@@ -3,7 +3,7 @@
 @custom-media --breakpoint-large screen and (min-width: 60em);
 
 :root {
-  --sans-serif: lato, helvetica, arial;
+  --sans-serif: arial, helvetica;
   --serif: georgia, serif;
   --code: consolas, monaco, monospace;
 
@@ -135,7 +135,7 @@
   --light-pink:  #ffa3d7;
   --dark-green:  #007459;
   --green:  #19a974;
-  --light-green:  #C7FFDF;
+  --light-green:  #A2F0D5;
   --navy:  #001b44;
   --dark-blue:  #00449e;
   --blue:  #357edd;
