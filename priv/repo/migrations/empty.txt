@@ -1,0 +1,1 @@
+empty migrations file // remove after one migration made
