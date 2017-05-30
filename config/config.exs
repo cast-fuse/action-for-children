@@ -12,7 +12,6 @@ config :action_for_children,
 # Configures the endpoint
 config :action_for_children, ActionForChildren.Web.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "2IOQrRPAP3AbbQ86x1UjOEz4KVyNmcsOftW4pWfpIX7Z8K+nqy00yrtu+PFgmzGk",
   render_errors: [view: ActionForChildren.Web.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ActionForChildren.PubSub,
            adapter: Phoenix.PubSub.PG2]
