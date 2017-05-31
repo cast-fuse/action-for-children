@@ -1,4 +1,4 @@
-<h1 class="tc mt5">Talk to one of our parenting experts</h1>
+<h1 class="tc mt5 f1">Talk to one of our parenting experts</h1>
 
 <div class="tc mw8 ph4 center">
 
@@ -27,5 +27,5 @@
 
   </div>
 
-  <button class="center dark-gray bg-near-white ba ph4 pv3 f5 pointer outline-0 bg-animate hover-bg-light-green">ASK YOUR QUESTION</button>
+  <button launch-intercom class="center dark-gray bg-near-white ba ph4 pv3 f5 pointer outline-0 t3 all ease hover-bg-dark-red hover-white">ASK YOUR QUESTION</button>
 </div>
