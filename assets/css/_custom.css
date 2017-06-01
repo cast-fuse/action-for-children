@@ -6,3 +6,15 @@ body {
 .pointer {
   cursor: pointer;
 }
+
+.t3 {
+  transition-duration: 0.3s;
+}
+
+.all {
+  transition-property: all;
+}
+
+.ease {
+  transition-timing-function: ease;
+}

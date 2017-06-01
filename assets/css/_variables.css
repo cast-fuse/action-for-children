@@ -3,7 +3,7 @@
 @custom-media --breakpoint-large screen and (min-width: 60em);
 
 :root {
-  --sans-serif: arial, helvetica;
+  --sans-serif: Rubik, Arial, Helvetica;
   --serif: georgia, serif;
   --code: consolas, monaco, monospace;
 
@@ -82,9 +82,9 @@
 
   --black: #000;
   --near-black: #111;
-  --dark-gray:#333;
+  --dark-gray: #2d2d2d;
   --mid-gray:#555;
-  --gray: #777;
+  --gray: #7f7f7f;
   --silver: #999;
   --light-silver: #aaa;
   --moon-gray: #ccc;
@@ -120,7 +120,7 @@
  --white-025: rgba(255,255,255,.025);
  --white-0125: rgba(255,255,255,.0125);
 
-  --dark-red:  #e7040f;
+  --dark-red:  #D6001C;
   --red:  #ff4136;
   --light-red:  #ff725c;
   --orange:  #ff6300;
