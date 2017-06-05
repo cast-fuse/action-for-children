@@ -1,6 +1,6 @@
 defmodule ActionForChildren.Web.SessionController do
   use ActionForChildren.Web, :controller
-  alias ActionForChildren.{Accounts, User}
+  alias ActionForChildren.Accounts
   alias ActionForChildren.Web.Plugs.Auth
 
   def create(conn, %{"session" => %{"id" => shortcode}}) do
