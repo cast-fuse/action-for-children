@@ -7,3 +7,10 @@
   <p>Save this code if you want to login on a different computer:</p>
   <h2><%= render_shortcode(@user) %></h2>
 </div>
+
+<script>
+  window.intercomSettings = {
+    autoShow: true,
+    user_id: "<%= @user.uuid %>"
+  }
+</script>
