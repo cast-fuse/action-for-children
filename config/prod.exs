@@ -18,8 +18,7 @@ config :action_for_children, ActionForChildren.Web.Endpoint,
   load_from_system_env: true,
   url: [scheme: "https", host: "action-for-children.herokuapp.com", port: 433],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
-  cache_static_manifest: "priv/static/cache_manifest.json",
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
+  cache_static_manifest: "priv/static/cache_manifest.json"
 
 config :action_for_children, ActionForChildren.Repo,
   adapter: Ecto.Adapters.Postgres,
