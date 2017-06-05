@@ -4,7 +4,7 @@ defmodule ActionForChildren.Web.SessionController do
   alias ActionForChildren.Web.Plugs.Auth
 
   def create(conn, %{"session" => %{"id" => shortcode}}) do
-    case Accounts.get_user_by_code(shortcode) do
+    case Accounts.get_user_by_shortcode(shortcode) do
       {:ok, user} ->
         conn
         |> Auth.login(user)

@@ -6,7 +6,7 @@ defmodule ActionForChildren.Web.UserController do
   plug Auth
 
   def show(conn, %{"id" => code}) do
-    case Accounts.get_user_by_code(code) do
+    case Accounts.get_user_by_shortcode(code) do
       {:ok, user} ->
         conn
         |> Auth.login(user)

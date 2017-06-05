@@ -2,7 +2,7 @@ defmodule ActionForChildren.Accounts do
   import Ecto.Query, warn: false
   alias ActionForChildren.{User, Repo}
 
-  def get_user_by_code(shortcode) do
+  def get_user_by_shortcode(shortcode) do
     case Repo.one(user_shortcode(shortcode)) do
       %User{} = user ->
         cond do
