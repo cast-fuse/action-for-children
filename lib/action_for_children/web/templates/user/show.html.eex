@@ -1,0 +1,9 @@
+<div class="pa3">
+  <div style="width: 300px">
+    <img src="/images/act-logo.png" class="w-100">
+  </div>
+
+  <p>Bookmark and come back to this page any time to continue your conversation</p>
+  <p>Save this code if you want to login on a different computer:</p>
+  <h2><%= render_shortcode(@user) %></h2>
+</div>
