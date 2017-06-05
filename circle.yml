@@ -1,6 +1,7 @@
 machine:
   environment:
     PATH: "$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
+    SECRET_KEY_BASE: "tYZgwyNJ8XP2Pr0XDC6LDuKXK/gQAuNJPY3JCK4MkpABx17V8DywE23U9p6cxfQG"
 dependencies:
   cache_directories:
     - ~/.asdf
@@ -15,4 +16,4 @@ dependencies:
     - yes | mix local.rebar
 test:
   override:
-    - mix test 
+    - mix test

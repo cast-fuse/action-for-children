@@ -17,6 +17,10 @@
       <p class="blue" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="red" role="alert"><%= get_flash(@conn, :error) %></p>
 
+      <%= if @conn.assigns.user do %>
+        <%= link "logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "tr pr4 no-underline db dark-red" %>
+      <% end %>
+
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>

@@ -17,10 +17,8 @@ defmodule ActionForChildren.Web.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-  end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", ActionForChildren.Web do
-  #   pipe_through :api
-  # end
+    resources "/sessions", SessionController, only: [:create, :delete]
+    resources "/users", UserController, only: [:show, :create]
+  end
 end

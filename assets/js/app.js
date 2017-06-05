@@ -1,4 +1,4 @@
 import 'phoenix_html'
-import { initAskQuestionBtn } from './launcher.js'
+import { handleIntercomLaunch } from './launcher.js'
 
-initAskQuestionBtn()
+handleIntercomLaunch()

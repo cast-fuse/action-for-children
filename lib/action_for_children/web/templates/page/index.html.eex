@@ -27,5 +27,19 @@
 
   </div>
 
-  <button launch-intercom class="center dark-gray bg-near-white ba ph4 pv3 f5 pointer outline-0 t3 all ease hover-bg-dark-red hover-white">ASK YOUR QUESTION</button>
+  <%= if @conn.assigns[:user] do %>
+    <%= link to: user_path(@conn, :show, @conn.assigns.user) do %>
+      <button class="center dark-gray bg-near-white ba ph4 pv3 f5 pointer outline-0 t3 all ease hover-bg-dark-red hover-white">ASK YOUR QUESTION</button>
+    <% end %>
+  <% else %>
+    <%= link to: user_path(@conn, :create), method: "post" do %>
+      <button class="center dark-gray bg-near-white ba ph4 pv3 f5 pointer outline-0 t3 all ease hover-bg-dark-red hover-white">ASK YOUR QUESTION</button>
+    <% end %>
+    <h3>chatted already? put your code here</h3>
+    <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
+      <%= text_input f, :id, placeholder: "user code" %>
+      <%= submit "login" %>
+    <% end %>
+  <% end %>
+
 </div>
