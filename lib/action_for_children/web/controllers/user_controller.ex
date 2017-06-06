@@ -20,16 +20,10 @@ defmodule ActionForChildren.Web.UserController do
 
   def create(conn, _params) do
     uuid = Ecto.UUID.generate()
+    {:ok, user} = Accounts.create_user(%{uuid: uuid})
 
-    case Accounts.create_user(%{uuid: uuid}) do
-      {:ok, user} ->
-        conn
-        |> Auth.login(user)
-        |> redirect(to: user_path(conn, :show, user))
-      {:error, _changeset} ->
-        conn
-        |> put_flash(:error, "error creating user")
-        |> redirect(to: page_path(conn, :index))
-    end
+    conn
+    |> Auth.login(user)
+    |> redirect(to: user_path(conn, :show, user))
   end
 end

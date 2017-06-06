@@ -6,10 +6,16 @@ defmodule ActionForChildren.Web.Plugs.Auth do
     opts
   end
 
+  def call(%{assigns: %{user: _}} = conn, _opts), do: conn
+
   def call(conn, _opts) do
     uuid = get_session(conn, :uuid)
-    user = uuid && Accounts.get_user_by_uuid(uuid)
-    assign(conn, :user, user)
+
+    if user = uuid && Accounts.get_user_by_uuid(uuid) do
+      assign(conn, :user, user)
+    else
+      assign(conn, :user, nil)
+    end
   end
 
   def login(conn, user) do
