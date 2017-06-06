@@ -19,7 +19,7 @@ defmodule ActionForChildren.Web.PageControllerTest do
   end
 
   test "logged in user only sees option to continue conversation", %{conn: conn} do
-    {:ok, user} = Accounts.create_user(%{uuid: Ecto.UUID.generate()})
+    {:ok, user} = Accounts.create_user()
     conn = assign(conn, :user, user)
     conn = get conn, "/"
 
