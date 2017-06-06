@@ -1,12 +1,13 @@
 defmodule ActionForChildren.Web.Plugs.Auth do
   import Plug.Conn
   alias ActionForChildren.Accounts
+  alias ActionForChildren.User
 
   def init(opts) do
     opts
   end
 
-  def call(%{assigns: %{user: _}} = conn, _opts), do: conn
+  def call(%{assigns: %{user: %User{}}} = conn, _opts), do: conn
 
   def call(conn, _opts) do
     uuid = get_session(conn, :uuid)

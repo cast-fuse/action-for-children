@@ -37,7 +37,8 @@ defmodule ActionForChildren.Accounts do
   end
 
   def create_user(attrs \\ %{}) do
-    %User{}
+    uuid = attrs[:uuid] || Ecto.UUID.generate()
+    %User{uuid: uuid}
     |> User.changeset(attrs)
     |> Repo.insert()
   end

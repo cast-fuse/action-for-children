@@ -19,8 +19,7 @@ defmodule ActionForChildren.Web.UserController do
   end
 
   def create(conn, _params) do
-    uuid = Ecto.UUID.generate()
-    {:ok, user} = Accounts.create_user(%{uuid: uuid})
+    {:ok, user} = Accounts.create_user()
 
     conn
     |> Auth.login(user)

@@ -18,7 +18,7 @@ defmodule ActionForChildren.Web.UserControllerTest do
   end
 
   test "shows user with the correct shortcode and auto logs them in", %{conn: conn} do
-    {:ok, user} = Accounts.create_user(%{uuid: Ecto.UUID.generate()})
+    {:ok, user} = Accounts.create_user()
     conn = get conn, user_path(conn, :show, user)
     %{assigns: %{user: user}} = conn
 
