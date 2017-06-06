@@ -20,6 +20,7 @@ defmodule ActionForChildren.Web.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
       import ActionForChildren.Web.Router.Helpers
+      import ActionForChildren.TestHelpers
 
       # The default endpoint for testing
       @endpoint ActionForChildren.Web.Endpoint
