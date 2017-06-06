@@ -1,45 +1,49 @@
-<h1 class="tc mt5 f1">Talk to one of our parenting experts</h1>
+<div class="ma4" style="width: 300px">
+  <img src="/images/act-logo.png" class="w-100">
+</div>
 
-<div class="tc mw8 ph4 center">
-
-  <div class="flex mt5 mb5">
-
-    <div class="w-33-ns">
-      <div class="mw5 center">
-        <div class="contain bg-center" style="background-image: url(/images/question-mark.png); height: 100px"></div>
-        <h4 class="fw5">share your parenting question with our experts</h4>
-      </div>
-    </div>
-
-    <div class="w-33-ns">
-      <div class="mw5 center">
-        <div class="contain bg-center" style="background-image: url(/images/speech-bubble.png); height: 100px"></div>
-        <h4 class="fw5">Talk to an expert online on request a callback</h4>
-      </div>
-    </div>
-
-    <div class="w-33-ns">
-      <div class="mw5 center">
-        <div class="contain bg-center" style="background-image: url(/images/clock.png); height: 100px"></div>
-        <h4 class="fw5">Book regular catch ups with your expert</h4>
-      </div>
-    </div>
-
+<div class="bg-dark-red pa4">
+  <div class="w-50">
+    <h1 class="white fw5">Talk to one of our parenting experts</h1>
+    <h4 class="white fw4 tracked">Our experts can offer practical support and advice for you and your family.</h4>
+    <h4 class="white fw4 tracked">The are available to chat live online, or you can arrange a time to talk on the phone.</h4>
   </div>
+</div>
 
-  <%= if @conn.assigns[:user] do %>
-    <%= link to: user_path(@conn, :show, @conn.assigns.user) do %>
-      <button class="center dark-gray bg-near-white ba ph4 pv3 f5 pointer outline-0 t3 all ease hover-bg-dark-red hover-white">ASK YOUR QUESTION</button>
-    <% end %>
+
+<div class="pa4 flex">
+
+  <%= if @conn.assigns.user do %>
+
+      <div class="mw6">
+        <h2 class="dark-gray">Continue your conversation</h2>
+        <p class="gray">You can book regular catch-ups once you get to know your parenting expert.</p>
+        <%= link to: user_path(@conn, :show, @conn.assigns.user) do %>
+          <button class="<%= red_button() %>">TALK TO AN EXPERT</button>
+        <% end %>
+
+      </div>
+
   <% else %>
-    <%= link to: user_path(@conn, :create), method: "post" do %>
-      <button class="center dark-gray bg-near-white ba ph4 pv3 f5 pointer outline-0 t3 all ease hover-bg-dark-red hover-white">ASK YOUR QUESTION</button>
-    <% end %>
-    <h3>chatted already? put your code here</h3>
-    <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
-      <%= text_input f, :id, placeholder: "user code" %>
-      <%= submit "login" %>
-    <% end %>
+
+    <div class="w-50">
+      <h2 class="dark-gray">Start a new conversation</h2>
+      <p class="gray">You can book regular catch-ups once you get to know your parenting expert.</p>
+      <%= link to: user_path(@conn, :create), method: "post" do %>
+        <button class="<%= red_button() %>">TALK TO AN EXPERT</button>
+      <% end %>
+    </div>
+
+    <div class="w-50">
+      <h2 class="dark-gray">Continue a conversation</h2>
+      <p class="gray">If you've previously spoken to an expert, enter your conversation code below to speak with them again.</p>
+
+      <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
+        <%= text_input f, :id, class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red", style: "border: 2px solid" %>
+        <%= submit "Continue", class: red_button() %>
+      <% end %>
+    </div>
+
   <% end %>
 
 </div>
