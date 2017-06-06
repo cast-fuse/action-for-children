@@ -3,7 +3,7 @@
     "file_column_width": 60
   },
   "skip_files": [
-    "lib/action_for_childre/application.ex",
+    "lib/action_for_children/application.ex",
     "lib/action_for_children/repo.ex",
     "lib/action_for_children/web/endpoint.ex",
     "lib/action_for_children/web/gettext.ex",
