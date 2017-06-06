@@ -1,7 +1,6 @@
 defmodule ActionForChildren.Web.AuthTest do
   use ActionForChildren.Web.ConnCase
   alias ActionForChildren.Web.Plugs.Auth
-  alias ActionForChildren.Accounts
 
   setup %{conn: conn} do
     conn =
@@ -21,7 +20,7 @@ defmodule ActionForChildren.Web.AuthTest do
   end
 
   test "call with existing user session assigns user to user struct", %{conn: conn} do
-    {:ok, user} = Accounts.create_user()
+    user = insert_user()
     conn =
       conn
       |> put_session(:uuid, user.uuid)
@@ -31,7 +30,7 @@ defmodule ActionForChildren.Web.AuthTest do
   end
 
   test "call with existing user just returns the conn", %{conn: conn} do
-    {:ok, user} = Accounts.create_user()
+    user = insert_user()
     conn =
       conn
       |> put_session(:uuid, user.uuid)
@@ -42,7 +41,7 @@ defmodule ActionForChildren.Web.AuthTest do
   end
 
   test "logs in a user and assigns the user to the conn", %{conn: conn} do
-    {:ok, user} = Accounts.create_user()
+    user = insert_user()
     conn = Auth.login(conn, user)
 
     assert conn.assigns.user == user
@@ -50,7 +49,7 @@ defmodule ActionForChildren.Web.AuthTest do
   end
 
   test "logs out user and removes them from the conn", %{conn: conn} do
-    {:ok, user} = Accounts.create_user()
+    user = insert_user()
     login_conn = Auth.login(conn, user)
     logout_conn =
       login_conn

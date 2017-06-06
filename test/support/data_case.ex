@@ -22,6 +22,7 @@ defmodule ActionForChildren.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import ActionForChildren.DataCase
+      import ActionForChildren.Web.TestHelpers
     end
   end
 

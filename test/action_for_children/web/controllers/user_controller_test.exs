@@ -1,6 +1,5 @@
 defmodule ActionForChildren.Web.UserControllerTest do
   use ActionForChildren.Web.ConnCase
-  alias ActionForChildren.Accounts
 
   test "creates a new user", %{conn: conn} do
     conn = post conn, "/users"
@@ -18,7 +17,7 @@ defmodule ActionForChildren.Web.UserControllerTest do
   end
 
   test "shows user with the correct shortcode and auto logs them in", %{conn: conn} do
-    {:ok, user} = Accounts.create_user()
+    user = insert_user()
     conn = get conn, user_path(conn, :show, user)
     %{assigns: %{user: user}} = conn
 
