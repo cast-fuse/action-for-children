@@ -8,9 +8,8 @@ defmodule ActionForChildren.Web.PageControllerTest do
     contents = [
       "Action for Children",
       "intercom",
-      "Talk to an expert",
       "form",
-      "user code",
+      "conversation code",
     ]
 
     Enum.map contents, fn content ->
@@ -26,12 +25,12 @@ defmodule ActionForChildren.Web.PageControllerTest do
     contents = [
       "Action for Children",
       "intercom",
-      "Talk to an expert"
+      "TALK TO AN EXPERT"
     ]
 
     excluded_content = [
-      "user code",
-      "put your code here"
+      "conversation code",
+      "enter your conversation code"
     ]
 
     Enum.map excluded_content, fn content ->
