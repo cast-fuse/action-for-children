@@ -1,6 +1,5 @@
 defmodule ActionForChildren.Web.PageControllerTest do
   use ActionForChildren.Web.ConnCase
-  alias ActionForChildren.Accounts
 
   test "non logged in user sees options to start conversation and enter code", %{conn: conn} do
     conn = get conn, "/"
@@ -18,7 +17,7 @@ defmodule ActionForChildren.Web.PageControllerTest do
   end
 
   test "logged in user only sees option to continue conversation", %{conn: conn} do
-    {:ok, user} = Accounts.create_user()
+    user = insert_user()
     conn = assign(conn, :user, user)
     conn = get conn, "/"
 
