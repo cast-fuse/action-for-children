@@ -1,5 +1,7 @@
 defmodule ActionForChildren.Web.CssHelpers do
-  @shortdoc "tachyons styles for common components"
+  @moduledoc """
+  tachyons styles for common components
+  """
 
   def red_button do
     styles([
