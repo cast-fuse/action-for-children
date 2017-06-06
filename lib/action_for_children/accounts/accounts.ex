@@ -26,18 +26,19 @@ defmodule ActionForChildren.Accounts do
   end
 
   def valid_shortcode?(user, shortcode) do
-    user_shortcode = user.uuid |> make_shortcode()
+    user_shortcode = user.uuid |> to_shortcode()
     user_shortcode == String.upcase(shortcode)
   end
 
-  def make_shortcode(uuid) do
+  def to_shortcode(uuid) do
     uuid
     |> String.slice(0, 8)
     |> String.upcase()
   end
 
   def create_user(attrs \\ %{}) do
-    %User{}
+    uuid = attrs[:uuid] || Ecto.UUID.generate()
+    %User{uuid: uuid}
     |> User.changeset(attrs)
     |> Repo.insert()
   end
