@@ -1,10 +1,9 @@
 defmodule ActionForChildren.Web.SessionControllerTest do
   use ActionForChildren.Web.ConnCase
-  alias ActionForChildren.Accounts
 
   setup %{conn: conn} = config do
     if uuid = config[:login_as] do
-      {:ok, user} = Accounts.create_user(%{uuid: uuid})
+      user = insert_user(%{uuid: uuid})
       conn = assign(build_conn(), :user, user)
       {:ok, conn: conn, user: user}
     else
@@ -13,8 +12,8 @@ defmodule ActionForChildren.Web.SessionControllerTest do
   end
 
   test "creates a new session", %{conn: conn} do
-    {:ok, user} = Accounts.create_user()
-    shortcode = Accounts.to_shortcode(user.uuid)
+    user = insert_user()
+    shortcode = to_shortcode(user.uuid)
     conn = post conn, "/sessions", %{session: %{id: shortcode}}
 
     assert get_session(conn, :uuid) == user.uuid
@@ -22,7 +21,7 @@ defmodule ActionForChildren.Web.SessionControllerTest do
   end
 
   test "no session created if unknown user", %{conn: conn} do
-    shortcode = Accounts.to_shortcode(Ecto.UUID.generate())
+    shortcode = to_shortcode(Ecto.UUID.generate())
     conn = post conn, "/sessions", %{session: %{id: shortcode}}
 
     assert get_flash(conn, :error) =~ "sorry could not find that user"

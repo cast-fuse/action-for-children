@@ -5,9 +5,7 @@ defmodule ActionForChildren.UserTest do
   alias ActionForChildren.User
   alias ActionForChildren.Web.Endpoint
 
-  @uuid "3c1f7669-8ed2-4f3d-a41d-91a827496e91"
-  @shortcode "3c1f7669"
-  @valid_attrs %{uuid: @uuid}
+  @valid_attrs %{uuid: Ecto.UUID.generate()}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
@@ -21,8 +19,12 @@ defmodule ActionForChildren.UserTest do
   end
 
   test "user_path uses uuid rather than id" do
-    changeset = User.changeset(%User{}, @valid_attrs)
-    user = Repo.insert!(changeset)
-    assert user_path(Endpoint, :show, user) == "/users/" <> String.upcase @shortcode
+    user = insert_user()
+    shortcode =
+      user.uuid
+      |> to_shortcode
+      |> String.upcase
+
+    assert user_path(Endpoint, :show, user) == "/users/" <> shortcode
   end
 end
