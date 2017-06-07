@@ -1,32 +1,64 @@
+<%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
 <div class="pa3 flex">
   <div style="width: 300px">
     <img src="/images/act-logo.png" class="w-100">
   </div>
-  <div class="ph3">
-    <h1>When's good to talk?</h1>
-    <div class="flex justify-around">
-      <div class="mr4" style="width: 100px" morning>
-        <img src="/images/crescent.png" class="w-100">
-        <h2>Morning</h2>
-      </div>
-      <div class="mr4" style="width: 100px" afternoon>
-        <img src="/images/crescent.png" class="w-100">
-        <h2>Afternoon</h2>
-      </div>
-      <div class="mr4" style="width: 100px">
-        <img src="/images/crescent.png" class="w-100" evening>
-        <h2>Evening</h2>
+
+  <div>
+    <div class="ph3">
+      <h1>When's good to talk?</h1>
+      <div class="flex justify-around">
+        <div class="mr4" style="width: 100px" morning>
+          <img src="/images/crescent.png" class="w-100">
+          <h2>Morning</h2>
+        </div>
+        <div class="mr4" style="width: 100px" afternoon>
+          <img src="/images/crescent.png" class="w-100">
+          <h2>Afternoon</h2>
+        </div>
+        <div class="mr4" style="width: 100px">
+          <img src="/images/crescent.png" class="w-100" evening>
+          <h2>Evening</h2>
+        </div>
       </div>
     </div>
+
+    <div>
+      <div class="flex justify-around">
+        <div class="pa2 bg-black-20" mon>Mon</div>
+        <div class="pa2 bg-black-20" tues>Tues</div>
+        <div class="pa2 bg-black-20" wed>Wed</div>
+        <div class="pa2 bg-black-20" thurs>Thurs</div>
+      </div>
+      <div class="flex justify-around">
+        <div class="pa2 bg-black-20" fri>Fri</div>
+        <div class="pa2 bg-black-20" sat>Sat</div>
+        <div class="pa2 bg-black-20" sun>Sun</div>
+        <div class="pa2 bg-black-20" any>Any</div>
+      </div>
+    </div>
+
+    <div>
+      <%= textarea f, :topic %>
+      <%= telephone_input f, :phone %>
+    </div>
+
   </div>
 </div>
 
-<%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
   <%= radio_button f, :time, "morning", morning_radio: "" %>
-  <label class="choice" for="discovery">Discovery</label><br />
   <%= radio_button f, :time, "afternoon", afternoon_radio: "" %>
-  <label class="choice" for="discovery">Discovery</label><br />
   <%= radio_button f, :time, "evening", evening_radio: "" %>
-  <label class="choice" for="discovery">Discovery</label><br />
+
+
+  <%= radio_button f, :day, "monday", mon_radio: "" %>
+  <%= radio_button f, :day, "tuesday", tues_radio: "" %>
+  <%= radio_button f, :day, "wednesday", wed_radio: "" %>
+  <%= radio_button f, :day, "thursday", thurs_radio: "" %>
+  <%= radio_button f, :day, "friday", fri_radio: "" %>
+  <%= radio_button f, :day, "saturday", sat_radio: "" %>
+  <%= radio_button f, :day, "sunday", sun_radio: "" %>
+  <%= radio_button f, :day, "any", any_radio: "" %>
+
   <%= submit "Continue", class: red_button() %>
 <% end %>
