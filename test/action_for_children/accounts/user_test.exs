@@ -20,11 +20,6 @@ defmodule ActionForChildren.UserTest do
 
   test "user_path uses uuid rather than id" do
     user = insert_user()
-    shortcode =
-      user.uuid
-      |> to_shortcode
-      |> String.upcase
-
-    assert user_path(Endpoint, :show, user) == "/users/" <> shortcode
+    assert user_path(Endpoint, :show, user) == "/users/" <> user.uuid
   end
 end
