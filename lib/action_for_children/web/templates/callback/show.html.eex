@@ -9,7 +9,7 @@
         <h1 class="ma0">When's good to talk?</h1>
         <div class="flex justify-around">
           <%= for time <- times() do
-            render ActionForChildren.Web.CallbackView, "time_button.html", time: time
+            render ActionForChildren.Web.CallbackView, "time_option.html", time: time
           end %>
         </div>
       </div>
@@ -17,12 +17,12 @@
       <div>
         <div class="flex justify-between mv2">
           <%= for day <- elem(days(), 0)  do
-            render ActionForChildren.Web.CallbackView, "day_button.html", day: day
+            render ActionForChildren.Web.CallbackView, "day_option.html", day: day
           end %>
         </div>
         <div class="flex justify-between mv2">
           <%= for day <- elem(days(), 1)  do
-            render ActionForChildren.Web.CallbackView, "day_button.html", day: day
+            render ActionForChildren.Web.CallbackView, "day_option.html", day: day
           end %>
       </div>
 
