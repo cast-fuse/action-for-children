@@ -18,3 +18,11 @@ body {
 .ease {
   transition-timing-function: ease;
 }
+
+textarea {
+  resize: none;
+}
+
+input[type=radio] {
+  display: none;
+}

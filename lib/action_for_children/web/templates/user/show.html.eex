@@ -11,7 +11,7 @@
     <p>if you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you</p>
   </div>
 
-  <%= link to: "/" do %>
+  <%= link to: user_callback_path(@conn, :show, @user)  do %>
     <button class="<%= grey_button() %>">CALL ME BACK</button>
   <% end %>
 </div>

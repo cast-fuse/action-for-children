@@ -39,6 +39,7 @@ defmodule ActionForChildren.Web do
       import ActionForChildren.Web.Router.Helpers
       import ActionForChildren.Web.ErrorHelpers
       import ActionForChildren.Web.Gettext
+      import ActionForChildren.Web.CssHelpers
     end
   end
 

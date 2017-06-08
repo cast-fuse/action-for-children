@@ -1,7 +1,7 @@
 defmodule ActionForChildren.User do
   use Ecto.Schema
   import Ecto.Changeset
-  alias ActionForChildren.{User, Accounts}
+  alias ActionForChildren.{User}
 
   schema "users" do
     field :uuid, :string

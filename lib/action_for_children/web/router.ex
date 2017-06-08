@@ -15,6 +15,9 @@ defmodule ActionForChildren.Web.Router do
     get "/", PageController, :index
 
     resources "/sessions", SessionController, only: [:create, :delete]
-    resources "/users", UserController, only: [:show, :create]
+    resources "/users", UserController, only: [:show, :create] do
+      get "/callback", CallbackController, :show
+      post "/callback", CallbackController, :create
+    end
   end
 end
