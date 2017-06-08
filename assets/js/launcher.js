@@ -2,7 +2,7 @@ const { intercomSettings } = window
 
 const bootIntercom = (intercomSettings) => window.Intercom
   ? window.Intercom('boot', {
-    app_id: 'jbn53yxb',
+    app_id: 'mboc2bs2',
     user_id: intercomSettings.user_id
   })
   : null
