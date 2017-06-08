@@ -8,12 +8,12 @@
       <div>
         <h1 class="ma0">When's good to talk?</h1>
         <div class="flex justify-around">
-          <div class="mr4" style="width: 100px" morning>
-            <img src="/images/crescent.png" class="w-100">
+          <div class="mr4" style="width: 100px">
+            <img src="/images/crescent.png" class="w-100" morning>
             <h2>Morning</h2>
           </div>
-          <div class="mr4" style="width: 100px" afternoon>
-            <img src="/images/crescent.png" class="w-100">
+          <div class="mr4" style="width: 100px">
+            <img src="/images/crescent.png" class="w-100" afternoon>
             <h2>Afternoon</h2>
           </div>
           <div class="mr4" style="width: 100px">

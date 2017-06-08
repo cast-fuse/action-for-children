@@ -15,24 +15,39 @@ const dayOptions =
     'any'
   ]
 
-const setEventListener = ({ button, radio }) => {
+const getButton = (timePeriod) => document.querySelector(`[${timePeriod}]`)
+const getRadioInput = (timePeriod) => document.querySelector(`[${timePeriod}-radio]`)
+const removeClass = el => className => el.classList.remove(className)
+const addClass = el => className => el.classList.add(className)
+
+const getButtonRadioPair = (timePeriod) => {
+  let radioButtonPair = {}
+  radioButtonPair.button = getButton(timePeriod)
+  radioButtonPair.radio = getRadioInput(timePeriod)
+  return radioButtonPair
+}
+
+const setEventListener = (buttons) => ({ button, radio }) => {
   if (button) {
     button.addEventListener('click', () => {
+      updateClasses(buttons, button)
       radio ? radio.click() : null
     })
   }
 }
 
-const addEventListeners = (timePeriod) => {
-  let radioButtonPair = {}
-  radioButtonPair.button = document.querySelector(`[${timePeriod}]`)
-  radioButtonPair.radio = document.querySelector(`[${timePeriod}-radio]`)
-  setEventListener(radioButtonPair)
+const updateClasses = (buttons, button) => {
+  const classes = ['white', 'bg-dark-red']
+  buttons.map(button => classes.map(removeClass(button)))
+  classes.map(addClass(button))
 }
 
-const addListeners = () => {
-  timeOptions.map(addEventListeners)
-  dayOptions.map(addEventListeners)
+const handleTimeOptions = () => {
+  const timeButtons = timeOptions.map(getButton)
+  const dayButtons = dayOptions.map(getButton)
+
+  timeOptions.map(getButtonRadioPair).map(setEventListener(timeButtons))
+  dayOptions.map(getButtonRadioPair).map(setEventListener(dayButtons))
 }
 
-export default addListeners
+export default handleTimeOptions
