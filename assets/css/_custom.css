@@ -22,7 +22,3 @@ body {
 textarea {
   resize: none;
 }
-
-input[type=radio] {
-  display: none;
-}
