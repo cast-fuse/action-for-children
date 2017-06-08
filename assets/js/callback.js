@@ -5,13 +5,13 @@ const timeOptions =
   ]
 
 const dayOptions =
-  [ 'mon',
-    'tues',
-    'wed',
-    'thurs',
-    'fri',
-    'sat',
-    'sun',
+  [ 'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+    'sunday',
     'any'
   ]
 

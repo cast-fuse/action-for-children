@@ -16,14 +16,14 @@
 
       <div>
         <div class="flex justify-between mv2">
-          <%= for day <- elem(days(), 0)  do %>
-            <%= render ActionForChildren.Web.CallbackView, "day_button.html", day: day, day_conversions: day_conversions()%>
-          <%= end %>
+          <%= for day <- elem(days(), 0)  do
+            render ActionForChildren.Web.CallbackView, "day_button.html", day: day, day_conversions: day_conversions()
+          end %>
         </div>
         <div class="flex justify-between mv2">
-          <%= for day <- elem(days(), 1)  do %>
-            <%= render ActionForChildren.Web.CallbackView, "day_button.html", day: day, day_conversions: day_conversions()%>
-          <%= end %>
+          <%= for day <- elem(days(), 1)  do
+            render ActionForChildren.Web.CallbackView, "day_button.html", day: day, day_conversions: day_conversions()
+          end %>
       </div>
 
       <div>
@@ -38,15 +38,9 @@
         radio_button f, :time, time, "#{time}_radio": ""
       end %>
 
-
-      <%= radio_button f, :day, "monday", "mon_radio": "" %>
-      <%= radio_button f, :day, "tuesday", tues_radio: "" %>
-      <%= radio_button f, :day, "wednesday", wed_radio: "" %>
-      <%= radio_button f, :day, "thursday", thurs_radio: "" %>
-      <%= radio_button f, :day, "friday", fri_radio: "" %>
-      <%= radio_button f, :day, "saturday", sat_radio: "" %>
-      <%= radio_button f, :day, "sunday", sun_radio: "" %>
-      <%= radio_button f, :day, "any", any_radio: "" %>
+      <%= for day <- Enum.concat(elem(days(), 0), elem(days(), 1)) do
+        radio_button f, :day, day, "#{day}_radio": ""
+      end %>
 
       <div class="mv3">
         <%= submit "Text me a time", class: red_button() %>
