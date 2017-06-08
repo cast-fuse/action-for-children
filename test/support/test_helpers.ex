@@ -1,18 +1,13 @@
 defmodule ActionForChildren.Web.TestHelpers do
   alias ActionForChildren.{Repo, User}
   def insert_user(attrs \\ %{}) do
-    changes = Map.merge(%{
-      uuid: Ecto.UUID.generate()
-      }, attrs)
+    uuid =
+      Ecto.UUID.generate()
+      |> String.slice(0, 8)
+      |> String.upcase()
 
-    %User{}
-    |> User.changeset(changes)
+    %User{uuid: uuid}
+    |> User.changeset(attrs)
     |> Repo.insert!()
-  end
-
-  def to_shortcode(uuid) do
-    uuid
-    |> String.slice(0, 8)
-    |> String.upcase()
   end
 end

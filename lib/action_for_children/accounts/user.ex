@@ -14,6 +14,6 @@ defmodule ActionForChildren.User do
   end
 
   defimpl Phoenix.Param, for: User do
-    def to_param(%{uuid: uuid}), do: Accounts.to_shortcode(uuid)
+    def to_param(%{uuid: uuid}), do: uuid
   end
 end

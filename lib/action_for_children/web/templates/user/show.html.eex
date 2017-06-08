@@ -4,7 +4,7 @@
   </div>
 
   <h4>Come back here any time to continue the conversation</h4>
-  <p>Your Code: <%= render_shortcode(@user) %></p>
+  <p>Your Code: <%= @user.uuid %></p>
 
   <div class="">
     <h4>Arrange a callback</h4>

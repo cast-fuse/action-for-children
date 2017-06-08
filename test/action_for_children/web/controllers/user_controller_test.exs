@@ -5,7 +5,7 @@ defmodule ActionForChildren.Web.UserControllerTest do
     conn = post conn, "/users"
     %{assigns: %{user: user}} = conn
 
-    assert String.length(user.uuid) == 36
+    assert String.length(user.uuid) == 8
     assert redirected_to(conn) == user_path(conn, :show, user)
   end
 
@@ -21,7 +21,7 @@ defmodule ActionForChildren.Web.UserControllerTest do
     conn = get conn, user_path(conn, :show, user)
     %{assigns: %{user: user}} = conn
 
-    assert String.length(user.uuid) == 36
+    assert String.length(user.uuid) == 8
     assert html_response(conn, 200) =~ user.uuid
   end
 end
