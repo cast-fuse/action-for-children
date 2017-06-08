@@ -1,4 +1,4 @@
-<div class="mr4" style="width: 100px">
+<div class="mr4 pointer" style="width: 100px">
   <img src="/images/crescent.png" class="w-100" <%= @time %>>
   <h2><%= String.capitalize @time %></h2>
 </div>

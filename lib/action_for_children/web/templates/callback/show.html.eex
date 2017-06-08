@@ -17,21 +17,21 @@
       <div>
         <div class="flex justify-between mv2">
           <%= for day <- elem(days(), 0)  do
-            render ActionForChildren.Web.CallbackView, "day_button.html", day: day, day_conversions: day_conversions()
+            render ActionForChildren.Web.CallbackView, "day_button.html", day: day
           end %>
         </div>
         <div class="flex justify-between mv2">
           <%= for day <- elem(days(), 1)  do
-            render ActionForChildren.Web.CallbackView, "day_button.html", day: day, day_conversions: day_conversions()
+            render ActionForChildren.Web.CallbackView, "day_button.html", day: day
           end %>
       </div>
 
       <div>
-        <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3 f4 no-outline", placeholder: "Would you like to tell use what you'd like to speak about?" %>
+        <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3 f4 outline-0", placeholder: "Would you like to tell use what you'd like to speak about?" %>
       </div>
 
       <div>
-        <%= telephone_input f, :phone, class: "w-100 br3 ba b--light-gray h2 f4 no-outline ph3", placeholder: "Your phone number" %>
+        <%= telephone_input f, :phone, class: "w-100 br3 ba b--light-gray h2 f4 no-outline ph3 outline-0", placeholder: "Your phone number" %>
       </div>
 
       <%= for time <- times() do
