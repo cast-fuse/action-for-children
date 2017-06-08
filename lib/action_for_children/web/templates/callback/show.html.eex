@@ -8,48 +8,38 @@
       <div>
         <h1 class="ma0">When's good to talk?</h1>
         <div class="flex justify-around">
-          <div class="mr4" style="width: 100px">
-            <img src="/images/crescent.png" class="w-100" morning>
-            <h2>Morning</h2>
-          </div>
-          <div class="mr4" style="width: 100px">
-            <img src="/images/crescent.png" class="w-100" afternoon>
-            <h2>Afternoon</h2>
-          </div>
-          <div class="mr4" style="width: 100px">
-            <img src="/images/crescent.png" class="w-100" evening>
-            <h2>Evening</h2>
-          </div>
+          <%= for time <- times() do
+            render ActionForChildren.Web.CallbackView, "time_button.html", time: time
+          end %>
         </div>
       </div>
 
       <div>
         <div class="flex justify-between mv2">
-          <div class="<%= day_class() %>" mon>Mon</div>
-          <div class="<%= day_class() %>" tues>Tues</div>
-          <div class="<%= day_class() %>" wed>Wed</div>
-          <div class="<%= day_class() %>" thurs>Thurs</div>
+          <%= for day <- elem(days(), 0)  do %>
+            <%= render ActionForChildren.Web.CallbackView, "day_button.html", day: day, day_conversions: day_conversions()%>
+          <%= end %>
         </div>
         <div class="flex justify-between mv2">
-          <div class="<%= day_class() %>" fri>Fri</div>
-          <div class="<%= day_class() %>" sat>Sat</div>
-          <div class="<%= day_class() %>" sun>Sun</div>
-          <div class="<%= day_class() %>" any>Any</div>
-        </div>
+          <%= for day <- elem(days(), 1)  do %>
+            <%= render ActionForChildren.Web.CallbackView, "day_button.html", day: day, day_conversions: day_conversions()%>
+          <%= end %>
       </div>
 
       <div>
         <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3 f4 no-outline", placeholder: "Would you like to tell use what you'd like to speak about?" %>
       </div>
+
       <div>
         <%= telephone_input f, :phone, class: "w-100 br3 ba b--light-gray h2 f4 no-outline ph3", placeholder: "Your phone number" %>
       </div>
-      <%= radio_button f, :time, "morning", morning_radio: "" %>
-      <%= radio_button f, :time, "afternoon", afternoon_radio: "" %>
-      <%= radio_button f, :time, "evening", evening_radio: "" %>
+
+      <%= for time <- times() do
+        radio_button f, :time, time, "#{time}_radio": ""
+      end %>
 
 
-      <%= radio_button f, :day, "monday", mon_radio: "" %>
+      <%= radio_button f, :day, "monday", "mon_radio": "" %>
       <%= radio_button f, :day, "tuesday", tues_radio: "" %>
       <%= radio_button f, :day, "wednesday", wed_radio: "" %>
       <%= radio_button f, :day, "thursday", thurs_radio: "" %>
@@ -57,10 +47,10 @@
       <%= radio_button f, :day, "saturday", sat_radio: "" %>
       <%= radio_button f, :day, "sunday", sun_radio: "" %>
       <%= radio_button f, :day, "any", any_radio: "" %>
+
       <div class="mv3">
         <%= submit "Text me a time", class: red_button() %>
       </div>
-
     </div>
   </div>
 <% end %>

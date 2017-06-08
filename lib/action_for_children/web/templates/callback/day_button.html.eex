@@ -1,0 +1,1 @@
+<div class="<%= day_class() %>" <%= @day %>><%= String.capitalize @day_conversions[@day] %></div>
