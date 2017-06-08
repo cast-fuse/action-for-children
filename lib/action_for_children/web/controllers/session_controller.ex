@@ -1,15 +1,15 @@
 defmodule ActionForChildren.Web.SessionController do
   use ActionForChildren.Web, :controller
-  alias ActionForChildren.Accounts
+  alias ActionForChildren.{Accounts, User}
   alias ActionForChildren.Web.Plugs.Auth
 
-  def create(conn, %{"session" => %{"id" => shortcode}}) do
-    case Accounts.get_user_by_shortcode(shortcode) do
-      {:ok, user} ->
+  def create(conn, %{"session" => %{"uuid" => uuid}}) do
+    case Accounts.get_user_by_uuid(uuid) do
+      %User{} = user ->
         conn
         |> Auth.login(user)
         |> redirect(to: user_path(conn, :show, user))
-      {:error, :user_not_found} ->
+      nil ->
         conn
         |> put_flash(:error, "sorry could not find that user")
         |> redirect(to: page_path(conn, :index))

@@ -39,7 +39,7 @@
       <p class="gray">If you've previously spoken to an expert, enter your conversation code below to speak with them again.</p>
 
       <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
-        <%= text_input f, :id, class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red", style: "border: 2px solid" %>
+        <%= text_input f, :uuid, class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red", style: "border: 2px solid" %>
         <%= submit "Continue", class: red_button() %>
       <% end %>
     </div>
