@@ -22,7 +22,7 @@ defmodule ActionForChildren.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {ActionForChildren.Application, []},
-     extra_applications: [:logger, :runtime_tools]]
+     extra_applications: [:logger, :runtime_tools, :intercom]]
   end
 
   # Specifies which paths to compile per environment.
@@ -41,7 +41,9 @@ defmodule ActionForChildren.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:excoveralls, "~> 0.7.0"}]
+     {:excoveralls, "~> 0.7.0"},
+     {:intercom, "~> 0.0.1"},
+     {:mock, "~> 0.2.0", only: :test}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

@@ -1,4 +1,4 @@
-defmodule ActionForChildren.Accounts.AccountsTest do
+defmodule ActionForChildren.AccountsTest do
   use ActionForChildren.DataCase
 
   alias ActionForChildren.{Accounts, User}
