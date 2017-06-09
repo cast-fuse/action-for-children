@@ -1,50 +1,48 @@
-<%= form_for @conn, user_callback_path(@conn, :create, @conn.assigns[:user]), [as: :callback], fn f -> %>
-  <div class="pa3 flex">
-    <div style="width: 300px">
-      <img src="/images/act-logo.png" class="w-100">
-    </div>
+<div class="mw8 center">
+  <%= form_for @conn, user_callback_path(@conn, :create, @conn.assigns[:user]), [as: :callback], fn f -> %>
+    <div class="pa3 flex">
+      <div class="pa3">
+        <div>
+          <h1 class="ma0">When's good to talk?</h1>
+          <div class="flex justify-around">
+            <%= for time <- times() do
+              render ActionForChildren.Web.CallbackView, "time_option.html", time: time
+            end %>
+          </div>
+        </div>
 
-    <div class="pa3">
-      <div>
-        <h1 class="ma0">When's good to talk?</h1>
-        <div class="flex justify-around">
-          <%= for time <- times() do
-            render ActionForChildren.Web.CallbackView, "time_option.html", time: time
-          end %>
+        <div>
+          <div class="flex justify-between mv2">
+            <%= for day <- elem(days(), 0)  do
+              render ActionForChildren.Web.CallbackView, "day_option.html", day: day
+            end %>
+          </div>
+          <div class="flex justify-between mv2">
+            <%= for day <- elem(days(), 1)  do
+              render ActionForChildren.Web.CallbackView, "day_option.html", day: day
+            end %>
+        </div>
+
+        <div>
+          <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3 f4 outline-0", placeholder: "Would you like to tell use what you'd like to speak about?" %>
+        </div>
+
+        <div>
+          <%= telephone_input f, :phone, class: "w-100 br3 ba b--light-gray h2 f4 no-outline ph3 outline-0", placeholder: "Your phone number", required: true %>
+        </div>
+
+        <%= for time <- times() do
+          radio_button f, :time, time, "#{time}_radio required": "", class: "dn"
+        end %>
+
+        <%= for day <- Enum.concat(elem(days(), 0), elem(days(), 1)) do
+          radio_button f, :day, day, "#{day}_radio required": "", class: "dn"
+        end %>
+
+        <div class="mv3">
+          <%= submit "Text me a time", class: red_button() %>
         </div>
       </div>
-
-      <div>
-        <div class="flex justify-between mv2">
-          <%= for day <- elem(days(), 0)  do
-            render ActionForChildren.Web.CallbackView, "day_option.html", day: day
-          end %>
-        </div>
-        <div class="flex justify-between mv2">
-          <%= for day <- elem(days(), 1)  do
-            render ActionForChildren.Web.CallbackView, "day_option.html", day: day
-          end %>
-      </div>
-
-      <div>
-        <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3 f4 outline-0", placeholder: "Would you like to tell use what you'd like to speak about?" %>
-      </div>
-
-      <div>
-        <%= telephone_input f, :phone, class: "w-100 br3 ba b--light-gray h2 f4 no-outline ph3 outline-0", placeholder: "Your phone number", required: true %>
-      </div>
-
-      <%= for time <- times() do
-        radio_button f, :time, time, "#{time}_radio required": "", class: "dn"
-      end %>
-
-      <%= for day <- Enum.concat(elem(days(), 0), elem(days(), 1)) do
-        radio_button f, :day, day, "#{day}_radio required": "", class: "dn"
-      end %>
-
-      <div class="mv3">
-        <%= submit "Text me a time", class: red_button() %>
-      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
