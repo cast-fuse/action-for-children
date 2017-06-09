@@ -21,6 +21,22 @@ defmodule ActionForChildren.Web.IntercomTest do
     end
   end
 
+  test "formats message correctly" do
+    message = %{
+      "topic" => "a topic",
+      "time" => "evening",
+      "day" => "mon",
+      "phone" => "12345678"
+    }
+
+    formatted = IntercomPrefferedTimes.format_message(message)
+
+    assert formatted =~ "a topic"
+    assert formatted =~ "evening"
+    assert formatted =~ "mon"
+    assert formatted =~ "12345678"
+  end
+
   test "returns error if user not found" do
     with_request_mock do
       message = "hello intercom"

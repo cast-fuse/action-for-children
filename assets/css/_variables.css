@@ -56,7 +56,7 @@
   --max-width-5: 16rem;
   --max-width-6: 32rem;
   --max-width-7: 48rem;
-  --max-width-8: 64rem;
+  --max-width-8: 66rem;
   --max-width-9: 96rem;
 
   --border-radius-none: 0;
@@ -120,7 +120,7 @@
  --white-025: rgba(255,255,255,.025);
  --white-0125: rgba(255,255,255,.0125);
 
-  --dark-red:  #D6001C;
+  --dark-red:  #E0000F;
   --red:  #ff4136;
   --light-red:  #ff725c;
   --orange:  #ff6300;

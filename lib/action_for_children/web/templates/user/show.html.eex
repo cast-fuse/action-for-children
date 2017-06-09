@@ -1,19 +1,17 @@
-<div class="pa3">
-  <div style="width: 300px">
-    <img src="/images/act-logo.png" class="w-100">
+<div class="mw8 center ph4">
+  <div class="w-50">
+    <h4>Come back here any time to continue the conversation</h4>
+    <p>Your Code: <%= @user.uuid %></p>
+
+    <div class="">
+      <h4>Arrange a callback</h4>
+      <p>if you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you</p>
+    </div>
+
+    <%= link to: user_callback_path(@conn, :show, @user)  do %>
+      <button class="<%= grey_button() %>">CALL ME BACK</button>
+    <% end %>
   </div>
-
-  <h4>Come back here any time to continue the conversation</h4>
-  <p>Your Code: <%= @user.uuid %></p>
-
-  <div class="">
-    <h4>Arrange a callback</h4>
-    <p>if you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you</p>
-  </div>
-
-  <%= link to: user_callback_path(@conn, :show, @user)  do %>
-    <button class="<%= grey_button() %>">CALL ME BACK</button>
-  <% end %>
 </div>
 
 <script>
