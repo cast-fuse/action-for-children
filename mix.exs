@@ -22,7 +22,7 @@ defmodule ActionForChildren.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {ActionForChildren.Application, []},
-     extra_applications: [:logger, :runtime_tools, :intercom]]
+     extra_applications: [:logger, :runtime_tools]]
   end
 
   # Specifies which paths to compile per environment.
@@ -43,6 +43,7 @@ defmodule ActionForChildren.Mixfile do
      {:cowboy, "~> 1.0"},
      {:excoveralls, "~> 0.7.0"},
      {:intercom, "~> 0.0.1"},
+     {:envy, "~> 1.1.1"},
      {:mock, "~> 0.2.0", only: :test}]
   end
 
