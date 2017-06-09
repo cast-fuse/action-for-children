@@ -11,5 +11,6 @@ defmodule ActionForChildren.Web.IntercomRequest do
       @application_json,
       hackney: @auth_config
     )
+    |> IO.inspect
   end
 end
