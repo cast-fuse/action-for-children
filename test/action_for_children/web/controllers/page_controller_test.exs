@@ -16,28 +16,11 @@ defmodule ActionForChildren.Web.PageControllerTest do
     end
   end
 
-  test "logged in user only sees option to continue conversation", %{conn: conn} do
+  test "logged in user redirected to conversation", %{conn: conn} do
     user = insert_user()
     conn = assign(conn, :user, user)
     conn = get conn, "/"
 
-    contents = [
-      "Action for Children",
-      "intercom",
-      "TALK TO AN EXPERT"
-    ]
-
-    excluded_content = [
-      "conversation code",
-      "enter your conversation code"
-    ]
-
-    Enum.map excluded_content, fn content ->
-      refute html_response(conn, 200) =~ content
-    end
-
-    Enum.map contents, fn content ->
-      assert html_response(conn, 200) =~ content
-    end
+    assert redirected_to(conn) == user_path(conn, :show, user)
   end
 end
