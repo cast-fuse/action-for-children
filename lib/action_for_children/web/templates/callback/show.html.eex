@@ -1,9 +1,10 @@
 <div class="mw8 center">
-  <%= form_for @conn, user_callback_path(@conn, :create, @conn.assigns[:user]), [as: :callback], fn f -> %>
+  <%= form_for @changeset, user_callback_path(@conn, :create, @conn.assigns[:user]), fn f -> %>
     <div class="pa3 flex justify-center">
       <div class="pa3">
         <div>
           <h1 class="ma0">When's good to talk?</h1>
+          <%= error_tag f, :time %>
           <div class="flex justify-around">
             <%= for time <- times() do
               render ActionForChildren.Web.CallbackView, "time_option.html", time: time
@@ -12,6 +13,7 @@
         </div>
 
         <div>
+          <%= error_tag f, :day %>
           <div class="flex justify-between mv2">
             <%= for day <- elem(days(), 0)  do
               render ActionForChildren.Web.CallbackView, "day_option.html", day: day
@@ -27,16 +29,17 @@
           <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3-5 f4 mt3 outline-0", placeholder: "Would you like to tell use what you'd like to speak about?" %>
         </div>
 
+        <%= error_tag f, :phone %>
         <div>
-          <%= telephone_input f, :phone, class: "w-100 br3 ba b--light-gray h2 f4 mt3 pa3-5 no-outline outline-0", placeholder: "Your phone number", required: true %>
+          <%= telephone_input f, :phone, class: "w-100 br3 ba b--light-gray h2 f4 mt3 pa3-5 no-outline outline-0", placeholder: "Your phone number" %>
         </div>
 
         <%= for time <- times() do
-          radio_button f, :time, time, "#{time}_radio required": "", class: "dn"
+          radio_button f, :time, time, "#{time}_radio": "", class: "dn"
         end %>
 
         <%= for day <- Enum.concat(elem(days(), 0), elem(days(), 1)) do
-          radio_button f, :day, day, "#{day}_radio required": "", class: "dn"
+          radio_button f, :day, day, "#{day}_radio": "", class: "dn"
         end %>
 
         <div class="mv3">
