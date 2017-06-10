@@ -3,6 +3,11 @@ body {
   font-family: var(--sans-serif);
 }
 
+textarea {
+  resize: none;
+}
+
+
 .pointer {
   cursor: pointer;
 }
@@ -19,6 +24,10 @@ body {
   transition-timing-function: ease;
 }
 
-textarea {
-  resize: none;
+.invert {
+  filter: invert(100%);
+}
+
+.pa3-5 {
+  padding: 1.5rem;
 }

@@ -16,7 +16,7 @@ defmodule ActionForChildren.Web.CallbackController do
         conn
         |> put_flash(:info, "thanks we'll get in touch")
         |> redirect(to: user_path(conn, :show, user_id))
-      {:error, reason} ->
+      {:error, _reason} ->
         conn
         |> put_flash(:error, "something went wrong")
         |> render("show.html")

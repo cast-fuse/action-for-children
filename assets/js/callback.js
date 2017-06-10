@@ -1,53 +1,87 @@
-const timeOptions =
-  [ 'morning',
-    'afternoon',
-    'evening'
-  ]
+const helpers = require('./domHelpers.js')
 
-const dayOptions =
-  [ 'monday',
-    'tuesday',
-    'wednesday',
-    'thursday',
-    'friday',
-    'saturday',
-    'sunday',
-    'any'
-  ]
+const timesOfDay = [
+  'morning',
+  'afternoon',
+  'evening'
+]
 
-const getButton = (timePeriod) => document.querySelector(`[${timePeriod}]`)
-const getRadioInput = (timePeriod) => document.querySelector(`[${timePeriod}-radio]`)
-const removeClass = el => className => el.classList.remove(className)
-const addClass = el => className => el.classList.add(className)
+const daysOfWeek = [
+  'monday',
+  'tuesday',
+  'wednesday',
+  'thursday',
+  'friday',
+  'saturday',
+  'sunday',
+  'any'
+]
 
-const getButtonRadioPair = (timePeriod) => {
-  let radioButtonPair = {}
-  radioButtonPair.button = getButton(timePeriod)
-  radioButtonPair.radio = getRadioInput(timePeriod)
-  return radioButtonPair
+// grabs the visible button for time of day and the hidden radio input
+const getVisibleButton = (timeOfDay) => document.querySelector(`[${timeOfDay}]`)
+const getRadioInput = (timeOfDay) => document.querySelector(`[${timeOfDay}-radio]`)
+
+const getButtonRadioPair = (timeOfDay) => {
+  return {
+    button: getVisibleButton(timeOfDay),
+    radio: getRadioInput(timeOfDay)
+  }
 }
 
-const setEventListener = (buttons) => ({ button, radio }) => {
+const clickHiddenRadio = (radio) => radio
+  ? radio.click()
+  : null
+
+const addButtonListener = (buttons) => ({ button, radio }) => {
   if (button) {
     button.addEventListener('click', () => {
-      updateClasses(buttons, button)
-      radio ? radio.click() : null
+      updateActiveClasses(buttons, button)
+      clickHiddenRadio(radio)
     })
   }
 }
 
-const updateClasses = (buttons, button) => {
-  const classes = ['white', 'bg-dark-red']
-  buttons.map(button => classes.map(removeClass(button)))
-  classes.map(addClass(button))
+const updateActiveClasses = (buttons, buttonToActivate) => {
+  const backgroundClasses = [ 'white', 'bg-dark-red' ]
+  removeActiveClasses(backgroundClasses, buttons)
+  addActiveClasses(backgroundClasses, buttonToActivate)
+}
+
+const removeActiveClasses = (backgroundClasses, buttons) => {
+  buttons.map(button => {
+    removeActiveImageClass(button)
+    backgroundClasses.map(helpers.removeClass(button))
+  })
+}
+
+const addActiveClasses = (activeClasses, buttonToActivate) => {
+  addActiveImageClass(buttonToActivate)
+  activeClasses.map(helpers.addClass(buttonToActivate))
+}
+
+const addActiveImageClass = (button) => {
+  if (button.firstElementChild) {
+    helpers.addClass(button.firstElementChild)('invert')
+  }
+}
+
+const removeActiveImageClass = (button) => {
+  if (button.firstElementChild) {
+    helpers.removeClass(button.firstElementChild)('invert')
+  }
 }
 
 const handleTimeOptions = () => {
-  const timeButtons = timeOptions.map(getButton)
-  const dayButtons = dayOptions.map(getButton)
+  const timeButtons = timesOfDay.map(getVisibleButton)
+  const dayButtons = daysOfWeek.map(getVisibleButton)
 
-  timeOptions.map(getButtonRadioPair).map(setEventListener(timeButtons))
-  dayOptions.map(getButtonRadioPair).map(setEventListener(dayButtons))
+  timesOfDay
+    .map(getButtonRadioPair)
+    .map(addButtonListener(timeButtons))
+
+  daysOfWeek
+    .map(getButtonRadioPair)
+    .map(addButtonListener(dayButtons))
 }
 
 export default handleTimeOptions
