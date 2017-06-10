@@ -14,5 +14,8 @@
     "lib/action_for_children/web/views/page_view.ex",
     "lib/action_for_children/web/views/layout_view.ex",
     "test"
+  ],
+  "custom_stop_words": [
+    "embedded_schema"
   ]
 }
