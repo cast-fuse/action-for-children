@@ -41,11 +41,8 @@ defmodule ActionForChildren.Web.IntercomTest do
     with_request_mock do
       message = "hello intercom"
       {:error, reason} = IntercomPrefferedTimes.send_preferred_times(%{user_id: "wrong id", message: message})
-      %{"errors" => [errors], "type" => type} = reason
 
-      assert type == "error.list"
-      assert Map.get(errors, "code") == "not_found"
-      assert Map.get(errors, "message") == "User Not Found"
+      assert reason == "not_found : User Not Found"
     end
   end
 
@@ -53,7 +50,7 @@ defmodule ActionForChildren.Web.IntercomTest do
     with_request_mock do
       {:error, reason} = IntercomPrefferedTimes.send_preferred_times(%{user_id: "foo", message: %{bad: "message"}})
 
-      assert reason == :http_client_error
+      assert reason == "http client error"
     end
   end
 end

@@ -20,10 +20,15 @@ defmodule ActionForChildren.Web.IntercomPrefferedTimes do
   end
 
   defp handle_response({:ok, %{status_code: _, body: body}}) do
-    {:error, Poison.Parser.parse!(body)}
+    {:error, render_error(body)}
   end
 
   defp handle_response({:error, _}) do
-    {:error, :http_client_error}
+    {:error, "http client error"}
+  end
+
+  defp render_error(body) do
+    %{"errors" => [errors]} = Poison.Parser.parse!(body)
+    "#{errors["code"]} : #{errors["message"]}"
   end
 end
