@@ -1,13 +1,19 @@
 defmodule ActionForChildren.Web.CallbackController do
   use ActionForChildren.Web, :controller
-  alias ActionForChildren.Web.Plugs.Auth
-  alias ActionForChildren.{Accounts, Callback}
+  alias ActionForChildren.{User, Web.Plugs.Auth, Accounts, Callback}
   import ActionForChildren.Web.IntercomPrefferedTimes
 
   plug Auth
 
   def show(conn, _params) do
-    render conn, "show.html", changeset: Accounts.new_callback()
+    case conn.assigns.user do
+      %User{} ->
+        render conn, "show.html", changeset: Accounts.new_callback()
+      nil ->
+        conn
+        |> put_flash(:error, "you must be logged in")
+        |> redirect(to: page_path(conn, :index))
+    end
   end
 
   def create(conn, %{"callback" => callback} = params) do

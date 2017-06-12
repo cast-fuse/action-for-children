@@ -49,3 +49,11 @@
     </div>
   <% end %>
 </div>
+
+<script>
+  window.intercomSettings = {
+    autoShow: false,
+    user_id: "<%= @user.uuid %>",
+    app_id: "<%= System.get_env("INTERCOM_APP_ID") %>",
+  }
+</script>
