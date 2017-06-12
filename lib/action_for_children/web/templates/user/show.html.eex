@@ -1,16 +1,17 @@
 <div class="mw8 center ph4">
   <div class="w-100 w-50-ns">
-    <h4>Come back here any time to continue the conversation</h4>
-    <p>Your Code: <%= @user.uuid %></p>
-
-    <div class="">
-      <h4>Arrange a callback</h4>
-      <p>If you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you</p>
+    <div>
+      <h4>Speak to us on the phone</h4>
+      <p>If you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you.</p>
     </div>
 
     <%= link to: user_callback_path(@conn, :show, @user)  do %>
-      <button class="<%= grey_button() %>">Call me back</button>
+      <button class="<%= red_button() %>">Arrange a call</button>
     <% end %>
+
+    <p>To speak with your parenting expert again, make a note of this code. You can use it here of if you phone us later.</p>
+    <p>Your Code: <b><%= @user.uuid %></b></p>
+
   </div>
 </div>
 

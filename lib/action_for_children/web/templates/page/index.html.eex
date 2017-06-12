@@ -2,8 +2,8 @@
   <div class="flex center mw8">
     <div class="w-50-m w-100 pa4">
       <h1 class="white fw5">Talk to one of our parenting experts</h1>
-      <h4 class="white fw4 tracked">Our experts can offer practical support and advice for you and your family.</h4>
-      <h4 class="white fw4 tracked">The are available to chat live online, or you can arrange a time to talk on the phone.</h4>
+      <h4 class="white fw4 tracked lh-sub-title">Our experts can offer practical support and advice for you and your family.</h4>
+      <h4 class="white fw4 tracked lh-sub-title">They are available to chat live online, or you can arrange a time to talk on the phone.</h4>
     </div>
     <div class="w-50-m relative">
       <div class="center mw5 absolute bottom-0 left-0 right-0">
@@ -14,17 +14,17 @@
 </div>
 
 <div class="pa4 flex flex-wrap mw8 center">
-  <div class="w-50-m w-100 tc">
-    <h2 class="dark-gray f3">Start a new conversation</h2>
-    <p class="gray">You can book regular catch-ups once you get to know your parenting expert.</p>
+  <div class="w-50-m w-100 tc flex flex-column items-center">
+    <h2 class="dark-gray f3 mt3 mb2">Ask a question</h2>
+    <p class="gray w-80 lh-copy mb4">You can arrange catch-ups with your parenting expert after you've spoken to them.</p>
     <%= link to: user_path(@conn, :create), method: "post" do %>
       <button class="<%= red_button() %>">Talk to an expert</button>
     <% end %>
   </div>
 
-  <div class="w-50-m w-100 tc">
-    <h2 class="dark-gray f3">Continue a conversation</h2>
-    <p class="gray">If you've previously spoken to an expert, enter your conversation code below to speak with them again.</p>
+  <div class="w-50-m w-100 tc flex flex-column items-center">
+    <h2 class="dark-gray f3 mt3 mb2">Continue a conversation</h2>
+    <p class="gray w-80 lh-copy mb4">If you've previously spoken to an expert, enter your conversation code below to speak with them again.</p>
 
     <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
       <%= text_input f, :uuid, class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2", style: "border: 2px solid" %>
