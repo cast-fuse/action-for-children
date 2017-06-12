@@ -12,7 +12,7 @@ defmodule ActionForChildren.Web.UserControllerTest do
   test "redirects to home if no user found", %{conn: conn} do
     conn = get conn, "/users/123"
 
-    assert get_flash(conn, :error) =~ "sorry could not find that user"
+    assert get_flash(conn, :error) =~ "Sorry, could not find that user"
     assert redirected_to(conn) == page_path(conn, :index)
   end
 
