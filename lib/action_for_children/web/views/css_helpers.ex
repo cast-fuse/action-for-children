@@ -14,7 +14,7 @@ defmodule ActionForChildren.Web.CssHelpers do
   def grey_button do
     styles([
       "bg-light-gray", "hover-bg-red", "gray", "hover-white",
-      "ba", "b--light-silver",
+      "ba", "b--light-silver", "br3",
       button()
     ])
   end

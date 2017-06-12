@@ -17,7 +17,7 @@ defmodule ActionForChildren.Callback do
     callback
     |> cast(params, [:phone, :time, :day, :topic])
     |> validate_required(:phone, message: "please enter your phone number")
-    |> validate_required(:day, message: "please select a time of day")
-    |> validate_required(:time, message: "please select a preferred time")
+    |> validate_required(:day, message: "please choose a day of the week")
+    |> validate_required(:time, message: "please choose a time of day")
   end
 end

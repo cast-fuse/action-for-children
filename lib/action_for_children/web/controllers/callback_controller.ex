@@ -23,7 +23,7 @@ defmodule ActionForChildren.Web.CallbackController do
         |> send_to_intercom(params, changeset)
       {:error, changeset} ->
         conn
-        |> put_flash(:error, "please correct the errors")
+        |> put_flash(:error, "Please fill in the missing fields")
         |> render("show.html", changeset: changeset)
     end
   end
@@ -33,7 +33,7 @@ defmodule ActionForChildren.Web.CallbackController do
     case send_preferred_times(%{user_id: user_id, message: message}) do
       {:ok, :message_sent, _} ->
         conn
-        |> put_flash(:info, "thanks we'll get in touch")
+        |> put_flash(:info, "Thanks we'll be in touch")
         |> redirect(to: user_path(conn, :show, user_id))
       {:error, reason} ->
         conn
