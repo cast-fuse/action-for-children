@@ -1,17 +1,15 @@
 <div class="mw8 center ph4">
   <div class="w-100 w-50-ns">
-    <div>
-      <h4>Speak to us on the phone</h4>
-      <p>If you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you.</p>
-    </div>
+    <h4>Speak to us on the phone</h4>
+    <p>If you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you.</p>
 
     <%= link to: user_callback_path(@conn, :show, @user)  do %>
       <button class="<%= red_button() %>">Arrange a call</button>
     <% end %>
 
-    <p>To speak with your parenting expert again, make a note of this code. You can use it here of if you phone us later.</p>
+    <h4>Speak to us again</h4>
+    <p>To speak to the same parenting expert again and carry on your conversations, make a note of this code. You can use the code for online chat or on the phone.</p>
     <p>Your Code: <b><%= @user.uuid %></b></p>
-
   </div>
 </div>
 
