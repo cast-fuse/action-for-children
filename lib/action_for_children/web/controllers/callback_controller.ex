@@ -5,15 +5,14 @@ defmodule ActionForChildren.Web.CallbackController do
 
   plug Auth
 
+  def show(%{assigns: %{user: %User{} = user}} = conn, _params) do
+    render conn, "show.html", changeset: Accounts.new_callback()
+  end
+
   def show(conn, _params) do
-    case conn.assigns.user do
-      %User{} ->
-        render conn, "show.html", changeset: Accounts.new_callback()
-      nil ->
-        conn
-        |> put_flash(:error, "you must be logged in")
-        |> redirect(to: page_path(conn, :index))
-    end
+    conn
+    |> put_flash(:error, "You must be logged in to see that page")
+    |> redirect(to: page_path(conn, :index))
   end
 
   def create(conn, %{"callback" => callback} = params) do
@@ -33,8 +32,7 @@ defmodule ActionForChildren.Web.CallbackController do
     case send_preferred_times(%{user_id: user_id, message: message}) do
       {:ok, :message_sent, _} ->
         conn
-        |> put_flash(:info, "Thanks we'll be in touch")
-        |> redirect(to: user_path(conn, :show, user_id))
+        |> render("confirmation.html")
       {:error, reason} ->
         conn
         |> put_flash(:error, "error: #{reason}")

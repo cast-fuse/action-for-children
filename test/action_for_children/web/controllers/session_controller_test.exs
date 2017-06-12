@@ -23,7 +23,7 @@ defmodule ActionForChildren.Web.SessionControllerTest do
     shortcode = "123"
     conn = post conn, "/sessions", %{session: %{uuid: shortcode}}
 
-    assert get_flash(conn, :error) =~ "sorry could not find that user"
+    assert get_flash(conn, :error) =~ "Sorry, could not find that user"
     assert get_session(conn, :uuid) == nil
     assert redirected_to(conn) == page_path(conn, :index)
   end
@@ -32,7 +32,7 @@ defmodule ActionForChildren.Web.SessionControllerTest do
   test "session expires on logout", %{conn: conn, user: user} do
     conn = delete conn, session_path(conn, :delete, user)
 
-    assert get_flash(conn, :info) =~ "logged out"
+    assert get_flash(conn, :info) =~ "Logged out"
     assert get_session(conn, :uuid) == nil
     assert redirected_to(conn) == page_path(conn, :index)
   end

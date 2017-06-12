@@ -22,7 +22,7 @@ defmodule ActionForChildren.Web.CallbackControllerTest do
     user = insert_user()
     conn = get conn, user_callback_path(conn, :show, user)
 
-    assert get_flash(conn, :error) =~ "you must be logged in"
+    assert get_flash(conn, :error) =~ "You must be logged in to see that page"
     assert get_session(conn, :uuid) == nil
     assert redirected_to(conn) == page_path(conn, :index)
   end
@@ -31,7 +31,6 @@ defmodule ActionForChildren.Web.CallbackControllerTest do
   test "can send message to intercom", %{conn: conn} do
     user = insert_user(%{uuid: "EAC31107"})
     conn = post conn, user_callback_path(conn, :create, user), @callback_info
-    assert get_flash(conn, :info) =~ "Thanks we'll be in touch"
-    assert redirected_to(conn) == user_path(conn, :show, user)
+    assert html_response(conn, 200) =~ "We'll text you to arrange a call, we aim to be in touch within 24 hours."
   end
 end

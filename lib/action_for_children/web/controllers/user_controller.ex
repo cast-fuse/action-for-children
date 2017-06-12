@@ -13,7 +13,7 @@ defmodule ActionForChildren.Web.UserController do
         |> render("show.html", user: user)
       nil ->
         conn
-        |> put_flash(:error, "sorry could not find that user")
+        |> put_flash(:error, "Sorry, could not find that user")
         |> redirect(to: page_path(conn, :index))
     end
   end
