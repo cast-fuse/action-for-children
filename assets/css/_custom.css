@@ -31,3 +31,7 @@ textarea {
 .pa3-5 {
   padding: 1.5rem;
 }
+
+.lh-sub-title {
+  line-height: 1.4;
+}
