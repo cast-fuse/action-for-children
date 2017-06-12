@@ -33,11 +33,12 @@ const clickHiddenRadio = (radio) => radio
   : null
 
 const addButtonListener = (buttons) => ({ button, radio }) => {
-  if (button) {
+  if (button && radio) {
     button.addEventListener('click', () => {
       updateActiveClasses(buttons, button)
       clickHiddenRadio(radio)
     })
+    return { button, radio }
   }
 }
 
@@ -78,10 +79,14 @@ const handleTimeOptions = () => {
   timesOfDay
     .map(getButtonRadioPair)
     .map(addButtonListener(timeButtons))
+    .filter(timePair => timePair ? timePair.radio.checked : null)
+    .map(timePair => timePair ? updateActiveClasses(timeButtons, timePair.button) : null)
 
   daysOfWeek
     .map(getButtonRadioPair)
     .map(addButtonListener(dayButtons))
+    .filter(dayPair => dayPair ? dayPair.radio.checked : null)
+    .map(dayPair => dayPair ? updateActiveClasses(dayButtons, dayPair.button) : null)
 }
 
 export default handleTimeOptions

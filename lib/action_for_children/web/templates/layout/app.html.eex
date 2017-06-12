@@ -12,17 +12,17 @@
   </head>
 
   <body>
-      <div class="mw8 center">
+      <div class="mw8 center ph2">
         <p class="blue tr" role="alert"><%= get_flash(@conn, :info) %></p>
         <p class="red tr" role="alert"><%= get_flash(@conn, :error) %></p>
       </div>
 
       <div class="mw8 center flex justify-between">
-        <div class="ma4" style="width: 230px">
+        <div class="ma2 ma4-ns" style="width: 230px">
           <img src="/images/afc-logo.png" class="w-100">
         </div>
         <%= if @conn.assigns[:user] do %>
-          <%= link "logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "no-underline mt4 mr4 dib dark-red" %>
+          <%= link "Logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "no-underline mt4 mr4 dib dark-red" %>
         <% end %>
       </div>
 
