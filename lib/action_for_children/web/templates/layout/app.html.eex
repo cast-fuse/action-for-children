@@ -21,7 +21,7 @@
         <div class="ma4" style="width: 230px">
           <img src="/images/afc-logo.png" class="w-100">
         </div>
-        <%= if @conn.assigns.user do %>
+        <%= if @conn.assigns[:user] do %>
           <%= link "logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "no-underline mt4 mr4 dib dark-red" %>
         <% end %>
       </div>

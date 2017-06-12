@@ -1,4 +1,6 @@
-<div class="mr4 pointer bg-white" style="width: 100px">
-  <img src="/images/crescent.png" class="w-100 bg-white t3 all ease" <%= @time %>>
-  <h2><%= String.capitalize @time %></h2>
+<div class="tc ph2">
+  <div class="br2 center pa3 pointer bg-white t3 all ease flex justify-center items-center" style="width: 100px; height: 100px;" <%= @time %>>
+    <img src='<%= "/images/#{@time}.png" %>' class="w-100">
+  </div>
+  <h2 class="ttc"><%= @time %></h2>
 </div>

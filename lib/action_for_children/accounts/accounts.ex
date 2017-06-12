@@ -1,6 +1,7 @@
 defmodule ActionForChildren.Accounts do
   import Ecto.Query, warn: false
-  alias ActionForChildren.{User, Repo}
+  alias Ecto.Changeset
+  alias ActionForChildren.{User, Callback, Repo}
 
   def get_user_by_uuid(uuid), do: Repo.get_by(User, uuid: uuid)
 
@@ -15,5 +16,25 @@ defmodule ActionForChildren.Accounts do
     %User{uuid: uuid}
     |> User.changeset(attrs)
     |> Repo.insert()
+  end
+
+  def new_callback, do: Callback.changeset(%Callback{})
+
+  def validate_callback(struct, params) do
+    change =
+      struct
+      |> Callback.changeset(params)
+      |> update_embedded_action(:send)
+
+    case change do
+      %Changeset{valid?: true} = changeset ->
+        {:ok, changeset}
+      changeset ->
+        {:error, changeset}
+    end
+  end
+
+  defp update_embedded_action(changeset, action) do
+    %{changeset | action: action}
   end
 end
