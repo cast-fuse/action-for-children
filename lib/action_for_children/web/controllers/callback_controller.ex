@@ -33,8 +33,7 @@ defmodule ActionForChildren.Web.CallbackController do
     case send_preferred_times(%{user_id: user_id, message: message}) do
       {:ok, :message_sent, _} ->
         conn
-        |> put_flash(:info, "Thanks we'll be in touch")
-        |> redirect(to: user_path(conn, :show, user_id))
+        |> render("confirmation.html")
       {:error, reason} ->
         conn
         |> put_flash(:error, "error: #{reason}")
