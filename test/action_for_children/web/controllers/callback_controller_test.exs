@@ -11,13 +11,13 @@ defmodule ActionForChildren.Web.CallbackControllerTest do
     end
   end
 
-  @valid_callback_form %{topic: "RACHAEL TESTING - IGNORE - DO NOT NEED TO REPLY",
-                         phone: "071233345838",
-                         time: "morning",
-                         day: "monday"}
+  @valid_callback_form %{topic: "TESTING - IGNORE - DO NOT NEED TO REPLY",
+                         phone: "TESTING - IGNORE - DO NOT NEED TO REPLY",
+                         time: "TESTING - IGNORE - DO NOT NEED TO REPLY",
+                         day: "TESTING - IGNORE - DO NOT NEED TO REPLY"}
 
-  @invalid_callback_form %{topic: "RACHAEL TESTING - IGNORE - DO NOT NEED TO REPLY",
-                           day: "monday"}
+  @invalid_callback_form %{topic: "TESTING - IGNORE - DO NOT NEED TO REPLY",
+                           day: "TESTING - IGNORE - DO NOT NEED TO REPLY"}
 
   @existing_intercom_user "EAC31107"
   @non_existing_intecom_user "A234323"
