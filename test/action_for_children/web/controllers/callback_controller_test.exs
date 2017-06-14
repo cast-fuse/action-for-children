@@ -1,9 +1,29 @@
 defmodule ActionForChildren.Web.CallbackControllerTest do
   use ActionForChildren.Web.ConnCase
 
-  test "logged in user is show callback view", %{conn: conn} do
-    user = insert_user()
-    conn = assign(conn, :user, user)
+  setup %{conn: conn} = config do
+    if user_id = config[:login_as] do
+      user = insert_user(%{uuid: user_id})
+      conn = assign(conn, :user, user)
+      {:ok, conn: conn, user: user}
+    else
+      :ok
+    end
+  end
+
+  @valid_callback_form %{topic: "TESTING - IGNORE - DO NOT NEED TO REPLY",
+                         phone: "TESTING - IGNORE - DO NOT NEED TO REPLY",
+                         time: "TESTING - IGNORE - DO NOT NEED TO REPLY",
+                         day: "TESTING - IGNORE - DO NOT NEED TO REPLY"}
+
+  @invalid_callback_form %{topic: "TESTING - IGNORE - DO NOT NEED TO REPLY",
+                           day: "TESTING - IGNORE - DO NOT NEED TO REPLY"}
+
+  @existing_intercom_user "EAC31107"
+  @non_existing_intecom_user "A234323"
+
+  @tag login_as: @existing_intercom_user
+  test "logged in user is show callback view", %{conn: conn, user: user} do
     conn = get conn, user_callback_path(conn, :show, user)
 
     contents = [
@@ -27,10 +47,25 @@ defmodule ActionForChildren.Web.CallbackControllerTest do
     assert redirected_to(conn) == page_path(conn, :index)
   end
 
-  @callback_info %{callback: %{topic: "Teething", phone: "071233345838", time: "morning", day: "monday"}}
-  test "can send message to intercom", %{conn: conn} do
-    user = insert_user(%{uuid: "EAC31107"})
-    conn = post conn, user_callback_path(conn, :create, user), @callback_info
+  @tag login_as: @existing_intercom_user
+  test "can send message to intercom", %{conn: conn, user: user} do
+    conn = post conn, user_callback_path(conn, :create, user), %{callback: @valid_callback_form}
+
     assert html_response(conn, 200) =~ "We'll text you to arrange a call, we aim to be in touch within 24 hours."
+  end
+
+  @tag login_as: @existing_intercom_user
+  test "form with missing fields does not send message to intercom", %{conn: conn, user: user} do
+    conn = post conn, user_callback_path(conn, :create, user), %{callback: @invalid_callback_form}
+
+    assert get_flash(conn, :error) =~ "Please fill in the missing fields"
+    assert {:time, {"please choose a time of day", [validation: :required]}} in conn.assigns.changeset.errors
+  end
+
+  @tag login_as: @non_existing_intecom_user
+  test "message fails for non-existing intercom user", %{conn: conn, user: user} do
+    conn = post conn, user_callback_path(conn, :create, user), %{callback: @valid_callback_form}
+
+    assert get_flash(conn, :error) =~ "error"
   end
 end
