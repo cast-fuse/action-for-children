@@ -13,4 +13,8 @@ defmodule ActionForChildren.Web.PageController do
   def index(conn, _params) do
     render conn, "index.html"
   end
+
+  def experts(conn, _params) do
+    render conn, "experts.html"
+  end
 end

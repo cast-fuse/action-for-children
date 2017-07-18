@@ -5,7 +5,7 @@ defmodule ActionForChildren.Web.CallbackController do
 
   plug Auth
 
-  def show(%{assigns: %{user: %User{} = user}} = conn, _params) do
+  def show(%{assigns: %{user: %User{}}} = conn, _params) do
     render conn, "show.html", changeset: Accounts.new_callback()
   end
 

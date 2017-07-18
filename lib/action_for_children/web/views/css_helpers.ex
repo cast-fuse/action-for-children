@@ -21,6 +21,16 @@ defmodule ActionForChildren.Web.CssHelpers do
     ])
   end
 
+  def home_tiles do
+    styles([
+      "w-100", "w-30-m",
+      "tc", "flex", "flex-column",
+      "items-center", "b--dark-red", "br4",
+      "bw2", "b--solid", "pv4", "ph1",
+      "mv2"
+    ])
+  end
+
   defp styles(styles) do
     styles
     |> List.flatten()

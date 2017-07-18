@@ -13,6 +13,7 @@ defmodule ActionForChildren.Web.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/experts", PageController, :experts
 
     resources "/sessions", SessionController, only: [:create, :delete]
     resources "/users", UserController, only: [:show, :create] do

@@ -1,5 +1,10 @@
 <div class="mw8 center ph4">
   <div class="w-100 w-50-ns">
+    <h4>How to talk to us</h4>
+    <p>You can ask us any parenting or family question, but so that we can help you please provide as much context as you are comfortable with.</p>
+    <p>For example, if you need advice around your child's sleeping, let us know their age and bedtime routine. This means we can give you really tailored advice.</p>
+    <p>You can use the online chat to the right and one of our experts will get back to you as soon as possible. If no one is available straight away you can fill in your email address and you'll be notified when someone is available to talk to you.</p>
+
     <h4>Speak to us on the phone</h4>
     <p>If you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you.</p>
 
@@ -8,7 +13,8 @@
     <% end %>
 
     <h4>Speak to us again</h4>
-    <p>To speak to the same parenting expert again and carry on your conversations, make a note of this code. You can use the code for online chat or on the phone.</p>
+    <p>To speak to the same parenting expert again and carry on your conversation, make a note of the 8 digit code below.</p>
+    <p>You can use the code for online chat or on the phone.</p>
     <p>Your Code: <b><%= @user.uuid %></b></p>
   </div>
 </div>

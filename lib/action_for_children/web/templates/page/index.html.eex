@@ -13,22 +13,32 @@
   </div>
 </div>
 
-<div class="pa4 flex flex-wrap mw8 center">
-  <div class="w-50-m w-100 tc flex flex-column items-center">
-    <h2 class="dark-gray f3 mt3 mb2">Ask a question</h2>
+<div class="pa4 flex justify-around flex-wrap mw9 center">
+
+  <div class="<%= home_tiles() %>">
+    <h2 class="dark-gray f3 ma0">Our experts</h2>
+    <p class="gray w-80 lh-copy mb4">We have years of experience working with families and are here to support you</p>
+    <%= link to: page_path(@conn, :experts) do %>
+      <button class="<%= red_button() %>">Meet our experts</button>
+    <% end %>
+  </div>
+
+  <div class="<%= home_tiles() %>">
+    <h2 class="dark-gray f3 ma0">Ask a question</h2>
     <p class="gray w-80 lh-copy mb4">You can arrange catch-ups with your parenting expert after you've spoken to them.</p>
     <%= link to: user_path(@conn, :create), method: "post" do %>
       <button class="<%= red_button() %>">Talk to an expert</button>
     <% end %>
   </div>
 
-  <div class="w-50-m w-100 tc flex flex-column items-center">
-    <h2 class="dark-gray f3 mt3 mb2">Continue a conversation</h2>
+  <div class="<%= home_tiles() %>">
+    <h2 class="dark-gray f3 ma0">Continue a conversation</h2>
     <p class="gray w-80 lh-copy mb4">If you've previously spoken to an expert, enter your conversation code below to speak with them again.</p>
 
     <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
-      <%= text_input f, :uuid, class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2", style: "border: 2px solid" %>
+      <%= text_input f, :uuid, class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-40-l", style: "border: 2px solid" %>
       <%= submit "Continue", class: red_button() %>
     <% end %>
   </div>
+
 </div>
