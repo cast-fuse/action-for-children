@@ -9,18 +9,16 @@ defmodule ActionForChildren.Web.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", ActionForChildren.Web do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-  end
+    get "/experts", PageController, :experts
 
-  # Other scopes may use custom stacks.
-  # scope "/api", ActionForChildren.Web do
-  #   pipe_through :api
-  # end
+    resources "/sessions", SessionController, only: [:create, :delete]
+    resources "/users", UserController, only: [:show, :create] do
+      get "/callback", CallbackController, :show
+      post "/callback", CallbackController, :create
+    end
+  end
 end

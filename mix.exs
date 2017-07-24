@@ -8,6 +8,11 @@ defmodule ActionForChildren.Mixfile do
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      start_permanent: Mix.env == :prod,
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: ["coveralls": :test,
+                         "coveralls.detail": :test,
+                         "coveralls.post": :test,
+                         "coveralls.html": :test],
      aliases: aliases(),
      deps: deps()]
   end
@@ -35,7 +40,11 @@ defmodule ActionForChildren.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:excoveralls, "~> 0.7.0"},
+     {:intercom, "~> 0.0.1"},
+     {:envy, "~> 1.1.1"},
+     {:mock, "~> 0.2.0", only: :test}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

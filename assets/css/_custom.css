@@ -2,3 +2,36 @@ body {
   margin: 0;
   font-family: var(--sans-serif);
 }
+
+textarea {
+  resize: none;
+}
+
+
+.pointer {
+  cursor: pointer;
+}
+
+.t3 {
+  transition-duration: 0.3s;
+}
+
+.all {
+  transition-property: all;
+}
+
+.ease {
+  transition-timing-function: ease;
+}
+
+.invert {
+  filter: invert(100%);
+}
+
+.pa3-5 {
+  padding: 1.5rem;
+}
+
+.lh-sub-title {
+  line-height: 1.4;
+}

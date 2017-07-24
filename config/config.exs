@@ -13,6 +13,7 @@ config :action_for_children,
 config :action_for_children, ActionForChildren.Web.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: ActionForChildren.Web.ErrorView, accepts: ~w(html json)],
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   pubsub: [name: ActionForChildren.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

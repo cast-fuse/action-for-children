@@ -6,6 +6,12 @@ defmodule ActionForChildren.Application do
   def start(_type, _args) do
     import Supervisor.Spec
 
+    # loads environment vars for local development
+    unless Mix.env == :prod do
+      Envy.load([".env"])
+      Envy.reload_config()
+    end
+
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
