@@ -30,6 +30,10 @@
 
       <main role="main" class="mb5">
         <%= render @view_module, @view_template, assigns %>
+
+        <div class="mw8 center ph4">
+          <p class="dark-red mt5">This service isn't available 24/7.<br/> If your question is urgent, or medical or you are worried about a child please contact the appropriate emergency service or organisation.</p>
+        </div>
       </main>
 
     <!-- intercom  -->
