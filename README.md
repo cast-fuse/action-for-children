@@ -58,9 +58,8 @@ Heroku is set up to automatically deploy from `staging` and `master` branches (t
 to add the env vars to the app, make a `.env` in the root of your app and add this (with your own vars in place)
 
 ```env
-INTERCOM_SECRET="<intercom secret>"
+INTERCOM_ACCESS_TOKEN="<intercom access token>"
 INTERCOM_APP_ID="<app id>"
-INTERCOM_HASH_KEY="<intercom hash key>"
 SECRET_KEY_BASE="<secret key base>" -- generated using mix phx.gen.secret
 ```
 

@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :action_for_children, ActionForChildren.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "j0bb3hplop",
   database: "action_for_children_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

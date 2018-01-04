@@ -1,12 +1,23 @@
-<div class="mw9 w-90 center mh2">
-  <div class="bg-dark-red pa2">
-    <h1 class="white ml4">Meet our experts</h1>
+<div class="w-100 bg-dark-red">
+  <div class="flex center mw8">
+    <div class="w-90 pa4">
+      <h1 class="white">Meet our staff</h1>
+      <%= link to: user_path(@conn, :create), method: "post" do %>
+        <button class="<%= white_button() %>">Talk to an expert</button>
+      <% end %>
+    </div>
   </div>
-  <div class="ml4 mt4">
-    <p class="lh-copy">Our parent experts have all worked in children's centres and have been helping parents and families for many years.</p>
-    <p class="lh-copy">You can ask our experts absolutely anything about parenting and we will support you with advice specific to your situation.</p>
-    <p class="lh-copy">It can be about development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping etc. We really don't mind what you ask us about, we are here to help you.</p>
+</div>
 
+<div class="flex center mw8">
+  <div class="w-50 pa4">
+    <p class="lh-copy">We have worked with and engaged with children, young people, their families and carers throughout their careers. We understand physical, intellectual, social and emotional growth as part of a child or young person's development. We understand and support transitions for children, young people and families.</p>
+    <p class="lh-copy">Throughout our working lives we have been supporting families by helping to provide their children with the best start in life. We have facilitated parenting support programmes, signpost families to relevant services and ensure that all families get the help and support they need.</p>
+    <p class="lh-copy">We have a minimum level 3 NVQ in Childcare of equivalent.</p>
+    <p class="lh-copy">We are non-judgemental, inclusive, friendly and approachable. You can ask us anything and we will do our best to make you feel comfortable, understood and helped.</p>
+    <p class="lh-copy">It can be about development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping etc. We really don't mind what you ask us about, we are here to help you.</p>
+  </div>
+  <div class="w-50 pa4">
     <h2>Meet Louise</h2>
     <p class="lh-copy">I have been a Family Support Worker for 6 years and have run young parent groups, stay and play, infant massage, breastfeeding clinics, parenting courses and supported children and families in the home.</p>
     <p class="lh-copy">I am passionate about children reching their full potential and having the chance to thrive and I hope in some small way I contribute towards this.</p>

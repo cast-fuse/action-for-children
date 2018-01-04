@@ -5,17 +5,30 @@ defmodule ActionForChildren.Web.UserController do
 
   plug Auth
 
-  def show(conn, %{"id" => uuid}) do
-    case Accounts.get_user_by_uuid(uuid) do
-      %User{} = user ->
-        conn
-        |> Auth.login(user)
-        |> render("show.html", user: user)
-      nil ->
-        conn
-        |> put_flash(:error, "Sorry, could not find that user")
-        |> redirect(to: page_path(conn, :index))
+  def index(conn, _params) do
+
+    uuid = get_session(conn, :uuid)
+
+    if uuid == nil do
+
+      conn
+      |> put_flash(:error, "Please login first")
+      |> redirect(to: page_path(conn, :index))
+
+    else
+
+      case Accounts.get_user_by_uuid(uuid) do
+        %User{} = user ->
+          conn
+          |> render("show.html", user: user)
+        nil ->
+          conn
+          |> put_flash(:error, "Please login first")
+          |> redirect(to: page_path(conn, :index))
+      end
+
     end
+
   end
 
   def create(conn, _params) do
@@ -23,6 +36,6 @@ defmodule ActionForChildren.Web.UserController do
 
     conn
     |> Auth.login(user)
-    |> redirect(to: user_path(conn, :show, user))
+    |> redirect(to: user_path(conn, :index))
   end
 end

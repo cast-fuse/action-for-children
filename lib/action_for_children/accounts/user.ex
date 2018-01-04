@@ -5,12 +5,13 @@ defmodule ActionForChildren.User do
 
   schema "users" do
     field :uuid, :string
+    field :email, :string
   end
 
   def changeset(%User{} = user, attrs \\ %{}) do
     user
-    |> cast(attrs, [:uuid])
-    |> validate_required([:uuid])
+    |> cast(attrs, [:uuid, :email])
+    |> validate_required([:uuid, :email])
   end
 
   defimpl Phoenix.Param, for: User do

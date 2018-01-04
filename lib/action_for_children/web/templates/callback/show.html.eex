@@ -1,10 +1,19 @@
+<div class="w-100 bg-dark-red">
+  <div class="flex center mw8">
+    <div class="w-90 pa4">
+      <h1 class="white">When's good to talk?</h1>
+      <p>The service is available Monday-Friday 2-8pm.</p>
+      <p>If you'd rather talk to us on the phone let us know when is best for you and we will arrange a time to call you and answer your questions.</p>
+    </div>
+  </div>
+</div>
+
 <div class="mw8 center">
   <%= form_for @changeset, user_callback_path(@conn, :create, @conn.assigns[:user]), fn f -> %>
     <div class="pa3 flex justify-center">
       <div class="pa3 w-50-ns">
 
         <div>
-          <h1>When's good to talk?</h1>
           <%= error_tag f, :time %>
           <div class="flex justify-between">
             <%= for time <- times() do
@@ -28,7 +37,7 @@
         </div>
 
         <div>
-          <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3-5 f4 mt3 outline-0", placeholder: "Would you like to tell us what you'd like to speak about?" %>
+          <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3-5 f4 mt3 outline-0", placeholder: "Please let us know a bit about what you'd like to ask" %>
         </div>
 
         <div>
@@ -46,7 +55,7 @@
         </div>
 
         <div class="mv3">
-          <%= submit "Text me a time", class: red_button() %>
+          <%= submit "Request a callback", class: red_button() %>
         </div>
 
       </div>

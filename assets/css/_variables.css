@@ -9,7 +9,7 @@
 
   --font-size-headline: 6rem;
   --font-size-subheadline: 5rem;
-  --font-size-1: 3rem;
+  --font-size-1: 2.625rem;
   --font-size-2: 2.25rem;
   --font-size-3: 1.5rem;
   --font-size-4: 1.25rem;
@@ -17,12 +17,12 @@
   --font-size-6: .875rem;
 
   --letter-spacing-tight:-.05em;
-  --letter-spacing-1:.1em;
+  --letter-spacing-1:.025em;
   --letter-spacing-2:.25em;
 
   --line-height-solid: 1;
   --line-height-title: 1.25;
-  --line-height-copy: 1.5;
+  --line-height-copy: 1.625;
 
   --measure: 30em;
   --measure-narrow: 20em;
@@ -81,7 +81,7 @@
   --box-shadow-5: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
 
   --black: #000;
-  --near-black: #111;
+  --near-black: #222;
   --dark-gray: #2d2d2d;
   --mid-gray:#555;
   --gray: #7f7f7f;

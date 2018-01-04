@@ -12,29 +12,35 @@
   </head>
 
   <body>
-      <div class="mw8 center ph2">
-        <p class="blue tr" role="alert"><%= get_flash(@conn, :info) %></p>
-        <p class="red tr" role="alert"><%= get_flash(@conn, :error) %></p>
-      </div>
 
       <div class="mw8 center flex justify-between">
-        <div class="mh2 mb1 mh4-ns mb2-ns" style="width: 200px">
+        <div class="mh2 mh4-ns pt4 pb4" style="width: 300px">
           <a href="<%= page_path(@conn, :index) %>">
-            <img src="/images/afc-logo.png" class="w-100">
+            <img src="/images/afc-logo.png" class="w-100 db">
           </a>
         </div>
-        <%= if @conn.assigns[:user] do %>
-          <%= link "Logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "no-underline mt4 mr4 dib dark-red" %>
-        <% end %>
+        <div class="mh2 mh4-ns">
+          <p class="dark-red mt4">This is a trial service and only available in Stockton and Cornwall. If you'd like to access this service in your area, please let us know.</p>
+          <p class="dark-red mt4"><a class="white bg-dark-red hover-bg-red bn br3 w-80-l center f5 ph4 pv3 outline-0 pointer t3 all ease" href="mailto:enquiries@actionforchildren.org.uk?subject=Pilot Service Area Request">Request service in my area</a></p>
+        </div>
       </div>
 
       <main role="main" class="mb5">
         <%= render @view_module, @view_template, assigns %>
 
-        <div class="mw8 center ph4">
-          <p class="dark-red mt5">This service isn't available 24/7.<br/> If your question is urgent, or medical or you are worried about a child please contact the appropriate emergency service or organisation.</p>
-        </div>
+        <%= if @conn.assigns[:user] do %>
+          <%= link "Logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "no-underline mt4 mr4 dib dark-red" %>
+        <% end %>
       </main>
+
+    <div class="w-100 bg-dark-red">
+      <div class="flex center mw8">
+        <div class="w-100-m w-100 pa4">
+          <h4 class="white fw4 tracked lh-copy">This service is not available 24/7. During the 3 month trial, experts will be available Monday-Friday 2pm-8pm</h4>
+          <h4 class="white fw4 tracked lh-copy">Contact your local council if you are worried about a child's welfare. Contact 111 if you are worried about your child's health, or 999 in a medical emergency.</h4>
+        </div>
+      </div>
+    </div>
 
     <!-- intercom  -->
     <script>
