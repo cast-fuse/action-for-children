@@ -1,10 +1,17 @@
+<div class="w-100 bg-dark-red">
+  <div class="flex center mw8">
+    <div class="w-90 pa4">
+      <h1 class="white">When's good to talk?</h1>
+    </div>
+  </div>
+</div>
+
 <div class="mw8 center">
   <%= form_for @changeset, user_callback_path(@conn, :create, @conn.assigns[:user]), fn f -> %>
     <div class="pa3 flex justify-center">
       <div class="pa3 w-50-ns">
 
         <div>
-          <h1>When's good to talk?</h1>
           <%= error_tag f, :time %>
           <div class="flex justify-between">
             <%= for time <- times() do
