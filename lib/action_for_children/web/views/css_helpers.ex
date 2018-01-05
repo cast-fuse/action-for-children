@@ -31,7 +31,7 @@ defmodule ActionForChildren.Web.CssHelpers do
 
   def home_tiles do
     styles([
-      "w-100", "w-30-m",
+      "w-80", "w-35-m",
       "tc", "flex", "flex-column",
       "items-center", "b--dark-red", "br4",
       "bw1", "b--solid", "pv4", "ph1",

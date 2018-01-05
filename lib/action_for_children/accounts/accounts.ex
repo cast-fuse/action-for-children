@@ -4,6 +4,8 @@ defmodule ActionForChildren.Accounts do
   alias ActionForChildren.{User, Callback, Repo}
 
   def get_user_by_uuid(uuid), do: Repo.get_by(User, uuid: uuid)
+  def get_user_by_uuid_and_email(uuid,email), do: Repo.get_by(User, %{uuid: uuid, email: email})
+  def get_user_by_email(email), do: Repo.get_by(User, email: email)
 
   def make_uuid do
     Ecto.UUID.generate()

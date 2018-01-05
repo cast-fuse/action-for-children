@@ -4,7 +4,7 @@ defmodule ActionForChildren.Web.SessionController do
   alias ActionForChildren.Web.Plugs.Auth
 
   def create(conn, %{"session" => %{"uuid" => uuid, "email" => email}}) do
-    case Accounts.get_user_by_uuid(uuid) do
+    case Accounts.get_user_by_uuid_and_email(uuid, email) do
       %User{} = user ->
         conn
         |> Auth.login(user)

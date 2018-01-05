@@ -13,45 +13,50 @@
   </div>
 </div>
 
-<div class="mt4 flex justify-around flex-wrap mw8 center" style="margin-top: 3rem">
+<div class="mt4 mw8 center" style="margin-top: 3rem">
 
-  <h2>We want to make sure you can access support and advice that is tailored to your individual situation.</h2>
-  <p>You can speak to the same expert as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.
+  <div class="center mw8">
 
-  <div class="mw8 center ph2">
-    <p class="blue tr" role="alert"><%= get_flash(@conn, :info) %></p>
-    <p class="red tr" role="alert"><%= get_flash(@conn, :error) %></p>
-  </div>
-
-  <div class="<%= home_tiles() %>">
-    <h2 class="near-black f3 ma0">Ask a question</h2>
-    <p class="gray w-80 lh-copy mb4">Speak to our experts online, or by phone. Once you've spoken, you can arrange to speak to the same expert again.</p>
-
-    <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
-      <%= text_input f, :email, placeholder: "Your email", class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l", style: "border: 2px solid" %>
-      <%= submit "Talk to an expert", class: red_button() %>
-    <% end %>
+    <h2>We want to make sure you can access support and advice that is tailored to your individual situation.</h2>
+    <p>You can speak to the same expert as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.
+    <p class="red" role="alert"><%= get_flash(@conn, :error) %></p>
 
   </div>
 
-  <div class="<%= home_tiles() %>">
-    <h2 class="near-blacky f3 ma0">Continue a conversation</h2>
-    <p class="gray w-80 lh-copy mb4">If you've spoken to our experts before, enter your conversation code below to speak with them again.</p>
+  <div class="flex">
 
-    <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
-      <%= text_input f, :email, placeholder: "Your email", class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l", style: "border: 2px solid" %>
-      <%= text_input f, :uuid, placeholder: "Code", class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l", style: "border: 2px solid" %>
-      <%= submit "Login", class: red_button() %>
-    <% end %>
+    <div class="<%= home_tiles() %>" id="talk">
 
-  </div>
+      <h2 class="near-black f3 ma0">Ask a question</h2>
+      <p class="gray w-80 lh-copy mb4">Speak to our experts online, or by phone. Once you've spoken, you can arrange to speak to the same expert again.</p>
 
-  <div class="<%= home_tiles() %>">
-    <h2 class="near-black f3 ma0">Our experts</h2>
-    <p class="gray w-80 lh-copy mb4">We have years of experience working with families and are here to support you</p>
-    <%= link to: page_path(@conn, :experts), class: "w-100-l" do %>
-      <button class="<%= red_button() %>">Meet our experts</button>
-    <% end %>
+      <%= form_for @conn, user_path(@conn, :create), [as: :user], fn f -> %>
+        <%= text_input f, :email, placeholder: "Your email", class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l", style: "border: 2px solid" %>
+        <%= submit "Talk to an expert", class: red_button() %>
+      <% end %>
+
+    </div>
+
+    <div class="<%= home_tiles() %>">
+      <h2 class="near-blacky f3 ma0">Continue a conversation</h2>
+      <p class="gray w-80 lh-copy mb4">If you've spoken to our experts before, enter your conversation code below to speak with them again.</p>
+
+      <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
+        <%= text_input f, :email, placeholder: "Your email", class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l", style: "border: 2px solid" %>
+        <%= text_input f, :uuid, placeholder: "Code", class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l", style: "border: 2px solid" %>
+        <%= submit "Login", class: red_button() %>
+      <% end %>
+
+    </div>
+
+    <div class="<%= home_tiles() %>">
+      <h2 class="near-black f3 ma0">Our experts</h2>
+      <p class="gray w-80 lh-copy mb4">We have years of experience working with families and are here to support you</p>
+      <%= link to: page_path(@conn, :experts), class: "w-100-l" do %>
+        <button class="<%= red_button() %>">Meet our experts</button>
+      <% end %>
+    </div>
+
   </div>
 
 </div>

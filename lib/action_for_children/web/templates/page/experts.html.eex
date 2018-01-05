@@ -2,9 +2,7 @@
   <div class="flex center mw8">
     <div class="w-90 pa4">
       <h1 class="white">Meet our staff</h1>
-      <%= link to: user_path(@conn, :create), method: "post" do %>
-        <button class="<%= white_button() %>">Talk to an expert</button>
-      <% end %>
+      <a href="/#talk" class="<%= white_button() %>">Talk to an expert</a>
     </div>
   </div>
 </div>

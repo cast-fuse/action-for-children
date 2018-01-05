@@ -31,11 +31,29 @@ defmodule ActionForChildren.Web.UserController do
 
   end
 
-  def create(conn, _params) do
-    {:ok, user} = Accounts.create_user()
+  def create(conn, %{"user" => %{"email" => email}}) do
 
-    conn
-    |> Auth.login(user)
-    |> redirect(to: user_path(conn, :index))
+    if email == "" do
+
+      conn
+      |> put_flash(:error, "Please enter a valid email address")
+      |> redirect(to: page_path(conn, :index))
+
+    else
+
+      case Accounts.get_user_by_email(email) do
+        %User{} = user ->
+          conn
+          |> put_flash(:error, "Email address already in use, please login using your code")
+          |> redirect(to: page_path(conn, :index))
+        nil ->
+          {:ok, user} = Accounts.create_user(%{email: email})
+          conn
+          |> Auth.login(user)
+          |> redirect(to: user_path(conn, :index))
+        end
+
+      end
+
   end
 end

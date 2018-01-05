@@ -22,15 +22,14 @@
         <div class="mh2 mh4-ns">
           <p class="dark-red mt4">This is a trial service and only available in Stockton and Cornwall. If you'd like to access this service in your area, please let us know.</p>
           <p class="dark-red mt4"><a class="white bg-dark-red hover-bg-red bn br3 w-80-l center f5 ph4 pv3 outline-0 pointer t3 all ease" href="mailto:enquiries@actionforchildren.org.uk?subject=Pilot Service Area Request">Request service in my area</a></p>
+          <%= if @conn.assigns[:user] do %>
+            <%= link "Logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "no-underline mt4 mr4 dib dark-red" %>
+          <% end %>
         </div>
       </div>
 
       <main role="main" class="mb5">
         <%= render @view_module, @view_template, assigns %>
-
-        <%= if @conn.assigns[:user] do %>
-          <%= link "Logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "no-underline mt4 mr4 dib dark-red" %>
-        <% end %>
       </main>
 
     <div class="w-100 bg-dark-red">

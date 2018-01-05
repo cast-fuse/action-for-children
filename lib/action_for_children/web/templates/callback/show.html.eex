@@ -2,8 +2,11 @@
   <div class="flex center mw8">
     <div class="w-90 pa4">
       <h1 class="white">When's good to talk?</h1>
-      <p>The service is available Monday-Friday 2-8pm.</p>
-      <p>If you'd rather talk to us on the phone let us know when is best for you and we will arrange a time to call you and answer your questions.</p>
+      <p class="white fw4 tracked lh-copy">The service is available Monday-Friday 2-8pm.</p>
+      <p class="white fw4 tracked lh-copy">If you'd rather talk to us on the phone let us know when is best for you and we will arrange a time to call you and answer your questions.</p>
+      <%= link to: page_path(@conn, :experts), class: "w-100-l" do %>
+        <button class="<%= white_button() %>">Meet our experts</button>
+      <% end %>
     </div>
   </div>
 </div>
@@ -55,7 +58,7 @@
         </div>
 
         <div class="mv3">
-          <%= submit "Request a callback", class: red_button() %>
+          <%= submit "Request call", class: red_button() %>
         </div>
 
       </div>

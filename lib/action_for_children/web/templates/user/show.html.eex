@@ -1,12 +1,15 @@
 <div class="w-100 bg-dark-red">
   <div class="flex center mw8">
-    <div class="w-90 pa4">
-      <h1 class="white">Talk to us</h1>
+    <div class="w-50 pa4">
 
-      <h4 class="near-black">Speak to us again</h4>
-      <p class="lh-copy near-black">To speak to the same parenting expert again and carry on your conversation, make a note of the 8 digit code below.</p>
-      <p class="lh-copy near-black">You can use the code for online chat or on the phone.</p>
-      <p>Your Code: <b><%= @user.uuid %></b></p>
+      <h1 class="white">Talk to us</h1>
+      <p class="white fw4 tracked lh-copy">To speak to the same parenting expert again and carry on your conversation, make a note of the 8 digit code below.</p>
+      <p class="white fw4 tracked lh-copy">Your Code: <b><%= @user.uuid %></b></p>
+      <p class="white fw4 tracked lh-copy">If you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you.</p>
+
+      <%= link to: user_callback_path(@conn, :show, @user)  do %>
+        <button class="<%= white_button() %>">Arrange a call</button>
+      <% end %>
 
     </div>
   </div>
@@ -14,19 +17,17 @@
 
 <div class="mw8 mt4 center ph4">
   <div class="w-100 w-50-ns">
-    <p class="lh-copy near-black">You can ask us any parenting or family question, but so that we can help you please provide as much context as you are comfortable with.</p>
-    <p class="lh-copy near-black">For example, if you need advice around your child's sleeping, let us know their age and bedtime routine. This means we can give you really tailored advice.</p>
-    <p class="lh-copy near-black">You can use the online chat to the right and one of our experts will get back to you as soon as possible. If no one is available straight away you can fill in your email address and you'll be notified when someone is available to talk to you.</p>
+    <p class="lh-copy near-black">We are non-judgemental, inclusive, friendly and approachable.</p>
+    <p class="lh-copy near-black">You can ask us any parenting or family question and we will do our best to make you feel comfortable, understood and helped.</p>
+    <p class="lh-copy near-black">It can be about development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping etc. We really don't mind what you ask us about, we are here to help you.</p>
+    <p class="lh-copy near-black">So that we can best support you, please provide some context about your question. </p>
+    <p class="lh-copy near-black">For example, if you need advice around your child's sleeping, let us know their age and bedtime routine. This means we can give you advice really specific to you and your situation.</p>
+    <p class="lh-copy near-black">You can use the online chat to the right and one of our experts will get back to you as soon as they are free. If no one is available straight away you can fill in your email address and you'll be notified when someone is available to talk to you.</p>
     <%= link to: page_path(@conn, :experts) do %>
       <button class="<%= red_button() %>">Who are our experts?</button>
     <% end %>
 
-    <h4 class="near-black">Speak to us on the phone</h4>
-    <p class="lh-copy near-black">If you'd rather speak to one of our experts on the phone, you can arrange a time for us to call you.</p>
-
-    <%= link to: user_callback_path(@conn, :show, @user)  do %>
-      <button class="<%= red_button() %>">Arrange a call</button>
-    <% end %>
+    <p class="lh-copy near-black">You might also find it useful to read some general parenting information written by Action for Children practitioners. Add in a button to http://staging.parentingfromactionforchildren.org.uk/</p>
 
   </div>
 </div>
