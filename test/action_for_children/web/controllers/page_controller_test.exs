@@ -16,11 +16,4 @@ defmodule ActionForChildren.Web.PageControllerTest do
     end
   end
 
-  test "logged in user redirected to conversation", %{conn: conn} do
-    user = insert_user()
-    conn = assign(conn, :user, user)
-    conn = get conn, "/"
-
-    assert redirected_to(conn) == user_path(conn, :show, user)
-  end
 end
