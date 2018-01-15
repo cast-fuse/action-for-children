@@ -1,8 +1,10 @@
 <div class="w-100 bg-dark-red">
   <div class="flex center mw8">
-    <div class="w-90 pa4">
+    <div class="w-50 pa4">
       <h1 class="white">Meet our staff</h1>
-      <a href="/#talk" class="<%= white_button() %>">Talk to an expert</a>
+    </div>
+    <div class="w-50 pa4">
+      <a href="/#talk" class="<%= white_button() %> no-underline cta">Talk to an expert</a>
     </div>
   </div>
 </div>

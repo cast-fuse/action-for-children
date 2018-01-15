@@ -7,6 +7,19 @@ textarea {
   resize: none;
 }
 
+.alert-banner {
+  margin: 0;
+  padding: 1.25em 2em;
+}
+
+.home_tile {
+  margin-right: 1.5em;
+}
+
+.cta {
+  float: right;
+  margin-top: 1.125em
+}
 
 .pointer {
   cursor: pointer;

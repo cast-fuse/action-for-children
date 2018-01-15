@@ -12,12 +12,12 @@
   </div>
 </div>
 
-<div class="mt4 mw8 center" style="margin-top: 3rem">
+<div class="mt4 mw8 center" style="margin-top: 0rem">
 
-  <div class="center mw8">
+  <div class="center mw8 pa4">
 
-    <h2>We want to make sure you can access support and advice that is tailored to your individual situation.</h2>
-    <p>You can speak to the same expert as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.
+    <h2 style="line-height: 1.6">We want to make sure you can access support and advice that is tailored to you</h2>
+    <p style="line-height: 1.6">You can speak to the same expert as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.
     <p class="red" role="alert"><%= get_flash(@conn, :error) %></p>
 
   </div>
