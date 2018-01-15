@@ -1,9 +1,8 @@
 <div class="w-100 bg-dark-red">
   <div class="flex center mw8">
     <div class="w-50-m w-100 pa4">
-      <h1 class="white fw5 f1">Talk to a parenting expert</h1>
-      <h4 class="white fw4 tracked lh-copy">Our digital parenting support service gives you access to trusted experts who can answer your questions and offer practical support and advice for you and your family.</h4>
-      <h4 class="white fw4 tracked lh-copy">They are available to chat live online, or you can arrange a time to talk on the phone.</h4>
+      <h1 class="white fw5 f1">Talk to a parenting expert – online or on the phone</h1>
+      <h4 class="white fw4 tracked lh-copy">Our parenting support service gives you access to trusted experts who can answer your questions and offer practical support and advice for you and your family.</h4>
     </div>
     <div class="w-50-m relative">
       <div class="center mw5 absolute bottom-0 left-0 right-0" style="max-width: 22rem">

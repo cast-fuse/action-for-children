@@ -35,3 +35,7 @@ textarea {
 .lh-sub-title {
   line-height: 1.4;
 }
+
+.logout-form p, form {
+  display: inline;
+}
