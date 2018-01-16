@@ -37,7 +37,7 @@
     <div class="w-100 bg-dark-red">
       <div class="flex center mw8">
         <div class="w-70-m w-70 pa4">
-          <h4 class="white fw4 tracked lh-copy">This service is not available 24/7. During the 3 month trial, experts will be available Monday-Friday 2pm-8pm</h4>
+          <h4 class="white fw4 tracked lh-copy">This service is not available 24/7. During the 3 month trial, practitioners will be available Monday-Friday 2pm-8pm</h4>
           <h4 class="white fw4 tracked lh-copy">Contact your local council if you are worried about a child's welfare. Contact 111 if you are worried about your child's health, or 999 in a medical emergency.</h4>
           <%= if @conn.assigns[:user] do %>
             <div class="logout-form">

@@ -4,7 +4,7 @@
       <h1 class="white">Meet our staff</h1>
     </div>
     <div class="w-50 pa4">
-      <a href="/#talk" class="<%= white_button() %> no-underline cta">Talk to an expert</a>
+      <a href="/#talk" class="<%= white_button() %> no-underline cta">Talk to a practitioner</a>
     </div>
   </div>
 </div>
