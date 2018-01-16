@@ -12,29 +12,43 @@
   </head>
 
   <body>
-      <div class="mw8 center ph2">
-        <p class="blue tr" role="alert"><%= get_flash(@conn, :info) %></p>
-        <p class="red tr" role="alert"><%= get_flash(@conn, :error) %></p>
+
+    <div class="w-100 bg-dark-red">
+      <div class="flex center mw8">
+        <p class="white alert-banner">
+          This is a trial service and only available in Stockton and Cornwall. If you'd like to access this service in your area
+          <a class="white" href="mailto:enquiries@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
+        </p>
       </div>
+    </div>
 
       <div class="mw8 center flex justify-between">
-        <div class="mh2 mb1 mh4-ns mb2-ns" style="width: 200px">
+        <div class="mh2 mh4-ns pt4 pb4" style="width: 250px">
           <a href="<%= page_path(@conn, :index) %>">
-            <img src="/images/afc-logo.png" class="w-100">
+            <img src="/images/afc-logo.png" class="w-100 db">
           </a>
         </div>
-        <%= if @conn.assigns[:user] do %>
-          <%= link "Logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "no-underline mt4 mr4 dib dark-red" %>
-        <% end %>
       </div>
 
       <main role="main" class="mb5">
         <%= render @view_module, @view_template, assigns %>
-
-        <div class="mw8 center ph4">
-          <p class="dark-red mt5">This service isn't available 24/7.<br/> If your question is urgent, or medical or you are worried about a child please contact the appropriate emergency service or organisation.</p>
-        </div>
       </main>
+
+    <div class="w-100 bg-dark-red">
+      <div class="flex center mw8">
+        <div class="w-70-m w-70 pa4">
+          <h4 class="white fw4 tracked lh-copy">This service is not available 24/7. During the 3 month trial, experts will be available Monday-Friday 2pm-8pm</h4>
+          <h4 class="white fw4 tracked lh-copy">Contact your local council if you are worried about a child's welfare. Contact 111 if you are worried about your child's health, or 999 in a medical emergency.</h4>
+          <%= if @conn.assigns[:user] do %>
+            <div class="logout-form">
+                <p class="white">You are logged in as <strong><%= @conn.assigns.user.email %></strong> – </p>
+                <%= link "Logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "white" %>
+                <br /><br />
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
     <!-- intercom  -->
     <script>

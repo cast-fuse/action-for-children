@@ -52,7 +52,7 @@ config :phoenix, :stacktrace_depth, 20
 config :action_for_children, ActionForChildren.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "j0bb3hplop",
   database: "action_for_children_dev",
   hostname: "localhost",
   pool_size: 10

@@ -6,7 +6,7 @@ defmodule ActionForChildren.Web.TestHelpers do
       |> String.slice(0, 8)
       |> String.upcase()
 
-    %User{uuid: uuid}
+    %User{uuid: uuid, email: "test@example.com"}
     |> User.changeset(attrs)
     |> Repo.insert!()
   end

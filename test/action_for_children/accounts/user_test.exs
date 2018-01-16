@@ -5,7 +5,7 @@ defmodule ActionForChildren.UserTest do
   alias ActionForChildren.User
   alias ActionForChildren.Web.Endpoint
 
-  @valid_attrs %{uuid: Ecto.UUID.generate()}
+  @valid_attrs %{uuid: Ecto.UUID.generate(), email: "test@example.com"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
@@ -18,8 +18,4 @@ defmodule ActionForChildren.UserTest do
     refute changeset.valid?
   end
 
-  test "user_path uses uuid rather than id" do
-    user = insert_user()
-    assert user_path(Endpoint, :show, user) == "/users/" <> user.uuid
-  end
 end

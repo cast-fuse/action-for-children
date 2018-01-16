@@ -21,6 +21,7 @@ defmodule ActionForChildren.Web.PageControllerTest do
     conn = assign(conn, :user, user)
     conn = get conn, "/"
 
-    assert redirected_to(conn) == user_path(conn, :show, user)
+    assert redirected_to(conn) == "/users"
   end
+
 end
