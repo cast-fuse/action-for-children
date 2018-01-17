@@ -11,15 +11,15 @@ defmodule ActionForChildren.Web.SessionController do
         |> redirect(to: user_path(conn, :index))
       nil ->
         conn
-        |> put_flash(:error, "Sorry, could not find that user")
-        |> redirect(to: page_path(conn, :index))
+        |> put_flash(:error, "Sorry, could not find that conversation, please start a new one using the option below")
+        |> redirect(to: "#{page_path(conn, :index)}#talk")
     end
   end
 
   def delete(conn, _params) do
     conn
     |> Auth.logout()
-    |> put_flash(:info, "Logged out")
-    |> redirect(to: page_path(conn, :index))
+    |> put_flash(:info, "You have been logged out")
+    |> redirect(to: "#{page_path(conn, :index)}#talk")
   end
 end

@@ -12,8 +12,8 @@ defmodule ActionForChildren.Web.UserController do
     if uuid == nil do
 
       conn
-      |> put_flash(:error, "Please login first")
-      |> redirect(to: page_path(conn, :index))
+      |> put_flash(:error, "Please select an option below first")
+      |> redirect(to: "#{page_path(conn, :index)}#talk")
 
     else
 
@@ -23,8 +23,8 @@ defmodule ActionForChildren.Web.UserController do
           |> render("show.html", user: user)
         nil ->
           conn
-          |> put_flash(:error, "Please login first")
-          |> redirect(to: page_path(conn, :index))
+          |> put_flash(:error, "Please select an option below first")
+          |> redirect(to: "#{page_path(conn, :index)}#talk")
       end
 
     end
@@ -37,15 +37,15 @@ defmodule ActionForChildren.Web.UserController do
 
       conn
       |> put_flash(:error, "Please enter a valid email address")
-      |> redirect(to: page_path(conn, :index))
+      |> redirect(to: "#{page_path(conn, :index)}#talk")
 
     else
 
       case Accounts.get_user_by_email(email) do
         %User{} = user ->
           conn
-          |> put_flash(:error, "Email address already in use, please login using your code")
-          |> redirect(to: page_path(conn, :index))
+          |> put_flash(:error, "Email address already in use, please continue your conversation using your unique code below")
+          |> redirect(to: "#{page_path(conn, :index)}#talk")
         nil ->
           {:ok, user} = Accounts.create_user(%{email: email})
           conn
