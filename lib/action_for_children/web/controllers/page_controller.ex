@@ -7,7 +7,7 @@ defmodule ActionForChildren.Web.PageController do
 
   def index(%{assigns: %{user: %User{} = user}} = conn, _params) do
     conn
-    |> redirect(to: user_path(conn, :show, user))
+    |> redirect(to: user_path(conn, :index))
   end
 
   def index(conn, _params) do

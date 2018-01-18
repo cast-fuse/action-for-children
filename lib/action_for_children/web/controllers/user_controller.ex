@@ -5,24 +5,55 @@ defmodule ActionForChildren.Web.UserController do
 
   plug Auth
 
-  def show(conn, %{"id" => uuid}) do
-    case Accounts.get_user_by_uuid(uuid) do
-      %User{} = user ->
-        conn
-        |> Auth.login(user)
-        |> render("show.html", user: user)
-      nil ->
-        conn
-        |> put_flash(:error, "Sorry, could not find that user")
-        |> redirect(to: page_path(conn, :index))
+  def index(conn, _params) do
+
+    uuid = get_session(conn, :uuid)
+
+    if uuid == nil do
+
+      conn
+      |> put_flash(:error, "Please select an option below first")
+      |> redirect(to: "#{page_path(conn, :index)}#talk")
+
+    else
+
+      case Accounts.get_user_by_uuid(uuid) do
+        %User{} = user ->
+          conn
+          |> render("show.html", user: user)
+        nil ->
+          conn
+          |> put_flash(:error, "Please select an option below first")
+          |> redirect(to: "#{page_path(conn, :index)}#talk")
+      end
+
     end
+
   end
 
-  def create(conn, _params) do
-    {:ok, user} = Accounts.create_user()
+  def create(conn, %{"user" => %{"email" => email}}) do
 
-    conn
-    |> Auth.login(user)
-    |> redirect(to: user_path(conn, :show, user))
+    if email == "" do
+
+      conn
+      |> put_flash(:error, "Please enter a valid email address")
+      |> redirect(to: "#{page_path(conn, :index)}#talk")
+
+    else
+
+      case Accounts.get_user_by_email(email) do
+        %User{} = user ->
+          conn
+          |> put_flash(:error, "Email address already in use, please continue your conversation using your unique code below")
+          |> redirect(to: "#{page_path(conn, :index)}#talk")
+        nil ->
+          {:ok, user} = Accounts.create_user(%{email: email})
+          conn
+          |> Auth.login(user)
+          |> redirect(to: user_path(conn, :index))
+        end
+
+      end
+
   end
 end
