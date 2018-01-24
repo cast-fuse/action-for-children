@@ -53,6 +53,10 @@ The app is currently hosted on `heroku`, with the following versions:
 
 Heroku is set up to automatically deploy from `staging` and `master` branches (to staging and production versions respectively).
 
+You may have to run migrations manually:
+
+``heroku run "mix ecto.migrate" --app action-for-children-staging``
+
 ### Environment Variables
 
 to add the env vars to the app, make a `.env` in the root of your app and add this (with your own vars in place)
