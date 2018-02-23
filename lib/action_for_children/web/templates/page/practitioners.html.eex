@@ -18,9 +18,31 @@
     <p class="lh-copy">It can be about development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping etc. We really don't mind what you ask us about, we are here to help you.</p>
   </div>
   <div class="w-50 pa4">
-    <h2>Meet Louise</h2>
-    <p class="lh-copy">I have been a Family Support Worker for 6 years and have run young parent groups, stay and play, infant massage, breastfeeding clinics, parenting courses and supported children and families in the home.</p>
-    <p class="lh-copy">I am passionate about children reching their full potential and having the chance to thrive and I hope in some small way I contribute towards this.</p>
-    <p class="lh-copy">I hope that I can continue to support parents and families and look forward to meeting more amazing families along the way.</p>
+    <div class="accordion">
+
+      <div>
+        <h2>Meet Louise</h2>
+        <div>
+          <p class="lh-copy">I have been a Family Support Worker for 6 years and have run young parent groups, stay and play, infant massage, breastfeeding clinics, parenting courses and supported children and families in the home.</p>
+          <p class="lh-copy">I am passionate about children reching their full potential and having the chance to thrive and I hope in some small way I contribute towards this.</p>
+          <p class="lh-copy">I hope that I can continue to support parents and families and look forward to meeting more amazing families along the way.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Meet Rachael</h2>
+        <div>
+          <p class="lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce commodo, dolor id suscipit laoreet, turpis leo ullamcorper est, interdum porta est nunc sed urna. Aliquam posuere orci sed nisl accumsan placerat.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Meet Andrew</h2>
+        <div>
+          <p class="lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce commodo, dolor id suscipit laoreet, turpis leo ullamcorper est, interdum porta est nunc sed urna. Aliquam posuere orci sed nisl accumsan placerat.</p>
+        </div>
+      </div>
+      
+    </div>
   </div>
 </div>

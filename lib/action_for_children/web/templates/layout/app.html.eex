@@ -13,14 +13,16 @@
 
   <body>
 
-    <div class="w-100 bg-dark-red">
-      <div class="flex center mw8">
-        <p class="white alert-banner">
-          This is a trial service and only available in Sandwell and Cornwall. If you'd like to access this service in your area
-          <a class="white" href="mailto:enquiries@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
-        </p>
+    <%= if @conn.request_path != "/users" do %>
+      <div class="w-100 bg-dark-red">
+        <div class="flex center mw8">
+          <p class="white alert-banner">
+            This is a trial service and only available in Sandwell and Cornwall. If you'd like to access this service in your area
+            <a class="white" href="mailto:enquiries@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
+          </p>
+        </div>
       </div>
-    </div>
+    <%= end %>
 
       <div class="mw8 center flex justify-between">
         <div class="mh2 mh4-ns pt4 pb4" style="width: 250px">
