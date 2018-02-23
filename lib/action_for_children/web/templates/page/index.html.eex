@@ -16,8 +16,8 @@
 
   <div class="center mw8 pa4" style="padding-bottom: 0">
 
-    <h2 style="line-height: 1.6">We want to make sure you can access support and advice that is tailored to you</h2>
-    <p style="line-height: 1.6">You can speak to the same practitioner as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.
+    <h2 style="line-height: 1.6; text-align:center;">We want to make sure you can access support and advice that is tailored to you</h2>
+    <p style="line-height: 1.6; text-align:center; padding: 0 10%;">You can speak to the same practitioner as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.
 
   </div>
 
@@ -40,7 +40,7 @@
 
       <div class="<%= home_tiles() %>">
         <h2 class="near-blacky f3 ma0">Continue a conversation</h2>
-        <p class="gray w-80 lh-copy mb4">If you've spoken to our practitioners before, enter your conversation code below to speak with them again.</p>
+        <p class="gray w-80 lh-copy mb4">Spoken to one of our practitioners before? Login to speak with them again. Forgotten your code? <a class="red" href="#">Request a new code</a></p>
 
         <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
           <%= text_input f, :email, placeholder: "Your email", class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l", style: "border: 2px solid" %>
@@ -53,7 +53,7 @@
       <div class="<%= home_tiles() %>">
         <h2 class="near-black f3 ma0">Our practitioners</h2>
         <p class="gray w-80 lh-copy mb4">We have years of experience working with families and are here to support you</p>
-        <%= link to: page_path(@conn, :experts), class: "w-100-l" do %>
+        <%= link to: page_path(@conn, :practitioners), class: "w-100-l" do %>
           <button class="<%= red_button() %>">Meet our practitioners</button>
         <% end %>
       </div>

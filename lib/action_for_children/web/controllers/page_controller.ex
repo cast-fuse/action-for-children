@@ -14,7 +14,7 @@ defmodule ActionForChildren.Web.PageController do
     render conn, "index.html"
   end
 
-  def experts(conn, _params) do
-    render conn, "experts.html"
+  def practitioners(conn, _params) do
+    render conn, "practitioners.html"
   end
 end
