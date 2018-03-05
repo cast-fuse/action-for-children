@@ -12,8 +12,8 @@
 <div class="flex center mw8">
   <div class="w-50 pa4">
     <p class="lh-copy">We have worked with and engaged with children, young people, their families and carers throughout their careers. We understand physical, intellectual, social and emotional growth as part of a child or young person's development. We understand and support transitions for children, young people and families.</p>
-    <p class="lh-copy">Throughout our working lives we have been supporting families by helping to provide their children with the best start in life. We have facilitated parenting support programmes, signpost families to relevant services and ensure that all families get the help and support they need.</p>
-    <p class="lh-copy">We have a minimum level 3 NVQ in Childcare of equivalent.</p>
+    <p class="lh-copy">Throughout our working lives we have been supporting families by helping to provide their children with the best start in life. We facilitate parenting support programmes, signpost families to relevant services and ensure that all families get the help and support they need.</p>
+    <p class="lh-copy">We are highly experienced and have a range of qualifications and training in Early Years and childhood learning and development subjects.</p>
     <p class="lh-copy">We are non-judgemental, inclusive, friendly and approachable. You can ask us anything and we will do our best to make you feel comfortable, understood and helped.</p>
     <p class="lh-copy">It can be about development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping etc. We really don't mind what you ask us about, we are here to help you.</p>
   </div>
@@ -21,7 +21,7 @@
     <div class="accordion">
 
       <div>
-        <h2>Meet Louise</h2>
+        <h2>Meet Gina</h2>
         <div>
           <p class="lh-copy">I have been a Family Support Worker for 6 years and have run young parent groups, stay and play, infant massage, breastfeeding clinics, parenting courses and supported children and families in the home.</p>
           <p class="lh-copy">I am passionate about children reching their full potential and having the chance to thrive and I hope in some small way I contribute towards this.</p>
@@ -30,19 +30,42 @@
       </div>
 
       <div>
-        <h2>Meet Rachael</h2>
+        <h2>Meet Sarah</h2>
         <div>
           <p class="lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce commodo, dolor id suscipit laoreet, turpis leo ullamcorper est, interdum porta est nunc sed urna. Aliquam posuere orci sed nisl accumsan placerat.</p>
         </div>
       </div>
 
       <div>
-        <h2>Meet Andrew</h2>
+        <h2>Meet Jo</h2>
         <div>
           <p class="lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce commodo, dolor id suscipit laoreet, turpis leo ullamcorper est, interdum porta est nunc sed urna. Aliquam posuere orci sed nisl accumsan placerat.</p>
         </div>
       </div>
-      
+
+      <div>
+        <h2>Meet Cherrie</h2>
+        <div>
+          <p class="lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce commodo, dolor id suscipit laoreet, turpis leo ullamcorper est, interdum porta est nunc sed urna. Aliquam posuere orci sed nisl accumsan placerat.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Meet Aimee</h2>
+        <div>
+          <p class="lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce commodo, dolor id suscipit laoreet, turpis leo ullamcorper est, interdum porta est nunc sed urna. Aliquam posuere orci sed nisl accumsan placerat.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Meet Emma</h2>
+        <div>
+          <p class="lh-copy">I have worked in Early Years for 14 years in a variety of settings including children's centres.</p>
+          <p class="lh-copy">I run baby socials, infant massage classes and fun sessions for parents and their children aged 0-5 years to play and learn together.</p>
+          <p class="lh-copy">I also support families in their own homes with home play.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

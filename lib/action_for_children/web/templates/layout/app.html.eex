@@ -18,7 +18,7 @@
         <div class="flex center mw8">
           <p class="white alert-banner">
             This is a trial service and only available in Sandwell and Cornwall. If you'd like to access this service in your area
-            <a class="white" href="mailto:enquiries@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
+            <a class="white" href="mailto:rachael.townley@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
           </p>
         </div>
       </div>
@@ -41,6 +41,9 @@
         <div class="w-70-m w-70 pa4">
           <h4 class="white fw4 tracked lh-copy">This service is not available 24/7. During the 3 month trial, practitioners will be available Monday-Friday 2pm-8pm</h4>
           <h4 class="white fw4 tracked lh-copy">Contact your local council if you are worried about a child's welfare. Contact 111 if you are worried about your child's health, or 999 in a medical emergency.</h4>
+          <%= link to: page_path(@conn, :privacy), class: "white" do %>
+            Privacy Policy
+          <% end %>
           <%= if @conn.assigns[:user] do %>
             <div class="logout-form">
                 <p class="white">You are logged in as <strong><%= @conn.assigns.user.email %></strong> – </p>
