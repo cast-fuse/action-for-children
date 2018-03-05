@@ -25,7 +25,7 @@
     <%= end %>
 
       <div class="mw8 center flex justify-between">
-        <div class="mh2 mh4-ns pt4 pb4" style="width: 250px">
+        <div class="mh2 mh4-ns pt4 pb4" style="width: 350px">
           <a href="<%= page_path(@conn, :index) %>">
             <img src="/images/afc-logo.png" class="w-100 db">
           </a>
