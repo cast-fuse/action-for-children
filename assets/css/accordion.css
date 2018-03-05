@@ -1,6 +1,6 @@
 /** Core styling */
 .accordion{
-	padding: 0;
+	padding: 1.125rem 0 0 0;
 	margin:  0;
 	position: relative;
 	list-style: none;
@@ -11,6 +11,7 @@
 		padding: 0;
 		margin:  0;
 	}
+
 		.accordion > *,
 		.accordion.edge-visible,
 		.accordion .accordion{

@@ -1,6 +1,6 @@
 <div class="w-100 bg-dark-red">
   <div class="flex center mw8">
-    
+
     <div class="w-50-m w-100 pa4">
       <h1 class="white fw5 f1">Talk to our parenting staff – online or <br />on the phone</h1>
       <h4 class="white fw4 tracked lh-copy">Our parenting support service gives you access to trusted practitioners who can answer your questions and offer practical support and advice for you and your family.</h4>
@@ -36,7 +36,7 @@
 
       <div class="<%= home_tiles() %>">
         <h2 class="near-blacky f3 ma0">Continue a conversation</h2>
-        <p class="gray w-80 lh-copy mb4">Spoken to one of our practitioners before? Login to speak with them again. Forgotten your code? <a class="red" href="#">Request a new code</a></p>
+        <p class="gray w-80 lh-copy mb4">Spoken to one of our practitioners before? Login to speak with them again. Forgotten your code? <a class="red" href="/new_code">Request a new code</a></p>
 
         <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
           <%= text_input f, :email, placeholder: "Your email", class: "ba b--red br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l", style: "border: 2px solid" %>

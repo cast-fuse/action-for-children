@@ -22,4 +22,8 @@ defmodule ActionForChildren.Web.PageController do
     render conn, "privacy.html"
   end
 
+  def new_code(conn, _params) do
+    render conn, "new_code.html"
+  end
+
 end
