@@ -15,6 +15,7 @@ defmodule ActionForChildren.Web.Router do
     get "/", PageController, :index
     get "/practitioners", PageController, :practitioners
     get "/privacy", PageController, :privacy
+    get "/new_code", PageController, :new_code
 
     resources "/sessions", SessionController, only: [:create, :delete]
     resources "/users", UserController, only: [:index, :create] do
