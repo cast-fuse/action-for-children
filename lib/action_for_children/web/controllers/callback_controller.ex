@@ -27,7 +27,7 @@ defmodule ActionForChildren.Web.CallbackController do
     end
   end
 
-  defp send_to_intercom(conn, %{"user_id" => user_id, "callback" => callback}, changeset) do
+  def send_to_intercom(conn, %{"user_id" => user_id, "callback" => callback}, changeset) do
     message = format_message(callback)
     case send_preferred_times(%{user_id: user_id, message: message}) do
       {:ok, :message_sent, _} ->
@@ -35,7 +35,7 @@ defmodule ActionForChildren.Web.CallbackController do
         |> render("confirmation.html")
       {:error, reason} ->
         conn
-        |> put_flash(:error, "error: #{reason}")
+        |> put_flash(:error, "Something went wrong: #{reason}")
         |> render("show.html", changeset: changeset)
     end
   end
