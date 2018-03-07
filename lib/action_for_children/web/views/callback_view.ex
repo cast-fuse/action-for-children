@@ -3,10 +3,10 @@ defmodule ActionForChildren.Web.CallbackView do
 
   def days, do: {
     ["monday", "tuesday", "wednesday", "thursday"],
-    ["friday", "saturday", "sunday", "any"]
+    ["friday", "any"]
   }
 
-  def times, do: ["morning", "afternoon", "evening"]
+  def times, do: ["afternoon", "evening"]
 
   def abbreviate_day("thursday"), do: "thurs"
   def abbreviate_day("tuesday"), do: "tues"

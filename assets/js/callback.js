@@ -1,7 +1,6 @@
 const helpers = require('./domHelpers.js')
 
 const timesOfDay = [
-  'morning',
   'afternoon',
   'evening'
 ]
@@ -12,8 +11,6 @@ const daysOfWeek = [
   'wednesday',
   'thursday',
   'friday',
-  'saturday',
-  'sunday',
   'any'
 ]
 
