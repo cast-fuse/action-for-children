@@ -16,16 +16,15 @@
     <%= if @conn.request_path != "/users" do %>
       <div class="w-100 bg-dark-red">
         <div class="flex center mw8">
-          <p class="white alert-banner" style="line-height: 1.6">
-            This is a trial service and only available in Sandwell and Cornwall. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>, <br />or if you'd like to access this service in your area
-            <a class="white" href="mailto:rachael.townley@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
+          <p class="white alert-banner" style="line-height: 1.6; font-size: 0.825em">
+            This is a trial service and only available in Sandwell and Cornwall. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>, or if you'd like to access this service in your area. <a class="white" href="mailto:rachael.townley@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
           </p>
         </div>
       </div>
-    <%= end %>
+    <% end %>
 
       <div class="mw8 center flex justify-between">
-        <div class="mh2 mh4-ns pt4 pb4" style="width: 350px">
+        <div class="mh2 mh4-ns pt5 pb5" style="width: 350px">
           <a href="<%= page_path(@conn, :index) %>">
             <img src="/images/afc-logo.png" class="w-100 db">
           </a>
@@ -41,15 +40,15 @@
         <div class="w-70-m w-70 pa4">
           <h4 class="white fw4 tracked lh-copy">This service is not available 24/7. During the 3 month trial, practitioners will be available Monday-Friday 2pm-8pm</h4>
           <h4 class="white fw4 tracked lh-copy">Contact your local council if you are worried about a child's welfare. Contact 111 if you are worried about your child's health, or 999 in a medical emergency.</h4>
-          <%= link to: page_path(@conn, :privacy), class: "white" do %>
-            Privacy Policy
-          <% end %>
           <%= if @conn.assigns[:user] do %>
             <div class="logout-form">
                 <p class="white">You are logged in as <strong><%= @conn.assigns.user.email %></strong> – </p>
                 <%= link "Logout", to: session_path(@conn, :delete, @conn.assigns.user), method: "delete", class: "white" %>
                 <br /><br />
             </div>
+          <% end %>
+          <%= link to: page_path(@conn, :privacy), class: "white" do %>
+            Privacy Policy
           <% end %>
         </div>
       </div>
