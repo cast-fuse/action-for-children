@@ -5,7 +5,7 @@
       <p class="white fw4 tracked lh-copy">The service is available Monday-Friday 2-8pm.</p>
       <p class="white fw4 tracked lh-copy">If you'd rather talk to us on the phone let us know when is best for you and we will arrange a time to call you and answer your questions.</p>
     </div>
-  </div> 
+  </div>
 </div>
 
 <div class="mw8 center">
@@ -43,11 +43,11 @@
         </div>
 
         <div>
-          <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3-5 f4 mt3 outline-0", placeholder: "Please let us know a bit about what you'd like to ask" %>
+          <%= textarea f, :topic, class: "w-100 br3 ba b--light-gray h4 pa3-5 f5 mt3 outline-0", placeholder: "Please let us know a bit about what you'd like to ask", rows: 5 %>
         </div>
 
         <div>
-          <%= telephone_input f, :phone, class: "w-100 br3 ba b--light-gray h2 f4 mt3 pa3-5 no-outline outline-0", placeholder: "Your phone number" %>
+          <%= telephone_input f, :phone, class: "w-100 br3 ba b--light-gray h2 f5 mt3 pa3-5 no-outline outline-0", placeholder: "Your phone number" %>
         </div>
         <%= error_tag f, :phone %>
 
