@@ -1,10 +1,19 @@
-<div class="w-100 bg-dark-red">
+<div class="w-100 bg-blue">
   <div class="flex center mw8">
 
     <div class="w-50-m w-100 pa4">
-      <h1 class="white fw5 f1">Talk to our parenting staff – online, or <br />on the phone</h1>
-      <h4 class="white fw4 tracked lh-copy">Our parenting support service gives you access to trusted practitioners who can answer your questions and offer practical support and advice for you and your family.</h4>
+      <h1 class="white fw5 f1">As a parent of an under five do you struggle to find out who to get help from or feel you don't know what questions to ask?</h1>
+      <h4 class="white fw4 tracked lh-copy">We're here for you, whatever’s on your mind. We'll support you as little or often as you want.</h4>
+      <h4 class="white fw4 tracked lh-copy">Our practitioners offer free advice and can help give you peace of mind or to guide you for additional support.</h4>
     </div>
+
+
+    <div class="w-50-m relative">
+      <div class="center mw5 absolute bottom-0 left-0 right-0" style="max-width: 15rem">
+        <img src="/images/kid.png" class="absolute bottom-0 pt3">
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -12,8 +21,10 @@
 
   <div class="center mw8 pa4" style="padding-bottom: 0">
 
-    <h2 style="line-height: 1.6; text-align:center;">We want to make sure you can access support and advice that is tailored to you</h2>
-    <p style="line-height: 1.6; text-align:center; padding: 0 10%;">You can speak to the same practitioner as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.
+    <p style="line-height: 1.6; text-align:center; padding: 0 10%;">
+      We can give you help with your child’s development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping, and much more.
+    </p>
+    <p style="line-height: 1.6; text-align:center; padding: 0 10%;">We really don’t mind what you ask us about, we are here to help you.</p>
 
   </div>
 

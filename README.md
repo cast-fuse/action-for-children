@@ -12,7 +12,6 @@ With the power of realtime communication via the internet this prototype hopes t
 
 The prototype will be a web app that uses the [intercom messaging widget](https://www.intercom.com/) to allow a parent to talk directly to family support worker. The widget has a text chat interface with a list of recent conversations plus options to be contacted by email or to request a callback via phone later if the family support worker is not online at the time.
 
-
 ### Installation and Setup
 
 To get up and running - make sure you have installed:
