@@ -13,15 +13,13 @@
 
   <body>
 
-    <%= if @conn.request_path != "/users" do %>
-      <div class="w-100 bg-dark-red">
+      <div class="w-100 bg-blue">
         <div class="flex center mw8">
           <p class="white alert-banner" style="line-height: 1.6; font-size: 0.825em">
             This is a trial service and only available in Sandwell and Cornwall. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>, or if you'd like to access this service in your area. <a class="white" href="mailto:rachael.townley@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
           </p>
         </div>
       </div>
-    <% end %>
 
       <div class="mw8 center flex justify-between">
         <div class="mh2 mh4-ns pt5 pb5" style="width: 350px">
@@ -35,7 +33,7 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
-    <div class="w-100 bg-dark-red">
+    <div class="w-100 bg-blue">
       <div class="flex center mw8">
         <div class="w-70-m w-70 pa4">
           <h4 class="white fw4 tracked lh-copy">This service is not available 24/7. During the 3 month trial, practitioners will be available Monday-Friday 2pm-8pm</h4>
