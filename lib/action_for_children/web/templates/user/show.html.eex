@@ -1,4 +1,4 @@
-<div class="w-100 bg-dark-red">
+<div class="w-100 bg-blue">
   <div class="flex center mw8">
     <div class="w-50 pa4">
 
@@ -9,7 +9,7 @@
       <p class="white fw4 tracked lh-copy">If you'd rather speak to one of our practitioners on the phone, you can arrange a time for us to call you.</p>
 
       <%= link to: user_callback_path(@conn, :show, @user)  do %>
-        <button class="<%= white_button() %>">Arrange a call</button>
+        <button class="<%= red_button() %>">Arrange a call</button>
       <% end %>
 
     </div>

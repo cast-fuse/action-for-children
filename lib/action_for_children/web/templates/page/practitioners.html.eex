@@ -1,10 +1,10 @@
-<div class="w-100 bg-dark-red">
+<div class="w-100 bg-blue">
   <div class="flex center mw8">
     <div class="w-50 pa4">
       <h1 class="white">Meet our staff</h1>
     </div>
     <div class="w-50 pa4">
-      <a href="/#talk" class="<%= white_button() %> no-underline cta">Talk to a practitioner</a>
+      <a href="/#talk" class="<%= red_button() %> no-underline cta" style="float:right; width: auto;">Talk to a practitioner</a>
     </div>
   </div>
 </div>
@@ -61,6 +61,7 @@
           <p class="lh-copy">I have been a community development worker with Action for Children for 3 years. Prior to this I worked in a day care nursery for 9 years achieving an outstanding by Ofsted. I have delivered parenting courses such as the HENRY programme and baby massage. I run regular drop in stay and play sessions.</p>
           <p class="lh-copy">I support children in their development through play, to reach their full potential, working with parents to do so. </p>
           <p class="lh-copy">I hope to continue to support and motivate families in this new venture.</p>
+        </div>
       </div>
 
       <div>

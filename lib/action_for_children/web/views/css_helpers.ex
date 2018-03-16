@@ -34,7 +34,7 @@ defmodule ActionForChildren.Web.CssHelpers do
       "w-80", "w-35-m",
       "tc", "flex", "flex-column",
       "items-center", "b--dark-red", "br4",
-      "bw1", "b--solid", "pv4", "ph1",
+      "bw1", "pv4", "ph1",
       "mv2", "home_tile"
     ])
   end
