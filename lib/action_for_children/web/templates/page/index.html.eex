@@ -9,7 +9,7 @@
 
 
     <div class="w-50-m relative">
-      <div class="center mw5 absolute bottom-0 left-0 right-0" style="max-width: 15rem">
+      <div class="center mw5 absolute bottom-0 left-0 right-0" style="max-width: 18rem">
         <img src="/images/kid.png" class="absolute bottom-0 pt3">
       </div>
     </div>
@@ -25,6 +25,7 @@
       We can give you help with your child’s development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping, and much more.
     </p>
     <p style="line-height: 1.6; text-align:center; padding: 0 10%;">We really don’t mind what you ask us about, we are here to help you.</p>
+    <p style="line-height: 1.6; text-align:center; padding: 0 10%;">You can speak to the same practitioner as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.</p>
 
   </div>
 
