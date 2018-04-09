@@ -44,6 +44,7 @@ defmodule ActionForChildren.Mixfile do
      {:excoveralls, "~> 0.7.0"},
      {:intercom, "~> 0.0.1"},
      {:envy, "~> 1.1.1"},
+     {:sendgrid, "~> 1.8.0"},
      {:mock, "~> 0.2.0", only: :test}]
   end
 

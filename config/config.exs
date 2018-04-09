@@ -9,6 +9,9 @@ use Mix.Config
 config :action_for_children,
   ecto_repos: [ActionForChildren.Repo]
 
+config :sendgrid,
+  api_key: System.get_env("SENDGRID_API_KEY")
+
 # Configures the endpoint
 config :action_for_children, ActionForChildren.Web.Endpoint,
   url: [host: "localhost"],
