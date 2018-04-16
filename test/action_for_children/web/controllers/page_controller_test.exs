@@ -8,7 +8,7 @@ defmodule ActionForChildrenWeb.PageControllerTest do
       "Action for Children",
       "intercom",
       "form",
-      "conversation code",
+      "Continue a conversation",
     ]
 
     Enum.map contents, fn content ->

@@ -29,7 +29,6 @@ defmodule ActionForChildrenWeb.CallbackControllerTest do
     contents = [
       "good to talk",
       "afternoon",
-      "morning",
       "evening"
     ]
 
@@ -66,6 +65,6 @@ defmodule ActionForChildrenWeb.CallbackControllerTest do
   test "message fails for non-existing intercom user", %{conn: conn, user: user} do
     conn = post conn, user_callback_path(conn, :create, user), %{callback: @valid_callback_form}
 
-    assert get_flash(conn, :error) =~ "error"
+    assert get_flash(conn, :error) =~ "Something went wrong"
   end
 end
