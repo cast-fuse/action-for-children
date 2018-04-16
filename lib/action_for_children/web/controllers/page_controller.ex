@@ -5,7 +5,7 @@ defmodule ActionForChildrenWeb.PageController do
 
   plug Auth
 
-  def index(%{assigns: %{user: %User{} = user}} = conn, _params) do
+  def index(%{assigns: %{user: %User{}}} = conn, _params) do
     conn
     |> redirect(to: user_path(conn, :index))
   end

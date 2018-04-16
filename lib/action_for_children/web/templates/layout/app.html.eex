@@ -14,9 +14,9 @@
   <body>
 
       <div class="w-100 bg-blue">
-        <div class="flex center mw8">
-          <p class="white alert-banner" style="line-height: 1.6; font-size: 0.825em">
-            This is a trial service and only available in Sandwell and Cornwall. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>, or if you'd like to access this service in your area. <a class="white" href="mailto:rachael.townley@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
+        <div class="flex center mw8 justify-center">
+          <p class="white alert-banner f6" style="line-height: 1.6;">
+            This is a trial service. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>.
           </p>
         </div>
       </div>
