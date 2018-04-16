@@ -42,7 +42,7 @@ defmodule ActionForChildrenWeb.UserController do
     else
 
       case Accounts.get_user_by_email(email) do
-        %User{} = user ->
+        %User{} = _user ->
           conn
           |> put_flash(:error, "Email address already in use, please continue your conversation using your unique code below")
           |> redirect(to: "#{page_path(conn, :index)}#talk")

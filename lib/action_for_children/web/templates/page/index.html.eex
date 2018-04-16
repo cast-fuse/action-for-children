@@ -37,7 +37,7 @@
 
       <div class="<%= home_tiles() %>">
 
-        <h2 class="f3 ma0 white">Ask a question</h2>
+        <h2 class="f3 ma0 white">Speak to us</h2>
         <p class="white w-80 lh-copy mb4">Speak to our practitioners online, or by phone. Once you've spoken, you can arrange to speak to the same practitioner again.</p>
 
         <%= form_for @conn, user_path(@conn, :create), [as: :user], fn f -> %>

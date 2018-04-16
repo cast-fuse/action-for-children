@@ -14,19 +14,22 @@
   <body>
 
       <div class="w-100 bg-blue">
-        <div class="flex center mw8">
-          <p class="white alert-banner" style="line-height: 1.6; font-size: 0.825em">
-            This is a trial service and only available in Sandwell and Cornwall. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>, or if you'd like to access this service in your area. <a class="white" href="mailto:rachael.townley@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
+        <div class="flex center mw8 justify-center">
+          <p class="white alert-banner f6" style="line-height: 1.6;">
+            This is a trial service. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>.
           </p>
         </div>
       </div>
 
-      <div class="mw8 center flex justify-between">
+      <div class="mw8 center flex justify-between items-center">
         <div class="mh2 mh4-ns pt5 pb5" style="width: 350px">
           <a href="<%= page_path(@conn, :index) %>">
             <img src="/images/afc-logo.png" class="w-100 db">
           </a>
         </div>
+          <%= unless @conn.assigns[:user] do %>
+            <a href="/#talk" class="db white bg-blue mh4 f3 fw4 pv2 ph3 br2 hover-bg-light-blue t3 all ease no-underline">Speak to us</a>
+          <% end %>
       </div>
 
       <main role="main" class="mb5">
