@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.SessionControllerTest do
-  use ActionForChildren.Web.ConnCase
+defmodule ActionForChildrenWeb.SessionControllerTest do
+  use ActionForChildrenWeb.ConnCase
 
   setup %{conn: conn} = config do
     if config[:login] do

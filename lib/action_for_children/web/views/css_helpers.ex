@@ -1,4 +1,4 @@
-defmodule ActionForChildren.Web.CssHelpers do
+defmodule ActionForChildrenWeb.CssHelpers do
   @moduledoc """
   tachyons styles for common components
   """

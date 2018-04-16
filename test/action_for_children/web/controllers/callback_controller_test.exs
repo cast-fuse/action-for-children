@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.CallbackControllerTest do
-  use ActionForChildren.Web.ConnCase
+defmodule ActionForChildrenWeb.CallbackControllerTest do
+  use ActionForChildrenWeb.ConnCase
 
   setup %{conn: conn} = config do
     if user_id = config[:login_as] do
@@ -29,7 +29,6 @@ defmodule ActionForChildren.Web.CallbackControllerTest do
     contents = [
       "good to talk",
       "afternoon",
-      "morning",
       "evening"
     ]
 
@@ -66,6 +65,6 @@ defmodule ActionForChildren.Web.CallbackControllerTest do
   test "message fails for non-existing intercom user", %{conn: conn, user: user} do
     conn = post conn, user_callback_path(conn, :create, user), %{callback: @valid_callback_form}
 
-    assert get_flash(conn, :error) =~ "error"
+    assert get_flash(conn, :error) =~ "Something went wrong"
   end
 end

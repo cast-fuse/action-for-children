@@ -17,7 +17,7 @@ defmodule ActionForChildren.Application do
       # Start the Ecto repository
       supervisor(ActionForChildren.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(ActionForChildren.Web.Endpoint, []),
+      supervisor(ActionForChildrenWeb.Endpoint, []),
       # Start your own worker by calling: ActionForChildren.Worker.start_link(arg1, arg2, arg3)
       # worker(ActionForChildren.Worker, [arg1, arg2, arg3]),
     ]

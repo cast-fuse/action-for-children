@@ -1,7 +1,7 @@
-defmodule ActionForChildren.Web.UserController do
-  use ActionForChildren.Web, :controller
+defmodule ActionForChildrenWeb.UserController do
+  use ActionForChildrenWeb, :controller
   alias ActionForChildren.{Accounts, User}
-  alias ActionForChildren.Web.Plugs.Auth
+  alias ActionForChildrenWeb.Plugs.Auth
 
   plug Auth
 

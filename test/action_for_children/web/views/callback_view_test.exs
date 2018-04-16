@@ -1,6 +1,6 @@
-defmodule ActionForChildren.Web.CallbackViewTest do
-  use ActionForChildren.Web.ConnCase
-  alias ActionForChildren.Web.CallbackView
+defmodule ActionForChildrenWeb.CallbackViewTest do
+  use ActionForChildrenWeb.ConnCase
+  alias ActionForChildrenWeb.CallbackView
 
   test "abbreviates days correctly" do
     assert CallbackView.abbreviate_day("monday") == "mon"
