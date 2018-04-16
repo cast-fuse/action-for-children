@@ -21,12 +21,15 @@
         </div>
       </div>
 
-      <div class="mw8 center flex justify-between">
+      <div class="mw8 center flex justify-between items-center">
         <div class="mh2 mh4-ns pt5 pb5" style="width: 350px">
           <a href="<%= page_path(@conn, :index) %>">
             <img src="/images/afc-logo.png" class="w-100 db">
           </a>
         </div>
+          <%= unless @conn.assigns[:user] do %>
+            <a href="/#talk" class="db white bg-blue mh4 f3 fw4 pv2 ph3 br2 hover-bg-light-blue t3 all ease no-underline">Speak to us</a>
+          <% end %>
       </div>
 
       <main role="main" class="mb5">
