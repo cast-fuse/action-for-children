@@ -1,3 +1,3 @@
-defmodule ActionForChildren.Web.UserView do
-  use ActionForChildren.Web, :view
+defmodule ActionForChildrenWeb.UserView do
+  use ActionForChildrenWeb, :view
 end

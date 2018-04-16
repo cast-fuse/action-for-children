@@ -1,7 +1,7 @@
-defmodule ActionForChildren.Web.SessionController do
-  use ActionForChildren.Web, :controller
+defmodule ActionForChildrenWeb.SessionController do
+  use ActionForChildrenWeb, :controller
   alias ActionForChildren.{Accounts, User}
-  alias ActionForChildren.Web.Plugs.Auth
+  alias ActionForChildrenWeb.Plugs.Auth
 
   def create(conn, %{"session" => %{"uuid" => uuid, "email" => email}}) do
     case Accounts.get_user_by_uuid_and_email(uuid, email) do

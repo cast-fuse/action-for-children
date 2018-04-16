@@ -1,12 +1,12 @@
-defmodule ActionForChildren.Web do
+defmodule ActionForChildrenWeb do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use ActionForChildren.Web, :controller
-      use ActionForChildren.Web, :view
+      use ActionForChildrenWeb, :controller
+      use ActionForChildrenWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -18,17 +18,17 @@ defmodule ActionForChildren.Web do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ActionForChildren.Web
+      use Phoenix.Controller, namespace: ActionForChildrenWeb
       import Plug.Conn
-      import ActionForChildren.Web.Router.Helpers
-      import ActionForChildren.Web.Gettext
+      import ActionForChildrenWeb.Router.Helpers
+      import ActionForChildrenWeb.Gettext
     end
   end
 
   def view do
     quote do
       use Phoenix.View, root: "lib/action_for_children/web/templates",
-                        namespace: ActionForChildren.Web
+                        namespace: ActionForChildrenWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1, action_name: 1]
@@ -36,10 +36,10 @@ defmodule ActionForChildren.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import ActionForChildren.Web.Router.Helpers
-      import ActionForChildren.Web.ErrorHelpers
-      import ActionForChildren.Web.Gettext
-      import ActionForChildren.Web.CssHelpers
+      import ActionForChildrenWeb.Router.Helpers
+      import ActionForChildrenWeb.ErrorHelpers
+      import ActionForChildrenWeb.Gettext
+      import ActionForChildrenWeb.CssHelpers
     end
   end
 
@@ -54,7 +54,7 @@ defmodule ActionForChildren.Web do
   def channel do
     quote do
       use Phoenix.Channel
-      import ActionForChildren.Web.Gettext
+      import ActionForChildrenWeb.Gettext
     end
   end
 

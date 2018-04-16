@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.ErrorView do
-  use ActionForChildren.Web, :view
+defmodule ActionForChildrenWeb.ErrorView do
+  use ActionForChildrenWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"

@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.PageControllerTest do
-  use ActionForChildren.Web.ConnCase
+defmodule ActionForChildrenWeb.PageControllerTest do
+  use ActionForChildrenWeb.ConnCase
 
   test "non logged in user sees options to start conversation and enter code", %{conn: conn} do
     conn = get conn, "/"

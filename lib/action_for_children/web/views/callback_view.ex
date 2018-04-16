@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.CallbackView do
-  use ActionForChildren.Web, :view
+defmodule ActionForChildrenWeb.CallbackView do
+  use ActionForChildrenWeb, :view
 
   def days, do: {
     ["monday", "tuesday", "wednesday", "thursday"],

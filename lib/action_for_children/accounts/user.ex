@@ -16,6 +16,6 @@ defmodule ActionForChildren.User do
   end
 
   defimpl Phoenix.Param, for: User do
-    def to_param(%{uuid: uuid, email: email}), do: uuid
+    def to_param(%{uuid: uuid}), do: uuid
   end
 end

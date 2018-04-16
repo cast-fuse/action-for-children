@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.CallbackControllerTest do
-  use ActionForChildren.Web.ConnCase
+defmodule ActionForChildrenWeb.CallbackControllerTest do
+  use ActionForChildrenWeb.ConnCase
 
   setup %{conn: conn} = config do
     if user_id = config[:login_as] do

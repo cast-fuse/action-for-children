@@ -1,3 +1,3 @@
-defmodule ActionForChildren.Web.LayoutView do
-  use ActionForChildren.Web, :view
+defmodule ActionForChildrenWeb.LayoutView do
+  use ActionForChildrenWeb, :view
 end

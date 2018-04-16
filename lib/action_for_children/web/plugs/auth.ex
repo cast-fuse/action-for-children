@@ -1,4 +1,4 @@
-defmodule ActionForChildren.Web.Plugs.Auth do
+defmodule ActionForChildrenWeb.Plugs.Auth do
   import Plug.Conn
   alias ActionForChildren.Accounts
   alias ActionForChildren.User
