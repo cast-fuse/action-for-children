@@ -36,7 +36,7 @@ home_tile_class = "w-60-ns tc flex flex-column items-center mv4-ns mh4-ns pb3-ns
 <div class="w-100 bg-blue">
 
   <div id="talk" class="mt0 mw8 center ph3 pv4 pt1-ns ph0-ns pb0-ns">
-    <p class="red" style="font-weight: bold;" role="alert"><%= get_flash(@conn, :error) %></p>
+    <p class="red b tc tl-ns mt0 mt3-ns" role="alert"><%= get_flash(@conn, :error) %></p>
 
     <div class="flex flex-row-ns flex-column items-center items-start-ns justify-center-ns">
 
