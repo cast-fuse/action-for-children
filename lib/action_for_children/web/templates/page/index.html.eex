@@ -1,10 +1,15 @@
+<%
+input_class = "ba b--blue br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-80-ns w-100"
+home_tile_class = "w-60-ns tc flex flex-column items-center mv4-ns mh4-ns pb3-ns"
+%>
+
 <div class="w-100 bg-blue">
   <div class="flex center mw8">
 
-    <div class="w-60-m w-100 pa4">
-      <h1 class="white fw5 f1">Our practitioners offer free advice and support – ask us your parenting questions</h1>
-      <h4 class="white fw4 tracked lh-copy w-80">As a parent of an under five do you struggle to find out who to get help from or feel you don't know what questions to ask?</h4>
-      <h4 class="white fw4 tracked lh-copy w-80">We're here for you, whatever's on your mind. We'll support you as often or as little as you want</h4>
+    <div class="w-60-ns w-100 pa4-ns ph3 pv4 tc tl-ns">
+      <h1 class="white fw5 f1-ns f3">Our practitioners offer free advice and support – ask us your parenting questions</h1>
+      <h4 class="white fw4 tracked lh-copy w-80-ns">As a parent of an under five do you struggle to find out who to get help from or feel you don't know what questions to ask?</h4>
+      <h4 class="white fw4 tracked lh-copy w-80-ns">We're here for you, whatever's on your mind. We'll support you as often or as little as you want</h4>
     </div>
 
 
@@ -19,10 +24,10 @@
 
 <div class="mt4 mw8 center" style="margin-top: 0rem">
 
-  <div class="center mw8 pa4">
+  <div class="center mw8 pa4-ns ph3 pv4">
 
-    <p class="mb4" style="line-height: 1.6; font-size: 1.1em; text-align:center; padding: 0 17%;">We can give you help with your child’s development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping, and much more.</p>
-    <p style="line-height: 1.6; font-size: 1.1em; text-align:center; padding: 0 20%;">You can speak to the same practitioner as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.</p>
+    <p class="mb4 tc ph6-ns" style="line-height: 1.6; font-size: 1.1em;">We can give you help with your child’s development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping, and much more.</p>
+    <p class="tc ph6-ns" style="line-height: 1.6; font-size: 1.1em;">You can speak to the same practitioner as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.</p>
 
   </div>
 
@@ -30,52 +35,47 @@
 
 <div class="w-100 bg-blue">
 
-  <div id="talk" style="padding-top: 0.5em" class="mt0 mw8 center">
+  <div id="talk" class="mt0 mw8 center ph3 pv4 pt1-ns ph0-ns pb0-ns">
     <p class="red" style="font-weight: bold;" role="alert"><%= get_flash(@conn, :error) %></p>
 
-    <div class="flex">
+    <div class="flex flex-row-ns flex-column items-center items-start-ns justify-center-ns">
 
-      <div class="<%= home_tiles() %>">
+      <div class="<%= "#{home_tile_class} pb4" %>">
 
         <h2 class="f3 ma0 white">Speak to us</h2>
-        <p class="white w-80 lh-copy mb4">Speak to our practitioners online, or by phone. Once you've spoken, you can arrange to speak to the same practitioner again.</p>
+        <p class="white w-80-ns lh-copy mb4">Speak to our practitioners online, or by phone. Once you've spoken, you can arrange to speak to the same practitioner again.</p>
 
         <%= form_for @conn, user_path(@conn, :create), [as: :user], fn f -> %>
-          <%= text_input f, :email, placeholder: "Your email", class: "ba b--blue br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l" %>
+          <%= text_input f, :email, placeholder: "Your email", class: input_class %>
           <%= submit "Talk to a practitioner", class: red_button() %>
         <% end %>
 
       </div>
 
-      <div class="<%= home_tiles() %>">
+      <div class="<%= "#{home_tile_class} pb3" %>">
         <h2 class="f3 ma0 white">Continue a conversation</h2>
-        <p class="white w-80 lh-copy mb4">Spoken to one of our practitioners before? Login to speak with them again. Forgotten your code? <a class="white" href="/new_code">Request a new code</a></p>
+        <p class="white w-80-ns lh-copy mb4">Spoken to one of our practitioners before? Login to speak with them again. Forgotten your code? <a class="white" href="/new_code">Request a new code</a></p>
 
         <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
-          <%= text_input f, :email, placeholder: "Your email", class: "ba b--blue br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l" %>
-          <%= text_input f, :uuid, placeholder: "Code", class: "ba b--blue br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-auto w-80-m w-80-l" %>
+          <%= text_input f, :email, placeholder: "Your email", class: input_class %>
+          <%= text_input f, :uuid, placeholder: "Code", class: input_class %>
           <%= submit "Login", class: red_button() %>
         <% end %>
-
       </div>
 
     </div>
-
   </div>
-
 </div>
 
-<div class="mt4 mw8 center" style="margin-top: 0rem; margin-bottom: -3rem">
 
-  <div class="flex center mw8">
+<div class="flex mw8 pv2 center">
 
-    <div class="w-60-m w-100 pa4">
-      <h2 class="near-black f3 ma0">Our practitioners</h2>
-      <p class="gray w-80 lh-copy mb4">We have years of experience working with families and are here to support you</p>
-      <%= link to: page_path(@conn, :practitioners), class: "w-100-l" do %>
-        <button class="<%= red_button() %>">Meet our practitioners</button>
-      <% end %>
-    </div>
+  <div class="w-50-ns w-100 ph3 pv4 ph4-ns flex flex-column items-center items-start-ns tc tl-ns">
+    <h2 class="near-black f3 ma0">Our practitioners</h2>
+    <p class="gray lh-copy mb4">We have years of experience working with families and are here to support you</p>
+    <%= link to: page_path(@conn, :practitioners), class: "db w-100" do %>
+      <button class="<%= red_button() %>">Meet our practitioners</button>
+    <% end %>
   </div>
 
 </div>

@@ -6,7 +6,7 @@ defmodule ActionForChildrenWeb.CssHelpers do
   def red_button do
     styles([
       "white", "bg-dark-red", "hover-bg-red",
-      "bn", "br3", "w-80-l",
+      "bn", "br3", "w-80-ns", "w-100",
       button()
     ])
   end
@@ -26,16 +26,6 @@ defmodule ActionForChildrenWeb.CssHelpers do
       "ph4", "pv3",
       "outline-0", "pointer",
       "t3", "all", "ease"
-    ])
-  end
-
-  def home_tiles do
-    styles([
-      "w-80", "w-35-m",
-      "tc", "flex", "flex-column",
-      "items-center", "b--dark-red", "br4",
-      "bw1", "pv4", "ph1",
-      "mv2", "home_tile"
     ])
   end
 
