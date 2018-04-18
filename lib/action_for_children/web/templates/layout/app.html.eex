@@ -27,8 +27,8 @@
             <img src="/images/afc-logo.png" class="w-100 db">
           </a>
         </div>
-          <%= unless @conn.assigns[:user] do %>
-            <a href="/#talk" class="db white bg-blue mh4-ns mh2 f3-ns f5 fw4 pv2 ph3 br2 hover-bg-light-blue t3 all ease no-underline tc">Speak to us</a>
+          <%= unless (@conn.assigns[:user] || @conn.request_path == "/talk-to-us") do %>
+            <a href="/talk-to-us" class="db white bg-dark-red mh4-ns mh2 f3-ns f5 fw4 pv2 ph3 br2 hover-bg-red t3 all ease no-underline tc">Speak to us</a>
           <% end %>
       </div>
 
