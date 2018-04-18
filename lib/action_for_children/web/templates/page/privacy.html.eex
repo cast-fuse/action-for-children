@@ -1,13 +1,13 @@
 <div class="w-100 bg-blue">
-  <div class="flex center mw8">
-    <div class="w-50 pa4">
-      <h1 class="white">Privacy Policy</h1>
+  <div class="flex center mw8 justify-center justify-start-ns">
+    <div class="w-50-ns pv4 ph3 ph4-ns tc tl-ns">
+      <h1 class="white fw5 f1-ns f3">Privacy Policy</h1>
     </div>
   </div>
 </div>
 
 <div class="flex center mw8">
-  <div class="w-50 pa4">
+  <div class="w-50-ns ph3 pv4 ph4-ns tc tl-ns">
     <p class="lh-copy">This privacy policy describes how Action for Children protects and makes use of the information you give us when you use this service.</p>
     <p class="lh-copy">Action for Children is committed to protecting the privacy of its supporters and stakeholders. We fully comply with the Data Protection Act 1998.</p>
     <p class="lh-copy">This policy is updated from time to time. The latest version will always be published on this page. This privacy policy was updated on 2nd March 2018.</p>
@@ -17,7 +17,7 @@
     <p class="lh-copy">We only collect personal information when you specifically provide it to us. This may happen when you are having a conversation with us or when we ask you to fill out forms on the service.
     <h2>What information we gather</h2>
     <p class="lh-copy">We may collect and store the following information:</p>
-    <ul>
+    <ul class="tl pl3 pl4-ns">
       <li class="lh-copy">Name</li>
       <li class="lh-copy">Email address</li>
       <li class="lh-copy">Location</li>
@@ -29,7 +29,7 @@
     <h2>How we use this data</h2>
     <p class="lh-copy">Collecting this information allows us to provide the service for you, improve the service and understand how users may interact with the service so that we can establish whether this trial service is something Action for Children rolls out on a larger scale.</p>
     <p class="lh-copy">Specifically, we may use data:</p>
-    <ul>
+    <ul class="tl pl3 pl4-ns">
       <li class="lh-copy">To provide the service to you</li>
       <li class="lh-copy">To signpost you to appropriate local services</li>
       <li class="lh-copy">To escalate safeguarding concerns</li>
@@ -48,7 +48,7 @@
     <p class="lh-copy">You can ask to see any information Action for Children holds about you, to have information corrected or erased.</p>
     <h2>Any questions or complaints:</h2>
     <p class="lh-copy">If you want to</p>
-    <ul>
+    <ul class="tl pl3 pl4-ns">
       <li class="lh-copy">correct, erase or withdraw your consent or</li>
       <li class="lh-copy">make a complaint or ask any other question in relation to your information please contact someone at the Information Governance Team at ask.us@actionforchildren.org.uk Action For Children, 3 The Boulevard, Ascot Road, Watford WD18 8AG.</li>
     </ul>
@@ -58,7 +58,7 @@
     <p class="lh-copy">Cookies enable us to see information like how many people use the website/service and how people use it.</p>
     <h3>How we use cookies</h3>
     <p>We may use cookies to:</p>
-    <ul>
+    <ul class="tl pl3 pl4-ns">
       <li class="lh-copy">Analyse our web traffic using Google Analytics. Aggregated usage data helps us improve the website structure, design, content and functions.</li>
       <li class="lh-copy">Identify whether you are signed in to our website.</li>
       <li class="lh-copy">Store information about your preferences. The website can then present you with information you will find more relevant and interesting.</li>

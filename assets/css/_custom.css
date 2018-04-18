@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: var(--sans-serif);
   color: #333;
+  outline: none !important;
 }
 
 textarea {
