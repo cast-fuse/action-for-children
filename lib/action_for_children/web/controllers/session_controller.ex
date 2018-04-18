@@ -20,6 +20,6 @@ defmodule ActionForChildrenWeb.SessionController do
     conn
     |> Auth.logout()
     |> put_flash(:info, "You have been logged out")
-    |> redirect(to: page_path(conn, :talk_to_us))
+    |> redirect(to: page_path(conn, :index))
   end
 end
