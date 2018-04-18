@@ -1,7 +1,7 @@
-defmodule ActionForChildren.Web.UserController do
-  use ActionForChildren.Web, :controller
+defmodule ActionForChildrenWeb.UserController do
+  use ActionForChildrenWeb, :controller
   alias ActionForChildren.{Accounts, User}
-  alias ActionForChildren.Web.Plugs.Auth
+  alias ActionForChildrenWeb.Plugs.Auth
 
   plug Auth
 
@@ -42,7 +42,7 @@ defmodule ActionForChildren.Web.UserController do
     else
 
       case Accounts.get_user_by_email(email) do
-        %User{} = user ->
+        %User{} = _user ->
           conn
           |> put_flash(:error, "Email address already in use, please continue your conversation using your unique code below")
           |> redirect(to: "#{page_path(conn, :index)}#talk")

@@ -9,10 +9,13 @@ use Mix.Config
 config :action_for_children,
   ecto_repos: [ActionForChildren.Repo]
 
+config :sendgrid,
+  api_key: System.get_env("SENDGRID_API_KEY")
+
 # Configures the endpoint
-config :action_for_children, ActionForChildren.Web.Endpoint,
+config :action_for_children, ActionForChildrenWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: ActionForChildren.Web.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: ActionForChildrenWeb.ErrorView, accepts: ~w(html json)],
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   pubsub: [name: ActionForChildren.PubSub,
            adapter: Phoenix.PubSub.PG2]

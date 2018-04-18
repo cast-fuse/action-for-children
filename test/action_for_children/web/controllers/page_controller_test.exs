@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.PageControllerTest do
-  use ActionForChildren.Web.ConnCase
+defmodule ActionForChildrenWeb.PageControllerTest do
+  use ActionForChildrenWeb.ConnCase
 
   test "non logged in user sees options to start conversation and enter code", %{conn: conn} do
     conn = get conn, "/"
@@ -8,7 +8,7 @@ defmodule ActionForChildren.Web.PageControllerTest do
       "Action for Children",
       "intercom",
       "form",
-      "conversation code",
+      "Continue a conversation",
     ]
 
     Enum.map contents, fn content ->

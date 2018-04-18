@@ -1,6 +1,6 @@
-defmodule ActionForChildren.Web.CssHelpersTest do
+defmodule ActionForChildrenWeb.CssHelpersTest do
   use ExUnit.Case
-  alias ActionForChildren.Web.CssHelpers
+  alias ActionForChildrenWeb.CssHelpers
 
   test "formats a list of styles into a valid class string" do
     button_styles = CssHelpers.button()

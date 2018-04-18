@@ -1,4 +1,4 @@
-defmodule ActionForChildren.Web.Endpoint do
+defmodule ActionForChildrenWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :action_for_children
 
   # Serve at "/" the static files from "priv/static" directory.
@@ -36,7 +36,7 @@ defmodule ActionForChildren.Web.Endpoint do
     key: "_action_for_children_key",
     signing_salt: "crOR3Fpy"
 
-  plug ActionForChildren.Web.Router
+  plug ActionForChildrenWeb.Router
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.

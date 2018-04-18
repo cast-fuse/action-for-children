@@ -23,7 +23,7 @@
           <%= error_tag f, :time %>
           <div class="flex justify-between">
             <%= for time <- times() do
-              render ActionForChildren.Web.CallbackView, "time_option.html", time: time
+              render ActionForChildrenWeb.CallbackView, "time_option.html", time: time
             end %>
           </div>
         </div>
@@ -31,12 +31,12 @@
         <div>
           <div class="flex justify-between mv2">
             <%= for day <- elem(days(), 0)  do
-              render ActionForChildren.Web.CallbackView, "day_option.html", day: day
+              render ActionForChildrenWeb.CallbackView, "day_option.html", day: day
             end %>
           </div>
           <div class="flex justify-between mv2">
             <%= for day <- elem(days(), 1)  do
-              render ActionForChildren.Web.CallbackView, "day_option.html", day: day
+              render ActionForChildrenWeb.CallbackView, "day_option.html", day: day
             end %>
           </div>
           <%= error_tag f, :day %>

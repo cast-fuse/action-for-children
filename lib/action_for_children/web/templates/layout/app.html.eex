@@ -14,29 +14,32 @@
   <body>
 
       <div class="w-100 bg-blue">
-        <div class="flex center mw8">
-          <p class="white alert-banner" style="line-height: 1.6; font-size: 0.825em">
-            This is a trial service and only available in Sandwell and Cornwall. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>, or if you'd like to access this service in your area. <a class="white" href="mailto:rachael.townley@actionforchildren.org.uk?subject=Pilot Service Area Request">let us know</a>
+        <div class="flex center mw8 justify-center">
+          <p class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">
+            This is a trial service. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>.
           </p>
         </div>
       </div>
 
-      <div class="mw8 center flex justify-between">
-        <div class="mh2 mh4-ns pt5 pb5" style="width: 350px">
+      <div class="mw8 center flex justify-between items-center">
+        <div class="mh2 mh4-ns pv5-ns pv4" style="width: 350px">
           <a href="<%= page_path(@conn, :index) %>">
             <img src="/images/afc-logo.png" class="w-100 db">
           </a>
         </div>
+          <%= unless @conn.assigns[:user] do %>
+            <a href="/#talk" class="db white bg-blue mh4-ns mh2 f3-ns f5 fw4 pv2 ph3 br2 hover-bg-light-blue t3 all ease no-underline tc">Speak to us</a>
+          <% end %>
       </div>
 
-      <main role="main" class="mb5">
+      <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
 
-    <div class="w-100 bg-blue">
-      <div class="flex center mw8">
-        <div class="w-70-m w-70 pa4">
-          <h4 class="white fw4 tracked lh-copy">This service is not available 24/7. During the 3 month trial, practitioners will be available Monday-Friday 2pm-8pm</h4>
+    <div class="w-100 bg-blue flex justify-center">
+      <div class="flex flex-column ph3 pv4 pa4-ns mw8">
+        <div class="w-70-ns tc tl-ns">
+          <h4 class="white fw4 tracked lh-copy mt0 mt3-ns">This service is not available 24/7. During the 3 month trial, practitioners will be available Monday-Friday 2pm-8pm</h4>
           <h4 class="white fw4 tracked lh-copy">Contact your local council if you are worried about a child's welfare. Contact 111 if you are worried about your child's health, or 999 in a medical emergency.</h4>
           <%= if @conn.assigns[:user] do %>
             <div class="logout-form">

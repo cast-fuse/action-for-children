@@ -1,4 +1,4 @@
-defmodule ActionForChildren.Web.ErrorHelpers do
+defmodule ActionForChildrenWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule ActionForChildren.Web.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(ActionForChildren.Web.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(ActionForChildrenWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(ActionForChildren.Web.Gettext, "errors", msg, opts)
+      Gettext.dgettext(ActionForChildrenWeb.Gettext, "errors", msg, opts)
     end
   end
 end
