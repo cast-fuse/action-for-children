@@ -4,7 +4,7 @@
       <h1 class="white fw5 f1-ns f3">Meet our staff</h1>
     </div>
     <div class="w-50 pa4 dn db-ns">
-      <a href="/#talk" class="<%= red_button() %> no-underline cta" style="float:right; width: auto;">Talk to a practitioner</a>
+      <a href="/talk-to-us" class="<%= red_button() %> no-underline cta" style="float:right; width: auto;">Talk to a practitioner</a>
     </div>
   </div>
 </div>
@@ -21,7 +21,7 @@
     <div class="accordion center tc tl-ns">
 
       <div>
-        <h2 class="tc tl-ns pb3"><span class="red">></span> Meet Gina</h2>
+        <h2 class="tc tl-ns pb3 outline-0"><span class="red">></span> Meet Gina</h2>
         <div>
           <p class="lh-copy">I have worked for Action for Children for over 3 years supporting families and feel this gives me the knowledge that would be needed to advise and sign post parents to the appropriate services.</p>
           <p class="lh-copy">I have worked with families to support them on a range of needs. My role means I provide support around parenting, different strategies, support with housing advice, as well as child development on a daily basis.</p>
@@ -30,7 +30,7 @@
       </div>
 
       <div>
-        <h2 class="tc tl-ns pb3"><span class="red">></span> Meet Sarah</h2>
+        <h2 class="tc tl-ns pb3 outline-0"><span class="red">></span> Meet Sarah</h2>
         <div>
           <p class="lh-copy">I have been a Family Support Worker for the last 6 years and before that I worked in various day nurseries for 5 years. Within my role I have run stay and play sessions, parenting courses, worked one to one with families and supported children and families within the children's centre and on some occasions in their home.</p>
           <p class="lh-copy">I am passionate about supporting children to learn and develop and have the best possible start in life.</p>
@@ -39,7 +39,7 @@
       </div>
 
       <div>
-        <h2 class="tc tl-ns pb3"><span class="red">></span> Meet Jo</h2>
+        <h2 class="tc tl-ns pb3 outline-0"><span class="red">></span> Meet Jo</h2>
         <div>
           <p class="lh-copy">I have worked for Action for Children since 2012, primarily working as a Senior Family Support Worker in a children's centre but have also been involved in a trauma response project, providing emotional and practical support to bereaved families.</p>
           <p class="lh-copy">I have been supporting children and families for over 17 years and have run my own parenting service providing workshops and parenting programmes to parents and practitioners. I am trained in The Incredible Years programme, The Family Links Nurturing Programme and HENRY (Health, Exercise & Nutrition for the Really Young).</p>
@@ -48,7 +48,7 @@
       </div>
 
       <div>
-        <h2 class="tc tl-ns pb3"><span class="red">></span> Meet Cherrie</h2>
+        <h2 class="tc tl-ns pb3 outline-0"><span class="red">></span> Meet Cherrie</h2>
         <div>
           <p class="lh-copy">I have been an Early Years Practitioner for 5 years and have run the following groups and courses at Action for Children centres; baby play, love to play, learning together through play and HENRY.</p>
           <p class="lh-copy">I enjoy working with parents, carers and their children, offering support and advice when needed. I am passionate about children reaching their full potential and having the chance to thrive and I hope in a small way I contribute towards this in my work.</p>
@@ -56,7 +56,7 @@
       </div>
 
       <div>
-        <h2 class="tc tl-ns pb3"><span class="red">></span> Meet Aimee</h2>
+        <h2 class="tc tl-ns pb3 outline-0"><span class="red">></span> Meet Aimee</h2>
         <div>
           <p class="lh-copy">I have been a community development worker with Action for Children for 3 years. Prior to this I worked in a day care nursery for 9 years achieving an outstanding by Ofsted. I have delivered parenting courses such as the HENRY programme and baby massage. I run regular drop in stay and play sessions.</p>
           <p class="lh-copy">I support children in their development through play, to reach their full potential, working with parents to do so. </p>
@@ -65,7 +65,7 @@
       </div>
 
       <div>
-        <h2 class="tc tl-ns pb3"><span class="red">></span> Meet Emma</h2>
+        <h2 class="tc tl-ns pb3 outline-0"><span class="red">></span> Meet Emma</h2>
         <div>
           <p class="lh-copy">I have worked in Early Years for 14 years in a variety of settings including children's centres.</p>
           <p class="lh-copy">I run baby socials, infant massage classes and fun sessions for parents and their children aged 0-5 years to play and learn together.</p>

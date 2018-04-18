@@ -18,7 +18,7 @@
 
 <div class="w-100 center flex justify-center">
   <div class="mw8">
-    <div class="w-50-ns ph3 pv4 ph4-ns pv5-ns tc">
+    <div class="w-50-ns ph3 pv4 ph4-ns pv5-ns tc tl-ns">
       <%= link to: page_path(@conn, :practitioners) do %>
         <button class="<%= "#{red_button()} mb2" %>">Who are our practitioners?</button>
       <% end %>
