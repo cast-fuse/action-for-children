@@ -44,7 +44,7 @@
           <%= if @conn.assigns[:user] do %>
             <div class="logout-form">
                 <p class="white">You are logged in as <strong><%= @conn.assigns.user.email %></strong> – </p>
-                <%= link "Logout", to: session_path(@conn, :delete), method: "delete", class: "white" %>
+                <%= link "Logout", to: session_path(@conn, :delete), class: "white" %>
                 <br /><br />
             </div>
           <% end %>
