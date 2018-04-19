@@ -13,7 +13,7 @@ defmodule ActionForChildrenWeb.UserController do
 
       conn
       |> put_flash(:error, "Please select an option below first")
-      |> redirect(to: "#{page_path(conn, :index)}#talk")
+      |> redirect(to: page_path(conn, :talk_to_us))
 
     else
 
@@ -24,7 +24,7 @@ defmodule ActionForChildrenWeb.UserController do
         nil ->
           conn
           |> put_flash(:error, "Please select an option below first")
-          |> redirect(to: "#{page_path(conn, :index)}#talk")
+          |> redirect(to: page_path(conn, :talk_to_us))
       end
 
     end
@@ -37,7 +37,7 @@ defmodule ActionForChildrenWeb.UserController do
 
       conn
       |> put_flash(:error, "Please enter a valid email address")
-      |> redirect(to: "#{page_path(conn, :index)}#talk")
+      |> redirect(to: page_path(conn, :talk_to_us))
 
     else
 
@@ -45,7 +45,7 @@ defmodule ActionForChildrenWeb.UserController do
         %User{} = _user ->
           conn
           |> put_flash(:error, "Email address already in use, please continue your conversation using your unique code below")
-          |> redirect(to: "#{page_path(conn, :index)}#talk")
+          |> redirect(to: page_path(conn, :talk_to_us))
         nil ->
           {:ok, user} = Accounts.create_user(%{email: email})
           conn

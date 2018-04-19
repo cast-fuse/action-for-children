@@ -1,9 +1,6 @@
 defmodule ActionForChildren.UserTest do
   use ActionForChildren.DataCase
-  import ActionForChildrenWeb.Router.Helpers
-
   alias ActionForChildren.User
-  alias ActionForChildrenWeb.Endpoint
 
   @valid_attrs %{uuid: Ecto.UUID.generate(), email: "test@example.com"}
   @invalid_attrs %{}

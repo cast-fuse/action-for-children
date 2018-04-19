@@ -1,0 +1,33 @@
+<%
+input_class = "ba b--blue br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-80-ns w-100"
+home_tile_class = "w-60-ns tc flex flex-column items-center mv4-ns mh4-ns pb3-ns"
+%>
+
+<div class="w-100 bg-blue bb b--white">
+  <div class="mt0 mw8 center ph3 pv4 pt1-ns ph0-ns pb0-ns">
+    <p class="red b tc tl-ns mt0 mt3-ns" role="alert"><%= get_flash(@conn, :error) %></p>
+    <div class="flex flex-row-ns flex-column items-center items-start-ns justify-center-ns">
+      <div class="<%= "#{home_tile_class} pb4" %>">
+        <h2 class="f3 ma0 white">Speak to us</h2>
+        <p class="white w-80-ns lh-copy mb4">Speak to our practitioners online, or by phone. Once you've spoken, you can arrange to speak to the same practitioner again.</p>
+
+        <%= form_for @conn, user_path(@conn, :create), [as: :user], fn f -> %>
+          <%= text_input f, :email, placeholder: "Your email", class: input_class %>
+          <%= submit "Talk to a practitioner", class: red_button() %>
+        <% end %>
+      </div>
+
+      <div class="<%= "#{home_tile_class} pb3" %>">
+        <h2 class="f3 ma0 white">Continue a conversation</h2>
+        <p class="white w-80-ns lh-copy mb4">Spoken to one of our practitioners before? Login to speak with them again. Forgotten your code? <a class="white" href="/new_code">Request a new code</a></p>
+
+        <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
+          <%= text_input f, :email, placeholder: "Your email", class: input_class %>
+          <%= text_input f, :uuid, placeholder: "Code", class: input_class %>
+          <%= submit "Login", class: red_button() %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

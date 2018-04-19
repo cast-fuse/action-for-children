@@ -26,4 +26,8 @@ defmodule ActionForChildrenWeb.PageController do
     render conn, "new_code.html"
   end
 
+  def talk_to_us(conn, _params) do
+    render conn, "talk_to_us.html"
+  end
+
 end

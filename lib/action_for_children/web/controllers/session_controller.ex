@@ -12,7 +12,7 @@ defmodule ActionForChildrenWeb.SessionController do
       nil ->
         conn
         |> put_flash(:error, "Sorry, could not find that conversation, please start a new one using the option below")
-        |> redirect(to: "#{page_path(conn, :index)}#talk")
+        |> redirect(to: page_path(conn, :talk_to_us))
     end
   end
 
@@ -20,6 +20,6 @@ defmodule ActionForChildrenWeb.SessionController do
     conn
     |> Auth.logout()
     |> put_flash(:info, "You have been logged out")
-    |> redirect(to: "#{page_path(conn, :index)}#talk")
+    |> redirect(to: page_path(conn, :index))
   end
 end
