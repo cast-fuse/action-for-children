@@ -18,7 +18,9 @@ defmodule ActionForChildrenWeb.Router do
     get "/new_code", PageController, :new_code
     get "/talk-to-us", PageController, :talk_to_us
 
-    resources "/sessions", SessionController, only: [:create, :delete]
+    post "/sessions", SessionController, :create
+    delete "/sessions", SessionController, :delete
+
     resources "/users", UserController, only: [:index, :create] do
       get "/callback", CallbackController, :show
       post "/callback", CallbackController, :create
