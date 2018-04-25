@@ -31,7 +31,7 @@
 <div class="w-100 bg-blue">
 
   <div id="talk" style="padding-top: 0.5em" class="mt0 mw8 center">
-    <p class="red" style="font-weight: bold;" role="alert"><%= get_flash(@conn, :error) %></p>
+    <p class="white" style="font-weight: bold;" role="alert"><%= get_flash(@conn, :error) %></p>
 
     <div class="flex">
 

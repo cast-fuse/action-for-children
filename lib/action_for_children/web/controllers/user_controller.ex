@@ -6,8 +6,33 @@ defmodule ActionForChildren.Web.UserController do
   plug Auth
 
   def new_code(conn, _params) do
-    
-    render conn, "new_code.html"
+
+    conn
+    |> render("new_code.html")
+
+  end
+
+  def generate_new_code(conn, %{"user" => %{"email" => email}}) do
+
+    case Accounts.get_user_by_email(email) do
+      %User{} = user ->
+        conn
+
+        SendGrid.Email.build()
+        |> SendGrid.Email.add_to(user.email)
+        |> SendGrid.Email.put_from("ask.us@actionforchildren.org.uk")
+        |> SendGrid.Email.put_subject("Your Action For Children Code")
+        |> SendGrid.Email.put_text("Your code is #{user.uuid}")
+        |> SendGrid.Mailer.send()
+
+        |> put_flash(:error, "We have sent you an email with your new code, please check your inbox")
+        |> redirect(to: "#{user_path(conn, :new_code)}")
+      nil ->
+        conn
+        |> put_flash(:error, "Can not find your email address, start a new conversation instead?")
+        |> redirect(to: "#{page_path(conn, :index)}#talk")
+    end
+
   end
 
   def index(conn, _params) do

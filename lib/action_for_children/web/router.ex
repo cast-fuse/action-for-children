@@ -15,12 +15,16 @@ defmodule ActionForChildren.Web.Router do
     get "/", PageController, :index
     get "/practitioners", PageController, :practitioners
     get "/privacy", PageController, :privacy
-    get "/new_code", PageController, :new_code
 
     resources "/sessions", SessionController, only: [:create, :delete]
+
+    get "/new_code", UserController, :new_code
+    post "/generate_new_code", UserController, :generate_new_code
+
     resources "/users", UserController, only: [:index, :create] do
       get "/callback", CallbackController, :show
       post "/callback", CallbackController, :create
     end
+
   end
 end
