@@ -5,6 +5,11 @@ defmodule ActionForChildren.Web.UserController do
 
   plug Auth
 
+  def new_code(conn, _params) do
+    
+    render conn, "new_code.html"
+  end
+
   def index(conn, _params) do
 
     uuid = get_session(conn, :uuid)
