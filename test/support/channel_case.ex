@@ -1,4 +1,4 @@
-defmodule ActionForChildren.Web.ChannelCase do
+defmodule ActionForChildrenWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,7 +21,7 @@ defmodule ActionForChildren.Web.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint ActionForChildren.Web.Endpoint
+      @endpoint ActionForChildrenWeb.Endpoint
     end
   end
 

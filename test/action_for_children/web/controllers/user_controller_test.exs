@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.UserControllerTest do
-  use ActionForChildren.Web.ConnCase
+defmodule ActionForChildrenWeb.UserControllerTest do
+  use ActionForChildrenWeb.ConnCase
 
   
 

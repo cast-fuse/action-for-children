@@ -1,7 +1,7 @@
-defmodule ActionForChildren.Web.UserController do
-  use ActionForChildren.Web, :controller
+defmodule ActionForChildrenWeb.UserController do
+  use ActionForChildrenWeb, :controller
   alias ActionForChildren.{Accounts, User}
-  alias ActionForChildren.Web.Plugs.Auth
+  alias ActionForChildrenWeb.Plugs.Auth
 
   plug Auth
 
@@ -16,8 +16,6 @@ defmodule ActionForChildren.Web.UserController do
 
     case Accounts.get_user_by_email(email) do
       %User{} = user ->
-        conn
-
         SendGrid.Email.build()
         |> SendGrid.Email.add_to(user.email)
         |> SendGrid.Email.put_from("ask.us@actionforchildren.org.uk")
@@ -25,6 +23,7 @@ defmodule ActionForChildren.Web.UserController do
         |> SendGrid.Email.put_text("Your code is #{user.uuid}")
         |> SendGrid.Mailer.send()
 
+        conn
         |> put_flash(:error, "We have sent you an email with your new code, please check your inbox")
         |> redirect(to: "#{user_path(conn, :new_code)}")
       nil ->
@@ -43,7 +42,7 @@ defmodule ActionForChildren.Web.UserController do
 
       conn
       |> put_flash(:error, "Please select an option below first")
-      |> redirect(to: "#{page_path(conn, :index)}#talk")
+      |> redirect(to: page_path(conn, :talk_to_us))
 
     else
 
@@ -54,7 +53,7 @@ defmodule ActionForChildren.Web.UserController do
         nil ->
           conn
           |> put_flash(:error, "Please select an option below first")
-          |> redirect(to: "#{page_path(conn, :index)}#talk")
+          |> redirect(to: page_path(conn, :talk_to_us))
       end
 
     end
@@ -67,15 +66,15 @@ defmodule ActionForChildren.Web.UserController do
 
       conn
       |> put_flash(:error, "Please enter a valid email address")
-      |> redirect(to: "#{page_path(conn, :index)}#talk")
+      |> redirect(to: page_path(conn, :talk_to_us))
 
     else
 
       case Accounts.get_user_by_email(email) do
-        %User{} = user ->
+        %User{} = _user ->
           conn
           |> put_flash(:error, "Email address already in use, please continue your conversation using your unique code below")
-          |> redirect(to: "#{page_path(conn, :index)}#talk")
+          |> redirect(to: page_path(conn, :talk_to_us))
         nil ->
           {:ok, user} = Accounts.create_user(%{email: email})
           conn

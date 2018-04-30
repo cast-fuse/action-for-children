@@ -1,4 +1,4 @@
-defmodule ActionForChildren.Web.IntercomRequest do
+defmodule ActionForChildrenWeb.IntercomRequest do
   require Intercom.Client
 
   @auth_config Intercom.Client.auth(System.get_env("INTERCOM_SECRET"), "")

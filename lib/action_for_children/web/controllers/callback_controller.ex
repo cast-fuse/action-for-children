@@ -1,7 +1,8 @@
-defmodule ActionForChildren.Web.CallbackController do
-  use ActionForChildren.Web, :controller
-  alias ActionForChildren.{User, Web.Plugs.Auth, Accounts, Callback}
-  import ActionForChildren.Web.IntercomPrefferedTimes
+defmodule ActionForChildrenWeb.CallbackController do
+  use ActionForChildrenWeb, :controller
+  alias ActionForChildren.{User,  Accounts, Callback}
+  alias ActionForChildrenWeb.Plugs.Auth
+  import ActionForChildrenWeb.IntercomPrefferedTimes
 
   plug Auth
 

@@ -1,4 +1,4 @@
-defmodule ActionForChildren.Web.IntercomRequestMock do
+defmodule ActionForChildrenWeb.IntercomRequestMock do
 
   def post(_url, %{from: %{user_id: "ACD12345"}} = payload) do
     {:ok, successful_response(payload)}

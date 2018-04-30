@@ -1,4 +1,4 @@
-defmodule ActionForChildren.Web.ConnCase do
+defmodule ActionForChildrenWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,11 +19,11 @@ defmodule ActionForChildren.Web.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      import ActionForChildren.Web.Router.Helpers
-      import ActionForChildren.Web.TestHelpers
+      import ActionForChildrenWeb.Router.Helpers
+      import ActionForChildrenWeb.TestHelpers
 
       # The default endpoint for testing
-      @endpoint ActionForChildren.Web.Endpoint
+      @endpoint ActionForChildrenWeb.Endpoint
     end
   end
 

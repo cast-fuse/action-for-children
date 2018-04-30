@@ -1,7 +1,7 @@
-defmodule ActionForChildren.Web.SessionController do
-  use ActionForChildren.Web, :controller
+defmodule ActionForChildrenWeb.SessionController do
+  use ActionForChildrenWeb, :controller
   alias ActionForChildren.{Accounts, User}
-  alias ActionForChildren.Web.Plugs.Auth
+  alias ActionForChildrenWeb.Plugs.Auth
 
   def create(conn, %{"session" => %{"uuid" => uuid, "email" => email}}) do
     case Accounts.get_user_by_uuid_and_email(uuid, email) do
@@ -12,7 +12,7 @@ defmodule ActionForChildren.Web.SessionController do
       nil ->
         conn
         |> put_flash(:error, "Sorry, could not find that conversation, please start a new one using the option below")
-        |> redirect(to: "#{page_path(conn, :index)}#talk")
+        |> redirect(to: page_path(conn, :talk_to_us))
     end
   end
 
@@ -20,6 +20,6 @@ defmodule ActionForChildren.Web.SessionController do
     conn
     |> Auth.logout()
     |> put_flash(:info, "You have been logged out")
-    |> redirect(to: "#{page_path(conn, :index)}#talk")
+    |> redirect(to: page_path(conn, :index))
   end
 end

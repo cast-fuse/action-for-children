@@ -1,7 +1,7 @@
-defmodule ActionForChildren.Web.IntercomTest do
+defmodule ActionForChildrenWeb.IntercomTest do
   use ExUnit.Case
   import Mock
-  alias ActionForChildren.Web.{IntercomPrefferedTimes, IntercomRequest, IntercomRequestMock}
+  alias ActionForChildrenWeb.{IntercomPrefferedTimes, IntercomRequest, IntercomRequestMock}
 
   defmacro with_request_mock(block) do
     quote do

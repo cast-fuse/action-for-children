@@ -33,11 +33,11 @@ defmodule ActionForChildren.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.3.0-rc"},
+    [{:phoenix, "~> 1.3.0"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.2"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 2.6"},
+     {:phoenix_html, "~> 2.10"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
@@ -45,7 +45,8 @@ defmodule ActionForChildren.Mixfile do
      {:intercom, "~> 0.0.1"},
      {:envy, "~> 1.1.1"},
      {:sendgrid, "~> 1.8.0"},
-     {:mock, "~> 0.2.0", only: :test}]
+     {:mock, "~> 0.2.0", only: :test},
+     {:httpoison, "~> 1.0", override: true}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

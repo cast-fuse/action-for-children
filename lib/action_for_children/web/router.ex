@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.Router do
-  use ActionForChildren.Web, :router
+defmodule ActionForChildrenWeb.Router do
+  use ActionForChildrenWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -9,17 +9,18 @@ defmodule ActionForChildren.Web.Router do
     plug :put_secure_browser_headers
   end
 
-  scope "/", ActionForChildren.Web do
+  scope "/", ActionForChildrenWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
     get "/practitioners", PageController, :practitioners
     get "/privacy", PageController, :privacy
 
-    resources "/sessions", SessionController, only: [:create, :delete]
-
     get "/new_code", UserController, :new_code
     post "/generate_new_code", UserController, :generate_new_code
+
+    post "/sign-in", SessionController, :create
+    get "/logout", SessionController, :delete
 
     resources "/users", UserController, only: [:index, :create] do
       get "/callback", CallbackController, :show

@@ -1,11 +1,11 @@
-defmodule ActionForChildren.Web.AuthTest do
-  use ActionForChildren.Web.ConnCase
-  alias ActionForChildren.Web.Plugs.Auth
+defmodule ActionForChildrenWeb.AuthTest do
+  use ActionForChildrenWeb.ConnCase
+  alias ActionForChildrenWeb.Plugs.Auth
 
   setup %{conn: conn} do
     conn =
       conn
-      |> bypass_through(ActionForChildren.Web.Router, :browser)
+      |> bypass_through(ActionForChildrenWeb.Router, :browser)
       |> get("/")
     {:ok, %{conn: conn}}
   end

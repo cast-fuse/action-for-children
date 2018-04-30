@@ -1,5 +1,5 @@
-defmodule ActionForChildren.Web.IntercomPrefferedTimes do
-  alias ActionForChildren.Web.IntercomRequest
+defmodule ActionForChildrenWeb.IntercomPrefferedTimes do
+  alias ActionForChildrenWeb.IntercomRequest
 
   def send_preferred_times(%{user_id: user_id, message: message}) do
     payload = %{

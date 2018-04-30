@@ -5,7 +5,7 @@
   <h2 class="ttc f5 f3-ns">
     <%= if @time == "afternoon" do %>
        2pm – 5pm
-    <%= else %>
+    <% else %>
        5pm – 8pm
     <% end %>
   </h2>
