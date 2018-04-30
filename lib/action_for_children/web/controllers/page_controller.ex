@@ -14,6 +14,10 @@ defmodule ActionForChildrenWeb.PageController do
     render conn, "index.html"
   end
 
+  def talk_to_us(conn, _params) do
+    render conn, "talk_to_us.html"
+  end
+
   def practitioners(conn, _params) do
     render conn, "practitioners.html"
   end
@@ -21,13 +25,4 @@ defmodule ActionForChildrenWeb.PageController do
   def privacy(conn, _params) do
     render conn, "privacy.html"
   end
-
-  def new_code(conn, _params) do
-    render conn, "new_code.html"
-  end
-
-  def talk_to_us(conn, _params) do
-    render conn, "talk_to_us.html"
-  end
-
 end
