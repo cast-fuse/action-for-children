@@ -29,7 +29,7 @@ defmodule ActionForChildrenWeb.UserController do
       nil ->
         conn
         |> put_flash(:error, "Can not find your email address, start a new conversation instead?")
-        |> redirect(to: "#{page_path(conn, :index)}#talk")
+        |> redirect(to: page_path(conn, :talk_to_us))
     end
 
   end
