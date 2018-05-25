@@ -1,9 +1,9 @@
 <div class="w-100 bg-blue">
   <div class="flex center mw8">
     <div class="w-60-ns w-100 pa4-ns ph3 pv4 tc tl-ns">
-      <h1 class="white fw5 f1-ns f3">Our practitioners offer free advice and support – ask us your parenting questions</h1>
-      <h4 class="white fw4 tracked lh-copy w-80-ns">As a parent of an under five do you struggle to find out who to get help from or feel you don't know what questions to ask?</h4>
-      <h4 class="white fw4 tracked lh-copy w-80-ns">We're here for you, whatever's on your mind. We'll support you as often or as little as you want</h4>
+      <h1 class="white fw5 f1-ns f3">Free and confidential live chat with parenting staff</h1>
+      <h4 class="white fw4 tracked lh-copy w-70-ns">Chat online with Jo or Gina weekdays between 2-8pm or request a call back when it's convenient for you.</h4>
+      <h4 class="white fw4 tracked lh-copy w-70-ns">You can get answers to your specific parenting situation from the comfort of your own home.</h4>
     </div>
 
     <div class="w-50-m relative">
@@ -15,10 +15,35 @@
 </div>
 
 <div class="mt4 mw8 center" style="margin-top: 0rem">
-  <div class="center mw8 pa4-ns ph3 pv4">
-    <p class="mb4 tc ph6-ns" style="line-height: 1.6; font-size: 1.1em;">We can give you help with your child’s development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping, and much more.</p>
-    <p class="tc ph6-ns" style="line-height: 1.6; font-size: 1.1em;">You can speak to the same practitioner as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.</p>
+
+  <div class="mw8 pt4 ph4 w-100 cf">
+
+    <div class="fl w-50">
+      <p class="tc pb1" style="font-size: 1.1em; color: #5196a3; font-weight: 500; line-height: 1.5">You may have questions, concerns <br />or worries about your child's...</p>
+      <ul class="tc pa0 mid-gray" style="list-style-type: none;">
+        <li style="line-height: 1.6; font-size: 1em;">Development</li>
+        <li style="line-height: 1.6; font-size: 1em;">Behaviour and how to deal with it</li>
+        <li style="line-height: 1.6; font-size: 1em;">Eating habits</li>
+        <li style="line-height: 1.6; font-size: 1em;">Sleep routine</li>
+        <li style="line-height: 1.6; font-size: 1em;">Toilet training</li>
+      </ul>
+    </div>
+
+    <div class="fl w-50">
+      <p class="tc pb1" style="font-size: 1.1em; color: #5196a3; font-weight: 500; line-height: 1.5">Or you may have questions<br /> about yourself, such as...</p>
+      <ul class="tc pa0 mid-gray" style="list-style-type: none;">
+        <li style="line-height: 1.6; font-size: 1em;">Reservations about returning to work</li>
+        <li style="line-height: 1.6; font-size: 1em;">Financial difficulties</li>
+        <li style="line-height: 1.6; font-size: 1em;">Any other parenting questions!</li>
+      </ul>
+    </div>
+
   </div>
+
+  <div class="center w-80 mw8 ph4 pb4 pt4">
+    <p class="mb4 tc ph6-ns mid-gray" style="line-height: 1.6; font-size: 1.1em;">You don't even need to have a question, just come and chat to us to say hi and get something off your chest. You can speak to the same practitioner as regularly as you like – continuing your conversation where you left off, without having to explain your situation from the beginning every time.</p>
+  </div>
+
 </div>
 
 <div class="w-100 bg-blue">
@@ -32,10 +57,10 @@
 
 
 <div class="flex mw8 pv2 center">
-  <div class="w-50-ns w-100 ph3 pv4 ph4-ns flex flex-column items-center items-start-ns tc tl-ns">
-    <h2 class="near-black f3 ma0">Our practitioners</h2>
-    <p class="gray lh-copy mb4">We have years of experience working with families and are here to support you</p>
-    <%= link to: page_path(@conn, :practitioners), class: "db w-100" do %>
+  <div class="w-100 ph3 pv5 ph4-ns">
+    <h2 class="tc near-black f3 ma0">Our practitioners</h2>
+    <p class="tc mid-gray lh-copy mb4">We have years of experience working with families and are here to support you</p>
+    <%= link to: page_path(@conn, :practitioners), class: "tc db w-50 center" do %>
       <button class="<%= red_button() %>">Meet our practitioners</button>
     <% end %>
   </div>
