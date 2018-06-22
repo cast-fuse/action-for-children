@@ -1,9 +1,9 @@
 <div class="w-100 bg-blue">
   <div class="flex center mw8">
-    <div class="w-60-ns w-100 pa4-ns ph3 pv4 tc tl-ns">
+    <div class="w-60-ns w-100 ph4-ns pv3-ns ph3 pv4 tc tl-ns">
       <h1 class="white fw5 f1-ns f3">Free and confidential live chat with parenting staff</h1>
       <h4 class="white fw4 tracked lh-copy w-70-ns">Chat online with Jo or Gina weekdays between 2-8pm or request a call back when it's convenient for you.</h4>
-      <h4 class="white fw4 tracked lh-copy w-70-ns">You can get answers to your specific parenting situation from the comfort of your own home.</h4>
+      <a href="/talk-to-us" class="db white bg-dark-red f3-ns f5 fw4 pv2-ns pv3 ph3 mv4-ns mt4 br2 hover-bg-red t3 all ease no-underline tc w-40-ns">Speak to us</a>
     </div>
 
     <div class="w-50-m relative">
@@ -50,10 +50,10 @@
 
 <div class="flex mw8 pv2 center">
   <div class="w-100 ph3 pv5-ns pv4 ph4-ns">
-    <h2 class="tc near-black f3 ma0">Our practitioners</h2>
+    <h2 class="tc near-black f3 ma0">Our staff</h2>
     <p class="tc mid-gray lh-copy mb4">We have years of experience working with families and are here to support you</p>
-    <%= link to: page_path(@conn, :practitioners), class: "tc db w-50-ns w-80 center" do %>
-      <button class="<%= red_button() %>">Meet our practitioners</button>
+    <%= link to: page_path(@conn, :practitioners), class: "tc db w-50-ns center" do %>
+      <button class="<%= red_button() %>">Meet our staff</button>
     <% end %>
   </div>
 </div>

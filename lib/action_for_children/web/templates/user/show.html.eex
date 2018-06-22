@@ -3,10 +3,11 @@
     <div class="w-50-ns ph3 pv4 ph4-ns pv5-ns tc tl-ns">
 
       <h1 class="white fw5 f2-ns f3 ma0">Talk to us</h1>
-      <p class="white fw4 tracked lh-copy">Chat to us online and one of our practitioners will get back to you as soon as they are free.</p>
-      <p class="white fw4 tracked lh-copy">To speak to the same practitioner again and carry on your conversation, make a note of the 8 digit code below.</p>
+      <p class="white fw4 tracked lh-copy">Ask your question in the chat box and Jo or Gina will reply as soon as they are free.</p>
+      <p class="white fw4 tracked lh-copy">Leave your email address if you don't get a response straight away and we'll let you know when we're free.</p>
+      <p class="white fw4 tracked lh-copy">To speak to us again and carry on your conversation, make a not of the code below:</p>
       <p class="white fw4 tracked lh-copy">Your Code: <b><%= @user.uuid %></b></p>
-      <p class="white fw4 tracked lh-copy">If you'd rather speak to one of our practitioners on the phone, you can arrange a time for us to call you.</p>
+      <p class="white fw4 tracked lh-copy">If you want to speak to us on the phone, arrange a time that is convenient for you.</p>
 
       <%= link to: user_callback_path(@conn, :show, @user)  do %>
         <button class="<%= red_button() %>">Arrange a call</button>
@@ -20,7 +21,7 @@
   <div class="mw8">
     <div class="w-50-ns ph3 pv4 ph4-ns pv5-ns tc tl-ns">
       <%= link to: page_path(@conn, :practitioners) do %>
-        <button class="<%= "#{red_button()} mb2" %>">Who are our practitioners?</button>
+        <button class="<%= "#{red_button()} mb2" %>">Meet our staff</button>
       <% end %>
       <p class="lh-copy near-black">We are non-judgemental, inclusive, friendly and approachable.</p>
       <p class="lh-copy near-black">You can ask us any parenting or family question and we will do our best to make you feel comfortable, understood and helped.</p>
