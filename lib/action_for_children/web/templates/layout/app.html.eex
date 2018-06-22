@@ -16,7 +16,7 @@
       <div class="w-100 bg-blue">
         <div class="flex center mw8 justify-center">
           <p class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">
-            This is a trial service. <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">Send us your feedback</a>.
+            This is a trial service. We'd appreciate your <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">feedback</a>. It will take less than 5 minutes.
           </p>
         </div>
       </div>
@@ -39,7 +39,7 @@
     <div class="w-100 bg-blue flex justify-center">
       <div class="flex flex-column ph3 pv4 pa4-ns mw8">
         <div class="w-70-ns tc tl-ns">
-          <h4 class="white fw4 tracked lh-copy mt0 mt3-ns">This service is not available 24/7. During the 3 month trial, practitioners will be available Monday-Friday 2pm-8pm</h4>
+          <h4 class="white fw4 tracked lh-copy mt0 mt3-ns">This service is available Monday-Friday 2pm-8pm.</h4>
           <h4 class="white fw4 tracked lh-copy">Contact your local council if you are worried about a child's welfare. Contact 111 if you are worried about your child's health, or 999 in a medical emergency.</h4>
           <%= if @conn.assigns[:user] do %>
             <div class="logout-form">

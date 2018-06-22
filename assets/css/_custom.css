@@ -51,3 +51,42 @@ textarea {
 form {
   display: inline;
 }
+
+.background-img {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80%;
+  height: 7em;
+}
+
+.icon-behaviour {
+  background-image: url(/images/icon-behaviour.png);
+}
+
+.icon-development {
+  background-image: url(/images/icon-development.png);
+}
+
+.icon-eating {
+  background-image: url(/images/icon-eating.png);
+}
+
+.icon-feelings {
+  background-image: url(/images/icon-feelings.png);
+}
+
+.icon-finances {
+  background-image: url(/images/icon-finances.png);
+}
+
+.icon-sleep {
+  background-image: url(/images/icon-sleep.png);
+}
+
+.icon-toilet {
+  background-image: url(/images/icon-toilet.png);
+}
+
+.icon-work {
+  background-image: url(/images/icon-work.png);
+}
