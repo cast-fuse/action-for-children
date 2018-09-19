@@ -57,41 +57,35 @@ defmodule ActionForChildrenWeb.UserController do
   end
 
   def create(conn, %{"user" => %{"email" => email}}) do
-    if email == "" do
-      conn
-      |> put_flash(:error, "Please enter a valid email address")
-      |> redirect(to: page_path(conn, :talk_to_us))
-    else
-      case Accounts.get_user_by_email(email) do
-        %User{} = _user ->
-          conn
-          |> put_flash(
-            :error,
-            "Email address already in use, please continue your conversation using your unique code below"
-          )
-          |> redirect(to: page_path(conn, :talk_to_us))
+    case Accounts.get_user_by_email(email) do
+      %User{} = _user ->
+        conn
+        |> put_flash(
+          :error,
+          "Email address already in use, please continue your conversation using your unique code below"
+        )
+        |> redirect(to: page_path(conn, :talk_to_us))
 
-        nil ->
-          {:ok, %User{} = user} = Accounts.create_user(%{email: email})
+      nil ->
+        {:ok, %User{} = user} = Accounts.create_user(%{email: email})
 
-          headers = [
-            Authorization: "Bearer #{System.get_env("INTERCOM_SECRET")}",
-            Accept: "application/json",
-            "Content-Type": "application/json"
-          ]
+        headers = [
+          Authorization: "Bearer #{System.get_env("INTERCOM_SECRET")}",
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        ]
 
-          body = Poison.encode!(%{user_id: user.uuid, email: user.email})
+        body = Poison.encode!(%{user_id: user.uuid, email: user.email})
 
-          HTTPoison.post(
-            "https://api.intercom.io/users",
-            body,
-            headers
-          )
+        HTTPoison.post(
+          "https://api.intercom.io/users",
+          body,
+          headers
+        )
 
-          conn
-          |> Auth.login(user)
-          |> redirect(to: user_path(conn, :index))
-      end
+        conn
+        |> Auth.login(user)
+        |> redirect(to: user_path(conn, :index))
     end
   end
 end
