@@ -10,7 +10,8 @@ defmodule ActionForChildrenWeb.Router do
   end
 
   scope "/", ActionForChildrenWeb do
-    pipe_through :browser # Use the default browser stack
+    # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
     get "/practitioners", PageController, :practitioners
@@ -27,6 +28,5 @@ defmodule ActionForChildrenWeb.Router do
       get "/callback", CallbackController, :show
       post "/callback", CallbackController, :create
     end
-
   end
 end
