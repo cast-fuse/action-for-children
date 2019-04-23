@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
-  <body>
+  <body class="relative h-min-100vh">
       <div class="w-100 bg-blue">
         <div class="flex center mw8 justify-center">
           <p class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">
@@ -35,7 +35,7 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
-    <div class="w-100 bg-blue flex justify-center b--white bt">
+    <div class="w-100 bg-blue flex justify-center b--white bt absolute bottom-0">
       <div class="flex flex-column ph3 pv4 pa4-ns mw8">
         <div class="w-70-ns tc tl-ns">
           <h4 class="white fw4 tracked lh-copy">Contact your local council if you are worried about a child's welfare. Contact 111 if you are worried about your child's health, or 999 in a medical emergency.</h4>
