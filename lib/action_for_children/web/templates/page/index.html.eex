@@ -48,12 +48,15 @@
 </div>
 
 
-<div class="flex mw8 pv2 center">
-  <div class="w-100 ph3 pv5-ns pv4 ph4-ns">
-    <h2 class="tc near-black f3 ma0">Our staff</h2>
-    <p class="tc mid-gray lh-copy mb4">We have years of experience working with families and are here to support you</p>
-    <%= link to: page_path(@conn, :practitioners), class: "tc db w-50-ns center" do %>
-      <button class="<%= red_button() %>">Meet our staff</button>
-    <% end %>
+
+<%= if @conn.assigns.version == "talk" do %>
+  <div class="flex mw8 pv2 center">
+    <div class="w-100 ph3 pv5-ns pv4 ph4-ns">
+      <h2 class="tc near-black f3 ma0">Our staff</h2>
+      <p class="tc mid-gray lh-copy mb4">We have years of experience working with families and are here to support you</p>
+      <%= link to: page_path(@conn, :practitioners), class: "tc db w-50-ns center" do %>
+        <button class="<%= red_button() %>">Meet our staff</button>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
