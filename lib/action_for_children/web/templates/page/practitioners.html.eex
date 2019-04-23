@@ -4,7 +4,7 @@
       <h1 class="white fw5 f1-ns f3">Meet our staff</h1>
     </div>
     <div class="w-50 pa4 dn db-ns">
-      <a href="/talk-to-us" class="<%= red_button() %> no-underline cta" style="float:right; width: auto;">Talk to a practitioner</a>
+      <a href="/talk-to-us" class="<%= red_button() %> no-underline cta" style="float:right; width: auto;">Speak to us now</a>
     </div>
   </div>
 </div>
