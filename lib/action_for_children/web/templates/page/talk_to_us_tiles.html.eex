@@ -9,7 +9,7 @@ home_tile_class = "w-60-ns tc flex flex-column items-center mv4-ns pb3-ns"
 
   <%= form_for @conn, user_path(@conn, :create), [as: :user], fn f -> %>
     <%= email_input f, :email, placeholder: "Your email", class: input_class, required: true %>
-    <%= submit "Talk to a practitioner", class: red_button() %>
+    <%= submit "Speak to us now", class: red_button() %>
   <% end %>
 </div>
 
