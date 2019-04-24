@@ -1,5 +1,6 @@
 defmodule ActionForChildrenWeb.Router do
   use ActionForChildrenWeb, :router
+  alias ActionForChildrenWeb.Plugs.Version
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -7,6 +8,7 @@ defmodule ActionForChildrenWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Version
   end
 
   scope "/", ActionForChildrenWeb do

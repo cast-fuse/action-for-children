@@ -5,7 +5,7 @@ home_tile_class = "w-60-ns tc flex flex-column items-center mv4-ns pb3-ns"
 
 <div class="<%= "#{home_tile_class} pb4 ml0-ns mr4-ns" %>">
   <h2 class="f3 ma0 white">Speak to us</h2>
-  <p class="white w-80-ns lh-copy mb4">Speak to us online or by phone. To start talking straight away, put your email address in and you’ll be directed to our confidential chat page.</p>
+  <p class="white w-80-ns lh-copy mb4"><%= if @conn.assigns.version == "advice", do: "", else: "Speak to us online or by phone. " %>To start talking straight away, put your email address in and you’ll be directed to our confidential chat page.</p>
 
   <%= form_for @conn, user_path(@conn, :create), [as: :user], fn f -> %>
     <%= email_input f, :email, placeholder: "Your email", class: input_class, required: true %>
