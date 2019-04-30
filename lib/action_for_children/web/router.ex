@@ -24,6 +24,7 @@ defmodule ActionForChildrenWeb.Router do
     get "/practitioners", PageController, :practitioners
     get "/privacy", PageController, :privacy
     get "/talk-to-us", PageController, :talk_to_us
+    get "/feedback", PageController, :feedback
 
     get "/new-code", UserController, :new_code
     post "/generate-new-code", UserController, :generate_new_code

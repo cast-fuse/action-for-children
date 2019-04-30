@@ -95,3 +95,7 @@ form {
 .h-min-100vh {
   min-height: 100vh;
 }
+
+.max-form-width {
+  max-width: 1000px;
+}

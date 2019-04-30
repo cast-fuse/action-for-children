@@ -25,4 +25,8 @@ defmodule ActionForChildrenWeb.PageController do
   def privacy(conn, _params) do
     render(conn, "privacy.html")
   end
+
+  def feedback(conn, _params) do
+    render(conn, "feedback.html")
+  end
 end
