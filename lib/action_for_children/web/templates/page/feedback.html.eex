@@ -1,0 +1,28 @@
+<div class="w-100 bg-blue">
+  <div class="flex center mw8 justify-center justify-start-ns">
+    <div class="w-50-ns pv4 ph3 ph4-ns tc tl-ns">
+      <h1 class="white fw5 f1-ns f3">Feedback</h1>
+    </div>
+  </div>
+</div>
+
+<div class="flex center mw8">
+  <%= if @conn.assigns.version == "talk" do %>
+    <div class="w-50-ns ph3 pv4 ph4-ns tc tl-ns">
+      <p class="lh-copy b">By telling us about your experience you’ll be helping us to help more parents.</p>
+      <p class="lh-copy">The 'Talk' service is a trial that Action for Children are running in Cornwall and Sandwell.</p>
+      <p class="lh-copy">We need feedback and to understand your experiences so that we can evaluate this service and see whether this service can make a difference to parents across the UK.</p>
+      <p class="lh-copy">Thank you for taking a few minutes to tell us about your experience using this pilot service.</p>
+    </div>
+  <% else %>
+    <p class="lh-copy mt5">By telling us about your experience you’ll be helping us to help more parents.</p>
+  <% end %>
+</div>
+
+<div class="w-80-ns center max-form-width mv5">
+  <%= if @conn.assigns.version == "talk" do %>
+    <script type="text/javascript" src="https://form.jotformeu.com/jsform/80593556284365"></script>
+  <% else %>
+    <script type="text/javascript" src="https://form.jotformeu.com/jsform/91051615715351"></script>
+  <% end %>
+</div>

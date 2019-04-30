@@ -15,7 +15,9 @@
       <div class="w-100 bg-blue">
         <div class="flex center mw8 justify-center">
           <p class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">
-            This is a trial service. We'd appreciate your <a target="_blank" class="white" href="https://www.actionforchildren.org.uk/support-for-parents/talk-service-feedback/">feedback</a>. It will take less than 5 minutes.
+            This is a trial service. We'd appreciate your <%= link "feedback", to: page_path(@conn, :feedback), class: "white" %>. It will take less than 5 minutes.
+
+
           </p>
         </div>
       </div>
