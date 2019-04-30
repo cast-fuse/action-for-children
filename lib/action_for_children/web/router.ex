@@ -11,6 +11,11 @@ defmodule ActionForChildrenWeb.Router do
     plug Version
   end
 
+  pipeline :api do
+    plug CORSPlug, origin: "*"
+    plug :accepts, ["json"]
+  end
+
   scope "/", ActionForChildrenWeb do
     # Use the default browser stack
     pipe_through :browser
@@ -25,10 +30,17 @@ defmodule ActionForChildrenWeb.Router do
 
     post "/sign-in", SessionController, :create
     get "/logout", SessionController, :delete
+    get "/token", SessionController, :create_from_token
 
     resources "/users", UserController, only: [:index, :create] do
       get "/callback", CallbackController, :show
       post "/callback", CallbackController, :create
     end
+  end
+
+  scope "/api", ActionForChildrenWeb do
+    pipe_through :api
+
+    post "/advice-login", SessionController, :advice_login
   end
 end

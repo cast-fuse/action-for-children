@@ -6,11 +6,12 @@ defmodule ActionForChildren.User do
   schema "users" do
     field :uuid, :string
     field :email, :string
+    field :token, :string
   end
 
   def changeset(%User{} = user, attrs \\ %{}) do
     user
-    |> cast(attrs, [:uuid, :email])
+    |> cast(attrs, [:uuid, :email, :token])
     |> validate_required(:uuid)
     |> validate_required(:email, message: "please enter your email address")
   end
