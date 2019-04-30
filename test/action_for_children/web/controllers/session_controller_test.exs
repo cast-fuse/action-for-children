@@ -10,5 +10,4 @@ defmodule ActionForChildrenWeb.SessionControllerTest do
       :ok
     end
   end
-
 end

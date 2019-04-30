@@ -7,7 +7,7 @@ defmodule ActionForChildren.Application do
     import Supervisor.Spec
 
     # loads environment vars for local development
-    unless Mix.env == :prod do
+    unless Mix.env() == :prod do
       Envy.load([".env"])
       Envy.reload_config()
     end
@@ -17,7 +17,7 @@ defmodule ActionForChildren.Application do
       # Start the Ecto repository
       supervisor(ActionForChildren.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(ActionForChildrenWeb.Endpoint, []),
+      supervisor(ActionForChildrenWeb.Endpoint, [])
       # Start your own worker by calling: ActionForChildren.Worker.start_link(arg1, arg2, arg3)
       # worker(ActionForChildren.Worker, [arg1, arg2, arg3]),
     ]
