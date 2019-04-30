@@ -7,6 +7,7 @@ defmodule ActionForChildrenWeb.AuthTest do
       conn
       |> bypass_through(ActionForChildrenWeb.Router, :browser)
       |> get("/")
+
     {:ok, %{conn: conn}}
   end
 
@@ -21,6 +22,7 @@ defmodule ActionForChildrenWeb.AuthTest do
 
   test "call with existing user session assigns user to user struct", %{conn: conn} do
     user = insert_user()
+
     conn =
       conn
       |> put_session(:uuid, user.uuid)
@@ -31,6 +33,7 @@ defmodule ActionForChildrenWeb.AuthTest do
 
   test "call with existing user just returns the conn", %{conn: conn} do
     user = insert_user()
+
     conn =
       conn
       |> put_session(:uuid, user.uuid)
@@ -51,6 +54,7 @@ defmodule ActionForChildrenWeb.AuthTest do
   test "logs out user and removes them from the conn", %{conn: conn} do
     user = insert_user()
     login_conn = Auth.login(conn, user)
+
     logout_conn =
       login_conn
       |> Auth.logout()

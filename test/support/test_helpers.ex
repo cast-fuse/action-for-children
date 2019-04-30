@@ -1,5 +1,6 @@
 defmodule ActionForChildrenWeb.TestHelpers do
   alias ActionForChildren.{Repo, User}
+
   def insert_user(attrs \\ %{}) do
     uuid =
       Ecto.UUID.generate()

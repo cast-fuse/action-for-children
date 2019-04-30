@@ -27,6 +27,7 @@ defmodule ActionForChildren.AccountsTest do
       day: "mon",
       time: "afternooon"
     }
+
     {:ok, changeset} = Accounts.validate_callback(%Callback{}, params)
 
     assert changeset.valid?
