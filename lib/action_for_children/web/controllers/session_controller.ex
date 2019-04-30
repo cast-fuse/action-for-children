@@ -23,9 +23,22 @@ defmodule ActionForChildrenWeb.SessionController do
   def create_from_token(conn, %{"token" => token}) do
     case Accounts.get_user_by_token(token) do
       %User{} = user ->
-        conn
-        |> Auth.login(user)
-        |> redirect(to: user_path(conn, :index))
+        time_diff_in_hours = NaiveDateTime.diff(NaiveDateTime.utc_now(), user.updated_at) / 3600
+
+        case time_diff_in_hours > 24 do
+          true ->
+            conn
+            |> put_flash(
+              :error,
+              "Sorry, your token has expired. Please sign in again."
+            )
+            |> redirect(to: page_path(conn, :talk_to_us))
+
+          false ->
+            conn
+            |> Auth.login(user)
+            |> redirect(to: user_path(conn, :index))
+        end
 
       nil ->
         conn
