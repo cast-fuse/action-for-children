@@ -30,7 +30,7 @@ defmodule ActionForChildrenWeb.SessionController do
             conn
             |> put_flash(
               :error,
-              "Sorry, your token has expired. Please sign in again."
+              "Please sign in again."
             )
             |> redirect(to: page_path(conn, :talk_to_us))
 
