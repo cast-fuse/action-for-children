@@ -32,6 +32,12 @@ defmodule ActionForChildren.Accounts do
     |> Repo.insert()
   end
 
+  def update_token(%User{} = user, %{token: token}) do
+    user
+    |> User.changeset(%{token: token})
+    |> Repo.update()
+  end
+
   def new_callback, do: Callback.changeset(%Callback{})
 
   def validate_callback(struct, params) do

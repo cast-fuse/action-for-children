@@ -23,9 +23,9 @@ defmodule ActionForChildrenWeb.SessionController do
   def create_from_token(conn, %{"token" => token}) do
     case Accounts.get_user_by_token(token) do
       %User{} = user ->
-        time_diff_in_hours = NaiveDateTime.diff(NaiveDateTime.utc_now(), user.updated_at) / 3600
+        time_diff_in_mins = NaiveDateTime.diff(NaiveDateTime.utc_now(), user.updated_at) / 60
 
-        case time_diff_in_hours > 24 do
+        case time_diff_in_mins > 1 do
           true ->
             conn
             |> put_flash(
@@ -69,7 +69,9 @@ defmodule ActionForChildrenWeb.SessionController do
       _ ->
         case Accounts.get_user_by_uuid_and_email(code, email) do
           %User{} = user ->
-            send_resp(conn, 201, user.token)
+            newToken = Ecto.UUID.generate()
+            {:ok, %User{} = updatedUser} = Accounts.update_token(user, %{token: newToken})
+            send_resp(conn, 201, updatedUser.token)
 
           nil ->
             send_resp(
