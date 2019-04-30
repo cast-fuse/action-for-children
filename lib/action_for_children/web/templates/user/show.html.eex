@@ -63,6 +63,7 @@
     autoShow: true,
     user_id: "<%= @user.uuid %>",
     app_id: "<%= System.get_env("INTERCOM_APP_ID") %>",
-    user_hash: "<%= :crypto.hmac(:sha256, "#{System.get_env("INTERCOM_HASH_KEY")}", @user.uuid) |> Base.encode16 %>"
+    user_hash: "<%= :crypto.hmac(:sha256, "#{System.get_env("INTERCOM_HASH_KEY")}", @user.uuid) |> Base.encode16 %>",
+    version: "<%= @conn.assigns.version %>"
   }
 </script>
