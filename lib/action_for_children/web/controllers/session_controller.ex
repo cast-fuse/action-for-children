@@ -23,9 +23,22 @@ defmodule ActionForChildrenWeb.SessionController do
   def create_from_token(conn, %{"token" => token}) do
     case Accounts.get_user_by_token(token) do
       %User{} = user ->
-        conn
-        |> Auth.login(user)
-        |> redirect(to: user_path(conn, :index))
+        time_diff_in_mins = NaiveDateTime.diff(NaiveDateTime.utc_now(), user.updated_at) / 60
+
+        case time_diff_in_mins > 1 do
+          true ->
+            conn
+            |> put_flash(
+              :error,
+              "Please sign in again."
+            )
+            |> redirect(to: page_path(conn, :talk_to_us))
+
+          false ->
+            conn
+            |> Auth.login(user)
+            |> redirect(to: user_path(conn, :index))
+        end
 
       nil ->
         conn
@@ -56,7 +69,9 @@ defmodule ActionForChildrenWeb.SessionController do
       _ ->
         case Accounts.get_user_by_uuid_and_email(code, email) do
           %User{} = user ->
-            send_resp(conn, 201, user.token)
+            newToken = Ecto.UUID.generate()
+            {:ok, %User{} = updatedUser} = Accounts.update_token(user, %{token: newToken})
+            send_resp(conn, 201, updatedUser.token)
 
           nil ->
             send_resp(

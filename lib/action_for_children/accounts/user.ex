@@ -7,6 +7,8 @@ defmodule ActionForChildren.User do
     field :uuid, :string
     field :email, :string
     field :token, :string
+
+    timestamps()
   end
 
   def changeset(%User{} = user, attrs \\ %{}) do
