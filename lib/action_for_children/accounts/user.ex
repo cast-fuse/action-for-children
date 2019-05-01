@@ -7,13 +7,12 @@ defmodule ActionForChildren.User do
     field :uuid, :string
     field :email, :string
     field :token, :string
-
-    timestamps()
+    field :token_expires, :naive_datetime
   end
 
   def changeset(%User{} = user, attrs \\ %{}) do
     user
-    |> cast(attrs, [:uuid, :email, :token])
+    |> cast(attrs, [:uuid, :email, :token, :token_expires])
     |> validate_required(:uuid)
     |> validate_required(:email, message: "please enter your email address")
   end

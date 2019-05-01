@@ -26,15 +26,16 @@ defmodule ActionForChildren.Accounts do
   def create_user_with_token(attrs \\ %{}) do
     uuid = attrs[:uuid] || make_uuid()
     token = Ecto.UUID.generate()
+    token_expires = NaiveDateTime.add(NaiveDateTime.utc_now(), 60, :second)
 
-    %User{uuid: uuid, token: token}
+    %User{uuid: uuid, token: token, token_expires: token_expires}
     |> User.changeset(attrs)
     |> Repo.insert()
   end
 
-  def update_token(%User{} = user, %{token: token}) do
+  def update_token(%User{} = user, %{token: token, token_expires: token_expires}) do
     user
-    |> User.changeset(%{token: token})
+    |> User.changeset(%{token: token, token_expires: token_expires})
     |> Repo.update()
   end
 
