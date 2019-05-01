@@ -12,7 +12,13 @@ defmodule ActionForChildrenWeb.Router do
   end
 
   pipeline :api do
-    plug CORSPlug, origin: ["https://megalodon-seabass-gaan.squarespace.com/", "https://advice.actionforchildren.org.uk", "https://wwww.advice.actionforchildren.org.uk"]
+    plug CORSPlug,
+      origin: [
+        "https://megalodon-seabass-gaan.squarespace.com",
+        "https://advice.actionforchildren.org.uk",
+        "https://wwww.advice.actionforchildren.org.uk"
+      ]
+
     plug :accepts, ["json"]
   end
 
