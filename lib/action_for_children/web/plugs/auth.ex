@@ -27,6 +27,6 @@ defmodule ActionForChildrenWeb.Plugs.Auth do
   end
 
   def logout(conn) do
-    configure_session(conn, drop: true)
+    delete_session(conn, :uuid)
   end
 end

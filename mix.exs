@@ -50,7 +50,8 @@ defmodule ActionForChildren.Mixfile do
       {:envy, "~> 1.1.1"},
       {:sendgrid, "~> 1.8.0"},
       {:mock, "~> 0.2.0", only: :test},
-      {:httpoison, "~> 1.0", override: true}
+      {:httpoison, "~> 1.0", override: true},
+      {:cors_plug, "~> 2.0"}
     ]
   end
 

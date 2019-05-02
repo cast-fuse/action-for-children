@@ -12,7 +12,9 @@ defmodule ActionForChildrenWeb.IntercomPrefferedTimes do
   end
 
   def format_message(%{"topic" => topic, "time" => time, "day" => day, "phone" => phone}) do
-    "Hi, could you call me back on #{day} in the #{time}? My number is #{phone} and I'd like to talk about... #{topic}"
+    "Hi, could you call me back on #{day} in the #{time}? My number is #{phone} and I'd like to talk about... #{
+      topic
+    }"
   end
 
   defp handle_response({:ok, %{status_code: 200, body: body}}) do

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding-bottom: 178.53px;
   font-family: var(--sans-serif);
   color: #333;
   outline: none !important;
@@ -89,4 +90,12 @@ form {
 
 .icon-work {
   background-image: url(/images/icon-work.png);
+}
+
+.h-min-100vh {
+  min-height: 100vh;
+}
+
+.max-form-width {
+  max-width: 1000px;
 }

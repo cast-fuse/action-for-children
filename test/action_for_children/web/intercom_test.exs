@@ -5,7 +5,8 @@ defmodule ActionForChildrenWeb.IntercomTest do
 
   defmacro with_request_mock(block) do
     quote do
-      with_mock IntercomRequest, [post: fn(url, payload) -> IntercomRequestMock.post(url, payload) end] do
+      with_mock IntercomRequest,
+        post: fn url, payload -> IntercomRequestMock.post(url, payload) end do
         unquote(block)
       end
     end
@@ -14,7 +15,9 @@ defmodule ActionForChildrenWeb.IntercomTest do
   test "sending a preffered times to a user" do
     with_request_mock do
       message = "hello intercom"
-      {:ok, :message_sent, res} = IntercomPrefferedTimes.send_preferred_times(%{user_id: "ACD12345", message: message})
+
+      {:ok, :message_sent, res} =
+        IntercomPrefferedTimes.send_preferred_times(%{user_id: "ACD12345", message: message})
 
       assert res["body"] == message
       assert res["type"] == "user_message"
@@ -40,7 +43,9 @@ defmodule ActionForChildrenWeb.IntercomTest do
   test "returns error if user not found" do
     with_request_mock do
       message = "hello intercom"
-      {:error, reason} = IntercomPrefferedTimes.send_preferred_times(%{user_id: "wrong id", message: message})
+
+      {:error, reason} =
+        IntercomPrefferedTimes.send_preferred_times(%{user_id: "wrong id", message: message})
 
       assert reason == "not_found : User Not Found"
     end
@@ -48,7 +53,8 @@ defmodule ActionForChildrenWeb.IntercomTest do
 
   test "returns error if bad request made" do
     with_request_mock do
-      {:error, reason} = IntercomPrefferedTimes.send_preferred_times(%{user_id: "foo", message: %{bad: "message"}})
+      {:error, reason} =
+        IntercomPrefferedTimes.send_preferred_times(%{user_id: "foo", message: %{bad: "message"}})
 
       assert reason == "http client error"
     end

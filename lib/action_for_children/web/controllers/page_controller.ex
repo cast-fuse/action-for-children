@@ -11,18 +11,22 @@ defmodule ActionForChildrenWeb.PageController do
   end
 
   def index(conn, _params) do
-    render conn, "index.html"
+    render(conn, "index.html")
   end
 
   def talk_to_us(conn, _params) do
-    render conn, "talk_to_us.html"
+    render(conn, "talk_to_us.html")
   end
 
   def practitioners(conn, _params) do
-    render conn, "practitioners.html"
+    render(conn, "practitioners.html")
   end
 
   def privacy(conn, _params) do
-    render conn, "privacy.html"
+    render(conn, "privacy.html")
+  end
+
+  def feedback(conn, _params) do
+    render(conn, "feedback.html")
   end
 end
