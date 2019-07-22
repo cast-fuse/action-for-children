@@ -33,6 +33,20 @@ defmodule ActionForChildrenWeb.SessionController do
             |> redirect(to: page_path(conn, :talk_to_us))
 
           :lt ->
+            headers = [
+              Authorization: "Bearer #{System.get_env("INTERCOM_SECRET")}",
+              Accept: "application/json",
+              "Content-Type": "application/json"
+            ]
+
+            body = Poison.encode!(%{user_id: user.uuid, email: user.email})
+
+            HTTPoison.post(
+              "https://api.intercom.io/users",
+              body,
+              headers
+            )
+
             conn
             |> Auth.login(user)
             |> redirect(to: user_path(conn, :index))
