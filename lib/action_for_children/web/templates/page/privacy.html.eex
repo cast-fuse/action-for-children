@@ -9,12 +9,12 @@
 <div class="flex center mw8">
   <div class="w-50-ns ph3 pv4 ph4-ns tc tl-ns">
     <p class="lh-copy">This privacy policy describes how Action for Children protects and makes use of the information you give us when you use this service.</p>
-    <p class="lh-copy">Action for Children is committed to protecting the privacy of its supporters and stakeholders. We fully comply with the Data Protection Act 1998.</p>
-    <p class="lh-copy">This policy is updated from time to time. The latest version will always be published on this page. This privacy policy was updated on 2nd March 2018.</p>
-    <p class="lh-copy">If you have any questions about this policy, please email ask.us@actionforchildren.org.uk or write to: Action For Children, 3 The Boulevard, Ascot Road, Watford WD18 8AG.</p>
+    <p class="lh-copy">Action for Children is committed to protecting the privacy of its supporters and stakeholders. We fully comply with the Data Protection Act 2018 and applicable data privacy legislation.</p>
+    <p class="lh-copy">This policy is updated from time to time. The latest version will always be published on this page. This privacy policy was updated on 20 June 2019.</p>
+    <p class="lh-copy">If you have any questions about this policy, please email  dataprotection@actionforchildren.org.uk or write to: Action For Children, 3 The Boulevard, Ascot Road, Watford WD18 8AG.</p>
     <p class="lh-copy">We gather and use certain information about you in order to provide this service and enable functions on this website. We also collect information and report on service use in order to better understand how you are using this service and so that we can make timely and relevant improvements.</p>
     <h2>How do we collect personal information?</h2>
-    <p class="lh-copy">We only collect personal information when you specifically provide it to us. This may happen when you are having a conversation with us or when we ask you to fill out forms on the service.
+    <p class="lh-copy">We only collect personal information when you specifically provide it to us. This may happen when you are having a conversation with us or when we ask you to fill out forms on the service.</p>
     <h2>What information we gather</h2>
     <p class="lh-copy">We may collect and store the following information:</p>
     <ul class="tl pl3 pl4-ns">
@@ -26,8 +26,9 @@
       <li class="lh-copy">Conversation transcripts</li>
       <li class="lh-copy">Other information relevant to the service</li>
     </ul>
+    <p class="lh-copy">We also may collect Special Category Data (SCD) which includes health data in order to target the support you require including health services. The legal basis for collecting this information is consent and the special condition as required by data privacy legislation is your explicit consent</p>
     <h2>How we use this data</h2>
-    <p class="lh-copy">Collecting this information allows us to provide the service for you, improve the service and understand how users may interact with the service so that we can establish whether this trial service is something Action for Children rolls out on a larger scale.</p>
+    <p class="lh-copy">Collecting this information allows us to provide the service for you and understand how users may interact with the service so that we can improve the service in future.</p>
     <p class="lh-copy">Specifically, we may use data:</p>
     <ul class="tl pl3 pl4-ns">
       <li class="lh-copy">To provide the service to you</li>
@@ -39,19 +40,16 @@
       <li class="lh-copy">To contact you for feedback</li>
     </ul>
     <h2>What do we do with your personal information?</h2>
-    <p class="lh-copy">We are legally obliged by the Data Protection Act 1998 to make sure that we only use your information for the purpose for which it was requested, and to make sure it is kept securely.</p>
-    <p class="lh-copy">Your personal information, conversations and notes will be stored on Intercom (the platform for the service) and Action for Children servers and only shared with partner organisations such as Cornwall County Council and Sandwell Council (our pilot partners), health services, and children’s agencies, for the purpose of contacting families to provide appropriate and timely services, evaluate service provision and for statistical analysis.</p>
-    <p class="lh-copy">Under the Data Protection Act 1998, any confidential information regarding your family will not be passed onto organisations outside of Children's Services partners, as mentioned above, without your consent, unless it is of a Child Protection nature, in which case information will be shared with appropriate agencies.</p>
+    <p class="lh-copy">We are legally obliged by the Data Protection Act 2018 to make sure that we only use your information for the purpose for which it was requested, and to make sure it is kept securely.</p>
+    <p class="lh-copy">Your personal information, conversations and notes will be stored on Intercom (the platform for the service) and Action for Children servers and only shared with partner organisations: Department of Work and Pension, health services, and children’s agencies, for the purpose of contacting families to provide appropriate and timely services, evaluate service provision and for statistical analysis. You will be informed of any organisations that we intend to refer you to.</p>
+    <p class="lh-copy">Under the Data Protection Act 2018, any confidential information regarding your family will not be passed onto organisations outside of Children's Services partners, as mentioned above, where possible without your consent.</p>
     <h2>How long will we keep your information?</h2>
-    <p class="lh-copy">We only keep your information as long as we need to, by law.</p>
+    <p class="lh-copy">We only keep your information up to a maximum of six years.</p>
     <h2>Your information rights</h2>
-    <p class="lh-copy">You can ask to see any information Action for Children holds about you, to have information corrected or erased.</p>
-    <h2>Any questions or complaints:</h2>
-    <p class="lh-copy">If you want to</p>
-    <ul class="tl pl3 pl4-ns">
-      <li class="lh-copy">correct, erase or withdraw your consent or</li>
-      <li class="lh-copy">make a complaint or ask any other question in relation to your information please contact someone at the Information Governance Team at ask.us@actionforchildren.org.uk Action For Children, 3 The Boulevard, Ascot Road, Watford WD18 8AG.</li>
-    </ul>
+    <p class="lh-copy">You can ask to see any information Action for Children holds about you, to have information corrected or erased. We are responsible for protecting your personal information, and we take this responsibility very seriously. If you have any queries or concerns about how we use your personal information, please contact the Information Governance Officer by email at dataprotection@actionforchildren.org.uk, or write to us at: Information Governance Officer, Action for Children, 3 The Boulevard, Ascot Road, Watford, WD18 8AG.</p>
+    <p class="lh-copy">You have the right to withdraw your consent at any time.</p>
+      <p class="lh-copy">For more information about your information rights please visit https://ico.org.uk/ or if you are unhappy with how we've handled your personal information, you have the right to contact the Information Commissioner's Office to lodge a complaint.</p>
+   
     <h2>Cookies and how we use them</h2>
     <h3>What is a cookie?</h3>
     <p class="lh-copy">A cookie is a small file placed on your computer's hard drive. It enables us to identify your computer as you view different pages on our website.</p>
