@@ -34,9 +34,7 @@
     <div class="w-100 bg-blue">
       <div class="flex center mw8 justify-center">
         <p class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">
-          This is a trial service. We'd appreciate your <%= link "feedback", to:
-          page_path(@conn, :feedback), class: "white" %>. It will take less than
-          5 minutes.
+          This is a trial service. We'd appreciate your <%= link "feedback", to: page_path(@conn, :feedback), class: "white" %>. It will take less than 5 minutes.
         </p>
       </div>
     </div>
@@ -47,8 +45,7 @@
           <img src="/images/afc-logo.png" class="w-100 db" />
         </a>
       </div>
-      <%= unless (@conn.assigns[:user] || @conn.request_path == "/talk-to-us")
-      do %>
+      <%= unless (@conn.assigns[:user] || @conn.request_path == "/talk-to-us") do %>
       <a
         href="/talk-to-us"
         class="db white bg-dark-red mh4-ns mh2 f3-ns f5 fw4 pv2 ph3 br2 hover-bg-red t3 all ease no-underline tc"
@@ -74,15 +71,16 @@
           <%= if @conn.assigns[:user] do %>
           <div class="logout-form">
             <p class="white">
-              You are logged in as
-              <strong><%= @conn.assigns.user.email %></strong> –
+              You are logged in as <strong><%= @conn.assigns.user.email %></strong> –
             </p>
             <%= link "Logout", to: session_path(@conn, :delete), class: "white"
             %>
             <br /><br />
           </div>
-          <% end %> <%= link to: page_path(@conn, :privacy), class: "white" do
-          %> Privacy Policy <% end %>
+          <% end %>
+          <%= link to: page_path(@conn, :privacy), class: "white" do %>
+            Privacy Policy
+          <% end %>
         </div>
       </div>
     </div>
