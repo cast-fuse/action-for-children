@@ -1,8 +1,8 @@
 <div class="w-100 bg-blue">
   <div class="flex center mw8">
     <div class="w-60-ns w-100 ph4-ns pv3-ns ph3 pv4 tc tl-ns">
-      <h1 class="white fw5 f1-ns f3">Free and confidential live chat with parenting staff</h1>
-      <h4 class="white fw4 tracked lh-copy w-70-ns">Chat online with Jo or Gina or request a call back when it's convenient for you.</h4>
+      <h1 class="white fw5 f1-ns f3">Free and confidential live chat with our parenting coaches</h1>
+      <h4 class="white fw4 tracked lh-copy w-70-ns">Chat online with us or request a call back when it's convenient for you.</h4>
       <a href="/talk-to-us" class="db white bg-dark-red f3-ns f5 fw4 pv2-ns pv3 ph3 mv4-ns mt4 br2 hover-bg-red t3 all ease no-underline tc w-40-ns">Speak to us</a>
     </div>
 
@@ -30,9 +30,11 @@
     </div>
   </div>
 
+
+
   <div class="center w-100 mw8 ph3 ph4-ns mv4-ns mv3">
     <p class="mb4 tc ph6-ns black" style="line-height: 1.6; font-size: 1.1em;">
-      And anything else you want to talk about! You don’t need to have a question, just come and get something off your chest. Speak to us as regularly as you like and continue where you left off.
+      And anything else you want to talk about! You don’t need to have a question, we’re here to listen and support you. Speak to us as regularly as you like and continue where you left off.
     </p>
   </div>
 

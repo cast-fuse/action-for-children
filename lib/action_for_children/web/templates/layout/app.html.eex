@@ -52,7 +52,7 @@
     <div class="w-100 bg-blue">
       <div class="flex center mw8 justify-center">
         <p class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">
-          This is a trial service. We'd appreciate your <%= link "feedback", to: page_path(@conn, :feedback), class: "white" %>. It will take less than 5 minutes.
+          We'd appreciate your <%= link "feedback", to: page_path(@conn, :feedback), class: "white" %> on our service - it will take less than 5 minutes.
         </p>
       </div>
     </div>
@@ -60,7 +60,7 @@
     <div class="mw8 center flex justify-between items-center">
       <div class="mh2 mh4-ns pv5-ns pv4" style="width: 350px">
         <a href="<%= page_path(@conn, :index) %>">
-          <img src="/images/afc-logo.png" class="w-100 db" />
+          <img src="/images/afc-logo.png" class="w-40 db" />
         </a>
       </div>
       <%= unless (@conn.assigns[:user] || @conn.request_path == "/talk-to-us") do %>
