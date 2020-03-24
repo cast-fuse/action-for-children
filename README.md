@@ -27,7 +27,7 @@ after installing, to install the dependencies run:
 > mix deps.get && cd assets && npm install
 ```
 
-make sure postgres is running and then run
+make sure postgres is running, cd .. out of assets and then run
 
 ```sh
 > mix ecto.create && mix ecto.migrate
