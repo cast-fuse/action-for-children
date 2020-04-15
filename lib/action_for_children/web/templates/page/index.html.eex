@@ -9,27 +9,11 @@
 </div>
 
 <div class="pv4-ns pv3 mw8 center">
-
-  <div class="mw8 ph3 ph4-ns w-100">
-    <p class="tc tl-ns black" style="line-height: 1.6; font-size: 1.1em;">We can talk to you about...</p>
-    <div class="flex justify-between-ns flex-wrap w-100 mt4">
-      <%=  render "icon.html", icon: "development", content: "Development", class: "bg-blue" %>
-      <%=  render "icon.html", icon: "behaviour", content: "Behaviour", class: "bg-light-blue" %>
-      <%=  render "icon.html", icon: "eating", content: "Eating", class: "bg-blue" %>
-      <%=  render "icon.html", icon: "sleep", content: "Sleeping", class: "bg-light-blue" %>
-      <%=  render "icon.html", icon: "toilet", content: "Toilet training", class: "bg-blue" %>
-      <%=  render "icon.html", icon: "work", content: "Work", class: "bg-light-blue" %>
-      <%=  render "icon.html", icon: "finances", content: "Finances", class: "bg-blue" %>
-      <%=  render "icon.html", icon: "feelings", content: "How you feel", class: "bg-light-blue" %>
-    </div>
-  </div>
-
-
-
+    
   <div class="center w-100 mw8 ph3 ph4-ns mv4-ns mv3">
-    <p class="mb4 tc ph6-ns black" style="line-height: 1.6; font-size: 1.1em;">
-      And anything else you want to talk about! You don’t need to have a question, we’re here to listen and support you. Speak to us as regularly as you like and continue where you left off.
-    </p>
+    <p class="tc ph4-ns black f4-ns f5" style="line-height: 1.6;">
+    We can give you information and advice on a variety of topics relating to children aged 0-19, including behaviour, healthy eating, sleeping, and child development. 
+    We can also help you with questions about finances, work, relationships, and how you’re feeling. You don’t necessarily have to have a question ready to ask, we’re just here to listen and support you. Speak to us as regularly as you like.</p>
   </div>
 
 </div>
