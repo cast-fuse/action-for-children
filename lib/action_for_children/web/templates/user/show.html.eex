@@ -52,7 +52,7 @@
         <p class="lh-copy near-black">It can be about your child's behaviour, understanding your child, arguments, your relationship with your partner/the other parent, child care, family life, wellbeing, looking for work, etc. We really don't mind what you ask us about. We are here to help you.</p>
         <p class="lh-copy near-black">So that we can help you, please give us as much information about your question as you can.</p>
         <p class="lh-copy near-black">For example, if your child’s behaviour has recently changed, tell us their age and if there have been any changes in your family. This means we can give you advice specific to you and your situation.</p>
-        <p class="lh-copy near-black">You might also want to <a class="red" href="https://advice.actionforchildren.org.uk">read some general parenting and family information</a> and <a class="red" href="https://dots.actionforchildren.org.uk">parents and carers of children aged 0-5 can visit our Dots advice site.</a></p>
+        <p class="lh-copy near-black">You might also want to <a class="red" href="https://www.parents.actionforchildren.org.uk/">read some general parenting and family information</a> and <a class="red" href="https://dots.actionforchildren.org.uk">parents and carers of children aged 0-5 can visit our Dots advice site.</a></p>
       <% end %>
     </div>
   </div>
