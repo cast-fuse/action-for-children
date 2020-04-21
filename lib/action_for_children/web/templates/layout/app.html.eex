@@ -77,7 +77,7 @@
     </main>
 
     <div
-      class="w-100 bg-blue flex justify-center b--white bt absolute bottom-0"
+      class="w-100 bg-blue flex justify-center b--white bt absolute bottom-0 footer"
     >
       <div class="flex flex-column ph3 pv4 pa4-ns mw8">
         <div class="w-70-ns tc tl-ns">
