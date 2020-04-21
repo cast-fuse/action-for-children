@@ -1,13 +1,13 @@
 body {
   margin: 0;
-  padding-bottom: 17rem;
+  padding-bottom: 18rem;
   font-family: var(--sans-serif);
   color: #333;
   outline: none !important;
 }
 
 .footer {
-  height: 17rem;
+  height: 18rem;
 }
 
 @media only screen and (min-width: 45em) {
@@ -17,6 +17,16 @@ body {
 
   .footer {
     height: 14rem;
+  }
+}
+
+@media only screen and (max-width: 28em) {
+  body {
+    padding-bottom: 20rem;
+  }
+
+  .footer {
+    height: 20rem;
   }
 }
 
