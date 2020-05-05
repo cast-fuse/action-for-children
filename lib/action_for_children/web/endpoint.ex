@@ -9,7 +9,7 @@ defmodule ActionForChildrenWeb.Endpoint do
     at: "/",
     from: :action_for_children,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico robots.txt sitemap.xml)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
