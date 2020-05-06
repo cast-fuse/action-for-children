@@ -30,8 +30,14 @@
 			<changefreq>weekly</changefreq>
 		</url>
 
+
 		<url>
 			<loc>http://talk.actionforchildren.org.uk/privacy</loc>
+			<changefreq>weekly</changefreq>
+		</url>
+
+		<url>
+			<loc>http://talk.actionforchildren.org.uk/verify</loc>
 			<changefreq>weekly</changefreq>
 		</url>
 

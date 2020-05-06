@@ -29,6 +29,7 @@ defmodule ActionForChildrenWeb.Router do
     get "/", PageController, :index
     get "/practitioners", PageController, :practitioners
     get "/privacy", PageController, :privacy
+    get "/verify", PageController, :verify
     get "/talk-to-us", PageController, :talk_to_us
     get "/feedback", PageController, :feedback
 
