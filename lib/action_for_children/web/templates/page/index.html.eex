@@ -3,7 +3,7 @@
     <div class="w-80-ns w-100 ph4-ns pv3-ns ph3 pv4 tc tl-ns">
       <h1 class="white fw5 f1-ns f3">Free and confidential live chat with our parenting coaches</h1>
       <h4 class="white fw4 tracked lh-copy w-80-ns">Chat online with us or request a call back when it's convenient for you.</h4>
-      <a href="/talk-to-us" class="db white bg-dark-red f3-ns f5 fw4 pv2-ns pv3 ph3 mv4-ns mt4 br2 hover-bg-red t3 all ease no-underline tc w-40-ns">Speak to us</a>
+      <a href="#speak-to-us" class="db white bg-dark-red f3-ns f5 fw4 pv2-ns pv3 ph3 mv4-ns mt4 br2 hover-bg-red t3 all ease no-underline tc w-40-ns">Speak to us</a>
     </div>
   </div>
 </div>
