@@ -35,7 +35,7 @@
       <h2 class="tc near-black f3 ma0">Our staff</h2>
       <p class="tc mid-gray lh-copy mb4">We have years of experience working with families and are here to support you</p>
       <%= link to: page_path(@conn, :practitioners), class: "tc db w-50-ns center" do %>
-        <button class="<%= red_button() %>">Meet our staff</button>
+        <button class="<%= blue_button() %>">Meet our staff</button>
       <% end %>
     </div>
   </div>

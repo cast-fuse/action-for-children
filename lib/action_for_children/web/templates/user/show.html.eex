@@ -3,26 +3,10 @@
     <div class="w-50-ns ph3 pv4 ph4-ns pv5-ns tc tl-ns">
 
       <h1 class="white fw5 f2-ns f3 ma0">Talk to us</h1>
-      <p class="white fw4 tracked lh-copy">Ask your question in the chat box and Jo or Gina will reply as soon as they are free.</p>
+      <p class="white fw4 tracked lh-copy">Ask your question in the chat box and one of our parenting coaches will reply as soon as they are free.</p>
 
-      <p class="white fw4 tracked lh-copy">
-        <%= if @conn.assigns.version == "talk" do %>
-          Leave your email address if you don't get a response straight away and we'll let you know when we're free.
-        <% else %>
-          Leave your email address and a message so we can get back to you and let you know when we're online to answer your questions.
-        <% end %>
-      </p>
-
-      <p class="white fw4 tracked lh-copy">To speak to us again and carry on your conversation, make a not of the code below:</p>
-      <p class="white fw4 tracked lh-copy">Your Code: <b><%= @user.uuid %></b></p>
-
-      <%= if @conn.assigns.version == "talk" do %>
-        <p class="white fw4 tracked lh-copy">If you want to speak to us on the phone, arrange a time that is convenient for you.</p>
-        <%= link to: user_callback_path(@conn, :show, @user)  do %>
-          <button class="<%= red_button() %>">Arrange a call</button>
-        <% end %>
-      <% end %>
-
+      <p class="white fw4 tracked lh-copy">Our opening hours are 12:00-19:00 Monday & Thursday, 09:30-16:30 Tuesday & Wednesday, and 09:30-16:00 Friday.</p>
+      <p class="white fw4 tracked lh-copy">If we're not here, please leave a message and we'll get back to you when we're back online.</p>
 
 
     </div>
@@ -33,26 +17,16 @@
   <div class="mw8">
     <div class="w-50-ns ph3 pv4 ph4-ns pv5-ns tc tl-ns">
 
-      <%= if @conn.assigns.version == "talk" do %>
         <%= link to: page_path(@conn, :practitioners) do %>
-          <button class="<%= "#{red_button()} mb2" %>">Meet our staff</button>
+          <button class="<%= "#{blue_button()} mb2" %>">Meet our staff</button>
         <% end %>
-      <% end %>
 
-      <%= if @conn.assigns.version == "talk" do %>
         <p class="lh-copy near-black">We are non-judgemental, inclusive, friendly and approachable.</p>
         <p class="lh-copy near-black">You can ask us any parenting or family question and we will do our best to make you feel comfortable, understood and helped.</p>
         <p class="lh-copy near-black">It can be about development, behaviour, feeding, family life, wellbeing, understanding your child, sleeping etc. We really don't mind what you ask us about, we are here to help you.</p>
         <p class="lh-copy near-black">So that we can best support you, please provide some context about your question. </p>
         <p class="lh-copy near-black">For example, if you need advice around your child's sleeping, let us know their age and bedtime routine. This means we can give you advice really specific to you and your situation.</p>
         <p class="lh-copy near-black">You might also find it useful to <a class="red" href="https://parents.actionforchildren.org.uk/">read some general parenting information</a> written by Action for Children practitioners.</p>
-      <% else %>
-        <p class="lh-copy near-black">We are friendly, don’t judge, will help everyone and are easy to talk to.</p>
-        <p class="lh-copy near-black">You can ask us any parent, relationship or family question and we will do our best to make you feel comfortable, understood and helped.</p>
-        <p class="lh-copy near-black">It can be about your child's behaviour, understanding your child, arguments, your relationship with your partner/the other parent, child care, family life, wellbeing, looking for work, etc. We really don't mind what you ask us about. We are here to help you.</p>
-        <p class="lh-copy near-black">So that we can help you, please give us as much information about your question as you can.</p>
-        <p class="lh-copy near-black">For example, if your child’s behaviour has recently changed, tell us their age and if there have been any changes in your family. This means we can give you advice specific to you and your situation.</p>
-        <p class="lh-copy near-black">You might also find it useful to <a class="red" href="https://parents.actionforchildren.org.uk/">read some general parenting information</a> written by Action for Children practitioners.</p>      <% end %>
     </div>
   </div>
 </div>

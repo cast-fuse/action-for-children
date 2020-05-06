@@ -137,9 +137,9 @@
   --dark-green: #007459;
   --green: #19a974;
   --light-green: #a2f0d5;
-  --navy: #001b44;
-  --dark-blue: #5196a3;
-  --blue: #5196a3;
+  --navy: #0a2463;
+  --dark-blue: #567b8a;
+  --blue: #567b8a;
   --light-blue: #95cad4;
   --lightest-blue: #cdecff;
   --washed-blue: #f6fffe;
@@ -227,5 +227,4 @@
   --gray-700: #b0b3b4;
   --gray-800: #cacccd;
   --gray-900: #e4e5e6;
-  
 }
