@@ -58,13 +58,18 @@ defmodule ActionForChildrenWeb.UserController do
 
   def create(conn, %{"user" => %{"email" => email}}) do
     case Accounts.get_user_by_email(email) do
-      %User{} = _user ->
-        conn
-        |> put_flash(
-          :error,
-          "Email address already in use, please continue your conversation using your unique code below"
+      %User{} = user ->
+        Email.build()
+        |> Email.add_to(user.email)
+        |> Email.put_from("parents@actionforchildren.org.uk")
+        |> Email.put_subject("Action for Children Email Verification")
+        |> Email.put_html(
+          "<p>Click <a href='http:/localhost:4000/users?code=#{user.uuid}'>here</a> to verify your email address and login to the Action for Children Talk Tool</p>"
         )
-        |> redirect(to: page_path(conn, :talk_to_us))
+        |> Mailer.send()
+
+        conn
+        |> redirect(to: page_path(conn, :verify))
 
       nil ->
         {:ok, %User{} = user} = Accounts.create_user(%{email: email})
