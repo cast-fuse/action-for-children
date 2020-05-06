@@ -40,8 +40,8 @@ defmodule ActionForChildrenWeb.UserController do
 
     unless uuid do
       conn
-      |> put_flash(:error, "Please select an option below first")
-      |> redirect(to: page_path(conn, :talk_to_us))
+      |> put_flash(:error, "Please try logging in again")
+      |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
     else
       case Accounts.get_user_by_uuid(uuid) do
         %User{} = user ->
