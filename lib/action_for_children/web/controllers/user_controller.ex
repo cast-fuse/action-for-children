@@ -6,65 +6,49 @@ defmodule ActionForChildrenWeb.UserController do
 
   plug Auth
 
-  def new_code(conn, _params) do
-    conn
-    |> render("new_code.html")
-  end
+  def index(conn, params) do
+    # uuid = get_session(conn, :uuid)
 
-  def generate_new_code(conn, %{"user" => %{"email" => email}}) do
-    case Accounts.get_user_by_email(email) do
-      %User{} = user ->
-        Email.build()
-        |> Email.add_to(user.email)
-        |> Email.put_from("ask.us@actionforchildren.org.uk")
-        |> Email.put_subject("Your Action For Children Code")
-        |> Email.put_text("Your code is #{user.uuid}")
-        |> Mailer.send()
+    %{"token" => token, "token_expires" => token_expires} = params
+    {:ok, %NaiveDateTime{} = token_expires} = NaiveDateTime.from_iso8601(token_expires)
 
+    case NaiveDateTime.compare(token_expires, NaiveDateTime.utc_now()) do
+      :gt ->
+        case Accounts.get_user_by_token(token) do
+          nil ->
+            conn
+            |> put_flash(:error, "Please enter your email here")
+            |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
+
+          %User{} = user ->
+            conn
+            |> render("show.html", user: user)
+        end
+
+      :lt ->
         conn
-        |> put_flash(
-          :error,
-          "We have sent you an email with your new code, please check your inbox"
-        )
-        |> redirect(to: "#{user_path(conn, :new_code)}")
-
-      nil ->
-        conn
-        |> put_flash(:error, "Can not find your email address, start a new conversation instead?")
-        |> redirect(to: page_path(conn, :talk_to_us))
-    end
-  end
-
-  def index(conn, _params) do
-    uuid = get_session(conn, :uuid)
-
-    unless uuid do
-      conn
-      |> put_flash(:error, "Please try logging in again")
-      |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
-    else
-      case Accounts.get_user_by_uuid(uuid) do
-        %User{} = user ->
-          conn
-          |> render("show.html", user: user)
-
-        nil ->
-          conn
-          |> put_flash(:error, "Please select an option below first")
-          |> redirect(to: page_path(conn, :talk_to_us))
-      end
+        |> put_flash(:error, "Your verification link expired, please try again")
+        |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
     end
   end
 
   def create(conn, %{"user" => %{"email" => email}}) do
     case Accounts.get_user_by_email(email) do
       %User{} = user ->
+        new_token = Ecto.UUID.generate()
+        token_expires = NaiveDateTime.add(NaiveDateTime.utc_now(), 60, :second)
+
+        {:ok, %User{} = updatedUser} =
+          Accounts.update_token(user, %{token: new_token, token_expires: token_expires})
+
         Email.build()
         |> Email.add_to(user.email)
         |> Email.put_from("parents@actionforchildren.org.uk")
         |> Email.put_subject("Action for Children Email Verification")
         |> Email.put_html(
-          "<p>Click <a href='http:/localhost:4000/users?code=#{user.uuid}'>here</a> to verify your email address and login to the Action for Children Talk Tool</p>"
+          "<p>Click <a href='http://localhost:4000/users?token=#{updatedUser.token}&token_expires=#{
+            updatedUser.token_expires
+          }'>here</a> to verify your email address and login to the Action for Children Talk Tool</p>"
         )
         |> Mailer.send()
 
@@ -72,7 +56,7 @@ defmodule ActionForChildrenWeb.UserController do
         |> redirect(to: page_path(conn, :verify))
 
       nil ->
-        {:ok, %User{} = user} = Accounts.create_user(%{email: email})
+        {:ok, %User{} = user} = Accounts.create_user_with_token(%{email: email})
 
         headers = [
           Authorization: "Bearer #{System.get_env("INTERCOM_SECRET")}",
