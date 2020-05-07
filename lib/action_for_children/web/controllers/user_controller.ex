@@ -36,7 +36,7 @@ defmodule ActionForChildrenWeb.UserController do
     case Accounts.get_user_by_email(email) do
       %User{} = user ->
         new_token = Ecto.UUID.generate()
-        token_expires = NaiveDateTime.add(NaiveDateTime.utc_now(), 60, :second)
+        token_expires = NaiveDateTime.add(NaiveDateTime.utc_now(), 24, :hour)
 
         {:ok, %User{} = updatedUser} =
           Accounts.update_token(user, %{token: new_token, token_expires: token_expires})
@@ -44,11 +44,16 @@ defmodule ActionForChildrenWeb.UserController do
         Email.build()
         |> Email.add_to(user.email)
         |> Email.put_from("parents@actionforchildren.org.uk")
-        |> Email.put_subject("Action for Children Email Verification")
+        |> Email.put_subject("Action for Children email verification")
         |> Email.put_html(
-          "<p>Click <a href='http://localhost:4000/users?token=#{updatedUser.token}&token_expires=#{
+          "<p>
+            <a href='http://localhost:4000/users?token=#{updatedUser.token}&token_expires=#{
             updatedUser.token_expires
-          }'>here</a> to verify your email address and login to the Action for Children Talk Tool</p>"
+          }'>Click here</a> to verify your email.
+          </p>
+          <p>
+          You’ll be taken back to our live chat, where you can start a new conversation with a parenting coach, or see the previous conversations you’ve had.
+          </p>"
         )
         |> Mailer.send()
 

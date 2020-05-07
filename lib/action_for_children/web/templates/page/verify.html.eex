@@ -1,7 +1,9 @@
-<div class="w-100 bg-blue">
+<div class="w-100">
   <div class="flex center mw8 justify-center justify-start-ns">
-    <div class="w-50-ns pv4 ph3 ph4-ns tc tl-ns">
-      <h1 class="white fw5 f1-ns f3">Please check your email, we've sent you a verification link</h1>
+    <div class="pv4 ph3 ph4-ns tc tl-ns">
+      <h1 class="fw5 f1-ns f3">Nearly there</h1>
+      <p class="f3-ns f4">Please check your email, we've sent you a verification link. </p>
+      <p class="f3-ns f4">Just click on it to access the Talk tool.</p>
     </div>
   </div>
 </div>
