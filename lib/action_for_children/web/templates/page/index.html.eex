@@ -2,7 +2,7 @@
   <div class="flex flex-row-ns flex-column items-center center splash-bg mw8">
     <div class="w-100 ph4-ns pv5-ns ph3 pv4 tc tl-ns">
       <h1 class="white w-70-ns fw5 f1-ns f3">Free and confidential live chat with our parenting coaches</h1>
-      <h4 class="white fw4 tracked lh-copy w-80-ns mb4-ns">Chat online with us or request a call back when it's convenient for you.</h4>
+      <h4 class="white fw4 tracked lh-copy w-80-ns mb4-ns">We’re open 12:00-19:00 Monday & Thursday, 09:30-16:30 Tuesday & Wednesday, and 09:30-16:00 Friday. At other times, leave us a message and we’ll get back to you.</h4>
       
       <p class="w-50-ns"><button onclick="document.location='/#speak-to-us';return false;" class="<%= red_button() %> ">Speak to us</button></p>
     </div>
