@@ -116,6 +116,27 @@ form {
   background-image: url(/images/icon-work.png);
 }
 
+.splash-bg {
+  background-image: url(/images/cutout-splash.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-color: #517d85;
+}
+
+@media only screen and (max-width: 480px) {
+  .splash-bg {
+    background: none;
+  }
+
+  .splash-img {
+    display: block;
+    width: 50%;
+    height: 20rem;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
 .h-min-100vh {
   min-height: 100vh;
 }

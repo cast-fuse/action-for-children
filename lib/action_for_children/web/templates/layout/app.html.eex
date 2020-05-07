@@ -51,9 +51,7 @@
     
     <div class="w-100 bg-blue">
       <div class="flex center mw8 justify-center">
-        <p class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">
-          We'd appreciate your on our service - it will take less than 5 minutes.
-        </p>
+        <a href="https://www.actionforchildren.org.uk/how-to-help/make-a-donation/parents" class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">Help keep our work going - click here to donate to Action for Children and support families across the UK.        </a>
       </div>
     </div>
 
