@@ -49,9 +49,9 @@
 
     <!-- End Google Tag Manager (noscript) -->
     
-    <div class="w-100 bg-blue">
+    <div class="w-100 bg-navy">
       <div class="flex center mw8 justify-center">
-        <a href="https://www.actionforchildren.org.uk/how-to-help/make-a-donation/parents" class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">Help keep our work going - click here to donate to Action for Children and support families across the UK.        </a>
+        <a href="https://www.actionforchildren.org.uk/how-to-help/make-a-donation/parents" class="white no-underline alert-banner fw4 tracked f6-ns f7 tc" style="line-height: 1.6;">Help keep our work going - click here to donate to Action for Children and support families across the UK.        </a>
       </div>
     </div>
 
