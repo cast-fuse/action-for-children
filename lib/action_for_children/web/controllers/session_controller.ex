@@ -16,7 +16,7 @@ defmodule ActionForChildrenWeb.SessionController do
           :error,
           "Sorry, could not find that conversation, please start a new one using the option below"
         )
-        |> redirect(to: page_path(conn, :talk_to_us))
+        |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
     end
   end
 
@@ -30,7 +30,7 @@ defmodule ActionForChildrenWeb.SessionController do
               :error,
               "Please sign in again."
             )
-            |> redirect(to: page_path(conn, :talk_to_us))
+            |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
 
           :lt ->
             headers = [
@@ -58,7 +58,7 @@ defmodule ActionForChildrenWeb.SessionController do
           :error,
           "Sorry, could not find that conversation, please start a new one using the option below"
         )
-        |> redirect(to: page_path(conn, :talk_to_us))
+        |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
     end
   end
 

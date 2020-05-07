@@ -18,10 +18,6 @@ defmodule ActionForChildrenWeb.PageController do
     render(conn, "verify.html")
   end
 
-  def talk_to_us(conn, _params) do
-    render(conn, "talk_to_us.html")
-  end
-
   def practitioners(conn, _params) do
     render(conn, "practitioners.html")
   end

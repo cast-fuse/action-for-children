@@ -23,8 +23,8 @@
   <div class="w-100 pv5-ns ph4-ns mt0 mw8 center ph3 pv4 pt1-ns ph0-ns pb0-ns">
     <p class="red b center tc  mt0 mt3-ns" role="alert"><%= get_flash(@conn, :error) %></p>
       <div class="pw-60-ns tc flex flex-column items-center mv4-ns b4">
-        <h2 class="f3 ma0 white">Speak to us</h2>
-        <p class="white w-80-ns lh-copy mb4"><%= if @conn.assigns.version == "advice", do: "", else: "Speak to us online or by phone. " %>To start talking straight away, put your email address in and you’ll be directed to our confidential chat page.</p>
+        <h2 class="f3 ma0 white">How Talk works</h2>
+        <p class="white w-80-ns lh-copy mb4">By using your email address, you can securely log in and speak to one of our parenting coaches right away. If we recognise your email address, we’ll send you a quick email to verify that it’s you. Once logged in, you will be able to start a new conversation or read previous ones.</p>
         <div class="w-50-ns">
         <%= form_for @conn, user_path(@conn, :create), [as: :user], fn f-> %>
           <%= email_input f, :email, placeholder: "Your email", class: "ba b--blue br3 tc pv3 ph3 f5 outline-0 dark-red mb2 w-80-ns w-100", required: true %>
