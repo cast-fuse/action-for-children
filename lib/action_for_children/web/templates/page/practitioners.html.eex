@@ -3,11 +3,6 @@
     <div class="w-50-ns pv4 ph3 ph4-ns tc tl-ns">
       <h1 class="white fw5 f1-ns f3">Meet our staff</h1>
     </div>
-    <%# <div class="w-50 pa4 dn db-ns">
-        <%= link to: page_path(@conn, :practitioners) do %>
-                  <%# <button class="<%= "#{red_button()} mb2"">Speak to us</button> %>
-        <%# <% end %> 
-    <%# </div> %>
   </div>
 </div>
 
