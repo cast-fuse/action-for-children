@@ -6,29 +6,24 @@ defmodule ActionForChildrenWeb.UserController do
 
   plug Auth
 
-  def index(conn, params) do
-    # uuid = get_session(conn, :uuid)
+  def index(conn, _params) do
+    uuid = get_session(conn, :uuid)
 
-    %{"token" => token, "token_expires" => token_expires} = params
-    {:ok, %NaiveDateTime{} = token_expires} = NaiveDateTime.from_iso8601(token_expires)
+    unless uuid do
+      conn
+      |> put_flash(:error, "Please enter your email here")
+      |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
+    else
+      case Accounts.get_user_by_uuid(uuid) do
+        %User{} = user ->
+          conn
+          |> render("show.html", user: user)
 
-    case NaiveDateTime.compare(token_expires, NaiveDateTime.utc_now()) do
-      :gt ->
-        case Accounts.get_user_by_token(token) do
-          nil ->
-            conn
-            |> put_flash(:error, "Please enter your email here")
-            |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
-
-          %User{} = user ->
-            conn
-            |> render("show.html", user: user)
-        end
-
-      :lt ->
-        conn
-        |> put_flash(:error, "Your verification link expired, please try again")
-        |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
+        nil ->
+          conn
+          |> put_flash(:error, "Please enter your email here")
+          |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
+      end
     end
   end
 
@@ -47,8 +42,8 @@ defmodule ActionForChildrenWeb.UserController do
         |> Email.put_subject("Action for Children email verification")
         |> Email.put_html(
           "<p>
-            <a href='http://localhost:4000/users?token=#{updatedUser.token}&token_expires=#{
-            updatedUser.token_expires
+            <a href='#{ActionForChildrenWeb.Endpoint.url()}/token-verification?token=#{
+            updatedUser.token
           }'>Click here</a> to verify your email.
           </p>
           <p>

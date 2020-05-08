@@ -34,6 +34,7 @@ defmodule ActionForChildrenWeb.Router do
     post "/sign-in", SessionController, :create
     get "/logout", SessionController, :delete
     get "/token", SessionController, :create_from_token
+    get "/token-verification", SessionController, :verify_from_email
 
     resources "/users", UserController, only: [:index, :create]
   end

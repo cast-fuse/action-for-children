@@ -3,6 +3,12 @@ defmodule ActionForChildrenWeb.SessionController do
   alias ActionForChildren.{Accounts, User}
   alias ActionForChildrenWeb.Plugs.Auth
 
+  use Timex
+
+  defp expired?(datetime) do
+    Timex.after?(Timex.now(), Timex.shift(datetime, days: 1))
+  end
+
   def create(conn, %{"session" => %{"uuid" => uuid, "email" => email}}) do
     case Accounts.get_user_by_uuid_and_email(uuid, email) do
       %User{} = user ->
@@ -59,6 +65,52 @@ defmodule ActionForChildrenWeb.SessionController do
           "Sorry, could not find that conversation, please start a new one using the option below"
         )
         |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
+    end
+  end
+
+  def verify_from_email(conn, %{"token" => token}) do
+    user = Accounts.get_user_by_token(token)
+
+    case user do
+      # 2. if token doesn't produce a user, redirect to home
+      nil ->
+        conn
+        |> put_flash(:error, "Please enter your email here")
+        |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
+
+      # 3. if token gets a user, check if token is expired
+      user ->
+        # 4. if expired, update user with token nil and expiry nil then redirect to home with error message
+        if expired?(user.token_expires) do
+          Accounts.update_token(user, %{token: nil, token_expires: nil})
+
+          conn
+          |> put_flash(:error, "Your verification link expired, please try again")
+          |> redirect(to: page_path(conn, :index) <> "#speak-to-us")
+        else
+          # 5. if not expired, update user with nil values as well (so it can't be used again) and initiate session
+          # and redirect to /users
+
+          Accounts.update_token(user, %{token: nil, token_expires: nil})
+
+          headers = [
+            Authorization: "Bearer #{System.get_env("INTERCOM_SECRET")}",
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          ]
+
+          body = Poison.encode!(%{user_id: user.uuid, email: user.email})
+
+          HTTPoison.post(
+            "https://api.intercom.io/users",
+            body,
+            headers
+          )
+
+          conn
+          |> Auth.login(user)
+          |> redirect(to: user_path(conn, :index))
+        end
     end
   end
 
