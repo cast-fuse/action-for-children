@@ -73,8 +73,8 @@
            <nav>
             <a href="/#speak-to-us">Speak to us</a>
             <a href="/practitioners">Meet our staff</a>
-            <a class="dib-ns flex items-baseline" href="https://www.parents.actionforchildren.org.uk/about">About<img class="w1-ns w2 ml1-ns ml2" src="/images/external-page.svg" /></a>
-            <a class="dib-ns flex items-baseline" href="https://www.parents.actionforchildren.org.uk/" class="">Parents<img class="w1-ns w2 ml1-ns ml2" src="/images/external-page.svg" /></a>
+            <a class="dib-ns flex items-baseline" target="_blank" href="https://www.parents.actionforchildren.org.uk/about">About<img class="w1-ns w2 ml1-ns ml2" src="/images/external-page.svg" /></a>
+            <a class="dib-ns flex items-baseline" target="_blank" href="https://www.parents.actionforchildren.org.uk/" class="">Parents<img class="w1-ns w2 ml1-ns ml2" src="/images/external-page.svg" /></a>
           </nav>
         </div>
         </div>
@@ -175,19 +175,6 @@
       ga("create", "UA-100560015-1", "auto");
       ga("send", "pageview");
     </script>
-   <!-- disable scroll when menu open -->
-   <script>
-    
-    const toggle = document.getElementById("toggle")
-    const footer = document.getElementById("footer")
-
-    document.body.addEventListener("click", (e) => {
-      if (e.target.id = "toggle") {
-        e.target.checked ?footer.style.display = "none" : footer.style.display = "block"
-      }
-    })
-      
-   </script>
 
    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
 
