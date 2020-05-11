@@ -31,7 +31,7 @@ defmodule ActionForChildrenWeb.UserController do
     case Accounts.get_user_by_email(email) do
       %User{} = user ->
         new_token = Ecto.UUID.generate()
-        token_expires = NaiveDateTime.add(NaiveDateTime.utc_now(), 86400, :second)
+        token_expires = NaiveDateTime.add(NaiveDateTime.utc_now(), 3600, :second)
 
         {:ok, %User{} = updatedUser} =
           Accounts.update_token(user, %{token: new_token, token_expires: token_expires})
