@@ -14,24 +14,20 @@
 			<loc>http://talk.actionforchildren.org.uk/</loc>
 			<changefreq>weekly</changefreq>
 		</url>
-
-		<url>
-			<loc>http://talk.actionforchildren.org.uk/talk-to-us</loc>
-			<changefreq>weekly</changefreq>
-		</url>
-
-		<url>
-			<loc>http://talk.actionforchildren.org.uk/new-code</loc>
-			<changefreq>weekly</changefreq>
-		</url>
-
+			
 		<url>
 			<loc>http://talk.actionforchildren.org.uk/practitioners</loc>
 			<changefreq>weekly</changefreq>
 		</url>
 
+
 		<url>
 			<loc>http://talk.actionforchildren.org.uk/privacy</loc>
+			<changefreq>weekly</changefreq>
+		</url>
+
+		<url>
+			<loc>http://talk.actionforchildren.org.uk/verify</loc>
 			<changefreq>weekly</changefreq>
 		</url>
 

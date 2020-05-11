@@ -49,27 +49,19 @@
 
     <!-- End Google Tag Manager (noscript) -->
     
-    <div class="w-100 bg-blue">
+    <div class="w-100 bg-navy">
       <div class="flex center mw8 justify-center">
-        <p class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">
-          We'd appreciate your <%= link "feedback", to: page_path(@conn, :feedback), class: "white" %> on our service - it will take less than 5 minutes.
-        </p>
+        <a href="https://www.actionforchildren.org.uk/how-to-help/make-a-donation/parents" class="white no-underline alert-banner fw4 tracked f6-ns f7 tc" style="line-height: 1.6;">Help keep our work going - click here to donate to Action for Children and support families across the UK.        </a>
       </div>
     </div>
 
-    <div class="mw8 center flex justify-between items-center">
-      <div class="mh2 mh4-ns pv5-ns pv4" style="width: 350px">
+    <div class="mw8 center ph4-ns ph3 flex justify-between items-center">
+      <div class="pv5-ns pv3" style="width: 350px">
         <a href="<%= page_path(@conn, :index) %>">
-          <img src="/images/afc-logo.png" class="w-40 db" />
+          <img src="/images/afc-logo.png" class="w-40-ns w-30 db" />
         </a>
       </div>
-      <%= unless (@conn.assigns[:user] || @conn.request_path == "/talk-to-us") do %>
-      <a
-        href="/talk-to-us"
-        class="db white bg-dark-red mh4-ns mh2 f3-ns f5 fw4 pv2 ph3 br2 hover-bg-red t3 all ease no-underline tc"
-        >Speak to us</a
-      >
-      <% end %>
+      <img src="/images/menu.svg" class="w3 pt5-ns pt3 t3 all ease self-start" />
     </div>
 
     <main role="main">
