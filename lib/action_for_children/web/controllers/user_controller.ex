@@ -48,7 +48,8 @@ defmodule ActionForChildrenWeb.UserController do
           </p>
           <p>
           You’ll be taken back to our live chat, where you can start a new conversation with a parenting coach, or see the previous conversations you’ve had.
-          </p>"
+          </p>
+          <p> Please note this link is only valid for one hour. </p>"
         )
         |> Mailer.send()
 
