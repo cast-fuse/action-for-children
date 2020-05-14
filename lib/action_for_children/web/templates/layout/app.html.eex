@@ -9,8 +9,8 @@
     <title>Action for Children</title>
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
- <!-- Google Tag Manager -->
-    <script>
+ <!-- Google Tag Manager - PROD -->
+    <%# <script>
       (function(w,d,s,l,i){
         w[l]=w[l]||[];
         w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
@@ -19,8 +19,19 @@
         j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
         f.parentNode.insertBefore(j,f);
       })(window, document, 'script', 'dataLayer', 'GTM-K6WKJZ4');
-    </script>
+    </script> %>
  <!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager - STAGING -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K6WKJZ4');
+    </script>
+<!-- End Google Tag Manager -->
+
+
  <!-- Hotjar Tracking Code for https://talk.actionforchildren.org.uk/ -->
     <script>
       (function(h, o, t, j, a, r) {
@@ -37,46 +48,66 @@
         a.appendChild(r);
       })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
+
+
   </head>
 
   <body class="relative h-min-100vh">
-     <!-- Google Tag Manager (noscript) -->
+     <!-- Google Tag Manager (noscript) - PROD -->
+<%# 
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6WKJZ4" height="0" width="0" style="display:none;visibility:hidden">
+      </iframe>
+    </noscript> %>
 
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google Tag Manager (noscript) - STAGING -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6WKJZ4" height="0" width="0" style="display:none;visibility:hidden">
       </iframe>
     </noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <div class="w-100 bg-blue">
+ 
+
+    <div class="w-100 bg-navy">
       <div class="flex center mw8 justify-center">
-        <p class="white alert-banner f6-ns f7 tc" style="line-height: 1.6;">
-          We'd appreciate your <%= link "feedback", to: page_path(@conn, :feedback), class: "white" %> on our service - it will take less than 5 minutes.
-        </p>
+        <a href="https://www.actionforchildren.org.uk/how-to-help/make-a-donation/parents" class="white no-underline alert-banner fw4 tracked f6-ns f7 tc" style="line-height: 1.6;">Help keep our work going - click here to donate to Action for Children and support families across the UK.        </a>
       </div>
     </div>
 
-    <div class="mw8 center flex justify-between items-center">
-      <div class="mh2 mh4-ns pv5-ns pv4" style="width: 350px">
-        <a href="<%= page_path(@conn, :index) %>">
-          <img src="/images/afc-logo.png" class="w-40 db" />
-        </a>
+    <div class="mw8 center ph4-ns ph3 flex justify-between items-center">
+     <a href="/" class="w-30 w-20-ns"> <img class="pv5-ns pv3" src="/images/afc-logo.png"  /></a>
+
+      <div class="pt5-ns pt3 self-start flex">
+        <input id="toggle" type="checkbox" class="dn"/>
+        <label for="toggle" class="hamburger">
+          <div class="top-bun"></div>
+          <div class="meat"></div>
+          <div class="bottom-bun"></div>
+         </label>
+         
+         <div id="nav" class="nav">
+          <div id="navwrapper" class="nav-wrapper">
+           <nav>
+            <a href="/#speak-to-us">Speak to us</a>
+            <a href="/practitioners">Meet our staff</a>
+            <a class="dib-ns flex items-baseline" target="_blank" href="https://www.parents.actionforchildren.org.uk/about">About<img class="w1-ns w2 ml1-ns ml2" src="/images/external-page.svg" /></a>
+            <a class="dib-ns flex items-baseline" target="_blank" href="https://www.parents.actionforchildren.org.uk/" class="">Parents advice<img class="w1-ns w2 ml1-ns ml2" src="/images/external-page.svg" /></a>
+          </nav>
+        </div>
+        </div>
+
+ 
       </div>
-      <%= unless (@conn.assigns[:user] || @conn.request_path == "/talk-to-us") do %>
-      <a
-        href="/talk-to-us"
-        class="db white bg-dark-red mh4-ns mh2 f3-ns f5 fw4 pv2 ph3 br2 hover-bg-red t3 all ease no-underline tc"
-        >Speak to us</a
-      >
-      <% end %>
     </div>
 
     <main role="main">
       <%= render @view_module, @view_template, assigns %>
     </main>
 
-    <div
+    <div id="footer"
       class="w-100 bg-blue flex justify-center b--white bt absolute bottom-0 footer"
     >
       <div class="flex flex-column ph3 pv4 pa4-ns mw8 mb4">
@@ -165,6 +196,7 @@
       ga("send", "pageview");
     </script>
 
-      <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+   <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+
   </body>
 </html>

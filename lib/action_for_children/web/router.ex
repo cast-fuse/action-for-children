@@ -29,25 +29,18 @@ defmodule ActionForChildrenWeb.Router do
     get "/", PageController, :index
     get "/practitioners", PageController, :practitioners
     get "/privacy", PageController, :privacy
-    get "/talk-to-us", PageController, :talk_to_us
-    get "/feedback", PageController, :feedback
-
-    get "/new-code", UserController, :new_code
-    post "/generate-new-code", UserController, :generate_new_code
+    get "/verify", PageController, :verify
 
     post "/sign-in", SessionController, :create
     get "/logout", SessionController, :delete
     get "/token", SessionController, :create_from_token
+    get "/token-verification", SessionController, :verify_from_email
 
-    resources "/users", UserController, only: [:index, :create] do
-      get "/callback", CallbackController, :show
-      post "/callback", CallbackController, :create
-    end
+    resources "/users", UserController, only: [:index, :create]
   end
 
   scope "/api", ActionForChildrenWeb do
     pipe_through :api
-
     post "/advice-login", SessionController, :advice_login
   end
 end

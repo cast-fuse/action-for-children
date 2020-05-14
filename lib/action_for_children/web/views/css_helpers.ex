@@ -7,20 +7,16 @@ defmodule ActionForChildrenWeb.CssHelpers do
     styles([
       "white",
       "bg-dark-red",
-      "hover-bg-red",
       "bn",
       "br3",
-      "w-80-ns",
-      "w-100",
       button()
     ])
   end
 
-  def white_button do
+  def blue_button do
     styles([
-      "red",
-      "bg-white",
-      "hover-bg-white",
+      "white",
+      "bg-navy",
       "bn",
       "br3",
       button()
@@ -35,9 +31,15 @@ defmodule ActionForChildrenWeb.CssHelpers do
       "pv3",
       "outline-0",
       "pointer",
+      "underline-hover",
+      "grow",
       "t3",
       "all",
-      "ease"
+      "ease",
+      "w-80-ns",
+      "w-100",
+      "shadow-1",
+      "h3"
     ])
   end
 

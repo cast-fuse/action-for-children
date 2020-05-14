@@ -51,7 +51,8 @@ defmodule ActionForChildren.Mixfile do
       {:sendgrid, "~> 1.8.0"},
       {:mock, "~> 0.2.0", only: :test},
       {:httpoison, "~> 1.0", override: true},
-      {:cors_plug, "~> 2.0"}
+      {:cors_plug, "~> 2.0"},
+      {:timex, "~> 3.0"}
     ]
   end
 
