@@ -91,7 +91,7 @@ defmodule ActionForChildrenWeb.SessionController do
           # 5. if not expired, update user with nil values as well (so it can't be used again) and initiate session
           # and redirect to /users
 
-          Accounts.update_token(user, %{token: nil, token_expires: nil})
+          # Accounts.update_token(user, %{token: nil, token_expires: nil})
 
           headers = [
             Authorization: "Bearer #{System.get_env("INTERCOM_SECRET")}",
