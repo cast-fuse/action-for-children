@@ -47,10 +47,13 @@ defmodule ActionForChildrenWeb.UserController do
 
         Email.build()
         |> Email.add_to(user.email)
-        |> Email.put_from("parents@actionforchildren.org.uk")
+        |> Email.put_from("parents@actionforchildren.org.uk", "Parents at Action for Children")
         |> Email.put_subject("Action for Children email verification")
         |> Email.put_html("<p>
-            <a href='#{verification_link}'>Click here</a> to verify your email.
+            <a href='#{verification_link}'>To verify your email, click on this link.</a> Alternatively, copy and paste the following into your browser:
+          </p>
+          <p>
+          #{verification_link}
           </p>
           <p>
           You’ll be taken back to our live chat, where you can start a new conversation with a parenting coach, or see the previous conversations you’ve had.
