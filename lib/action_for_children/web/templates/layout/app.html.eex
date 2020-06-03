@@ -115,7 +115,7 @@
           <h4 class="white fw4 tracked lh-copy">
             Contact your local council if you are worried about a child's
             welfare. Contact 111 if you are worried about your child's health,
-            or 999 in a medical emergency.
+            or 999 in an emergency.
           </h4>
           <%= if @conn.assigns[:user] do %>
           <div class="logout-form">
